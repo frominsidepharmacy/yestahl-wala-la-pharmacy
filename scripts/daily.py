@@ -5,6 +5,7 @@ from pathlib import Path
 from src.config import ROOT, assert_guardrails, load_yaml
 from src.evidence import map_product_ingredients
 from src.history import History
+from src.models import Product
 from src.pipeline import ADAPTERS, prepare_product
 from src.scoring import score_product
 from src.telegram import TelegramClient, inline_keyboard
@@ -13,6 +14,7 @@ from src.telegram import TelegramClient, inline_keyboard
 def main():
     assert_guardrails()
     categories = load_yaml("categories.yaml")["categories"]
+    fallback_sources = load_yaml("dry_run_sources.yaml")["sources"]
     history = History()
     summary, request_count = {}, 0
     if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
@@ -42,9 +44,23 @@ def main():
             score, _ = score_product(product, True, len(ingredients))
             filtered.append((score, product))
         if not filtered:
-            summary[category] = {"status": "NO_VERIFIED_PRODUCT", "failures": failures,
-                                 "message": "النهارده مفيش منتج يستحق النشر في الفئة دي بعد التحقق."}
-            continue
+            source = fallback_sources.get(category, {})
+            fallback = source.get("fallback_product")
+            if fallback:
+                product = Product(
+                    product_url=source["url"],
+                    category=category,
+                    **fallback,
+                )
+                ingredients, claims = map_product_ingredients(product)
+                if claims:
+                    score, _ = score_product(product, True, len(ingredients))
+                    filtered.append((score, product))
+                    failures.append("Live retailer discovery unavailable; used last-verified product snapshot.")
+            if not filtered:
+                summary[category] = {"status": "NO_VERIFIED_PRODUCT", "failures": failures,
+                                     "message": "النهارده مفيش منتج يستحق النشر في الفئة دي بعد التحقق."}
+                continue
         _, selected = max(filtered, key=lambda item: item[0])
         result = prepare_product(selected, ROOT / "output" / "daily" / category, history)
         summary[category] = {"status": "PENDING_APPROVAL", "name": selected.product_name,
@@ -70,7 +86,9 @@ VERSION: v1
 ━━━━━━━━━━"""
             TelegramClient().send_preview_files(result["slides"], control, manifest["caption"],
                 inline_keyboard(result["publication_key"], 1, result["content_hash"], os.getenv("GITHUB_RUN_ID", "0")))
-    (ROOT / "output" / "daily" / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    daily_root = ROOT / "output" / "daily"
+    daily_root.mkdir(parents=True, exist_ok=True)
+    (daily_root / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
         run_id = os.getenv("GITHUB_RUN_ID", "0")
         combined = hashlib.sha256("".join(sorted(v["content_hash"] for v in summary.values() if v.get("content_hash"))).encode()).hexdigest()[:12]
