@@ -54,10 +54,26 @@ def live_dry_run(output_root: Optional[Path] = None) -> Dict:
     history = History(output_root / "dry-run.sqlite3")
     for category, source in sources.items():
         adapter = ADAPTERS[source["retailer"]]()
-        product = adapter.product(source["url"], category)
+        source_mode = "live"
+        try:
+            product = adapter.product(source["url"], category)
+        except RuntimeError:
+            # Some retailers block datacenter IP ranges even though the same
+            # public page works from a normal browser. Keep the credential-free
+            # CI dry run deterministic with a last-verified product snapshot.
+            fallback = source.get("fallback_product")
+            if not fallback:
+                raise
+            product = Product(
+                product_url=source["url"],
+                category=category,
+                **fallback,
+            )
+            source_mode = "verified_fallback"
         result = prepare_product(product, output_root / category, history, allow_recent=True)
         results[category] = {"name": product.product_name, "retailer": product.retailer,
                              "price_aed": product.price_aed, "score": result["score"],
-                             "verdict": result["verdict"], "qc_passed": result["qc"]["passed"]}
+                             "verdict": result["verdict"], "qc_passed": result["qc"]["passed"],
+                             "source_mode": source_mode}
     (output_root / "summary.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     return results

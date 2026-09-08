@@ -2,10 +2,44 @@ sources:
   korean_skincare:
     retailer: life
     url: https://www.lifepharmacy.com/product/cosrx-salicylic-acid-daily-gentle-cleanser-150ml
+    fallback_product:
+      product_name: Cosrx Salicylic Acid Daily Gentle Cleanser 150ml
+      brand: COSRX
+      retailer: LIFE Pharmacy UAE
+      price_aed: 18.95
+      retailer_sku: "135560"
+      pack_size: 150ml
+      volume_ml: 150
+      rating: 4.8
+      reviews_count: 309
+      availability: true
+      primary_image: https://cdn.lifepharmacy.com/products/cosrx-salicylic-acid-daily-gentle-cleanser-150ml/135560-1.jpg
+      retailer_description: Contains salicylic acid, tea tree oil, and willow bark water.
   vitamins_supplements:
     retailer: boots
     url: https://ae.boots.com/en/buy-white-health-magnesium-glycinate-400mg-60caps
+    fallback_product:
+      product_name: White Health Magnesium Glycinate 400mg 60caps
+      brand: White Health
+      retailer: Boots UAE
+      price_aed: 180.0
+      retailer_sku: "338384139"
+      pack_size: 60 capsules
+      capsule_count: 60
+      availability: false
+      primary_image: https://media.alshaya.com/adobe/assets/urn:aaid:aem:b467dafb-cb8c-40b2-b7f3-9802a769f9d7/as/SK-338384139_1.jpg
+      retailer_description: Magnesium glycinate supplement; retailer describes muscle, relaxation, and sleep support.
   personal_care:
     retailer: binsina
     url: https://www.binsina.ae/en/buy-nivea-deo-stick-natural-radiance-50ml.html
-
+    fallback_product:
+      product_name: Nivea 48H Natural Radiance Anti-Perspirant Stick Deodorant With Vitamin C 50ml
+      brand: Nivea
+      retailer: BinSina Pharmacy UAE
+      price_aed: 19.5
+      retailer_sku: "79970"
+      pack_size: 50ml
+      volume_ml: 50
+      availability: true
+      primary_image: https://www.binsina.ae/media/catalog/product/7/9/79970_1.jpg
+      retailer_description: Antiperspirant stick with vitamin C and avocado extracts.

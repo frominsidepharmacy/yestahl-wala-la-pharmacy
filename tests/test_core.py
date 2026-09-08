@@ -157,3 +157,13 @@ def test_approval_hash_detects_mutation(tmp_path):
 
 def test_retailer_adapters_are_separate():
     assert {LifeAdapter.key, BootsAdapter.key, BinSinaAdapter.key} == {"life", "boots", "binsina"}
+
+
+def test_dry_run_sources_have_complete_verified_fallbacks():
+    sources = load_yaml("dry_run_sources.yaml")["sources"]
+    assert set(sources) == {"korean_skincare", "vitamins_supplements", "personal_care"}
+    for category, source in sources.items():
+        fallback = source["fallback_product"]
+        candidate = Product(product_url=source["url"], category=category, **fallback)
+        assert candidate.product_name and candidate.retailer and candidate.price_aed
+        assert candidate.primary_image.startswith("https://")
