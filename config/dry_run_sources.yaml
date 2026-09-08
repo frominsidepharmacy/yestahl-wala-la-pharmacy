@@ -1,0 +1,11 @@
+sources:
+  korean_skincare:
+    retailer: life
+    url: https://www.lifepharmacy.com/product/cosrx-salicylic-acid-daily-gentle-cleanser-150ml
+  vitamins_supplements:
+    retailer: boots
+    url: https://ae.boots.com/en/buy-white-health-magnesium-glycinate-400mg-60caps
+  personal_care:
+    retailer: binsina
+    url: https://www.binsina.ae/en/buy-nivea-deo-stick-natural-radiance-50ml.html
+

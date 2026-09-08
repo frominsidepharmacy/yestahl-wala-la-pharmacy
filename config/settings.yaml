@@ -1,0 +1,25 @@
+brand:
+  series_name_ar: "يستاهل ولا لأ؟"
+  brand_line_ar: "من جوه الصيدلية"
+  creator_name_ar: "د. عمرو أبوبكر"
+  full_series_name_ar: "يستاهل ولا لأ؟ | من جوه الصيدلية"
+schedule:
+  timezone: Asia/Dubai
+  hour: 10
+  minute: 7
+guardrails:
+  allow_paid_services: false
+  require_manual_approval: true
+  free_ai_enabled: false
+  max_daily_products: 3
+  max_daily_telegram_control_runs: 50
+  max_github_action_runtime_minutes_per_day: 20
+  max_retailer_page_requests_per_run: 150
+  max_carousel_slides: 6
+selection:
+  no_repeat_days: 90
+  minimum_evidence_strength: 2
+  request_delay_seconds: 1.0
+  timeout_seconds: 20
+  max_retries: 2
+

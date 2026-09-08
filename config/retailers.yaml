@@ -1,0 +1,14 @@
+retailers:
+  life:
+    name: LIFE Pharmacy UAE
+    base_url: https://www.lifepharmacy.com
+    search_url: https://www.lifepharmacy.com/search?q={query}
+  boots:
+    name: Boots UAE
+    base_url: https://ae.boots.com
+    search_url: https://ae.boots.com/en/search/?text={query}
+  binsina:
+    name: BinSina Pharmacy UAE
+    base_url: https://www.binsina.ae
+    search_url: https://www.binsina.ae/en/search?q={query}
+

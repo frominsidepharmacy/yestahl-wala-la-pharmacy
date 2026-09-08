@@ -1,0 +1,42 @@
+name: Publish all approved carousels
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_run_id: {required: true, type: string}
+      approval_hash: {required: true, type: string}
+permissions: {actions: read, contents: read, pages: write, id-token: write}
+concurrency: {group: publish-all, cancel-in-progress: false}
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: {name: github-pages}
+    env:
+      ALLOW_PAID_SERVICES: "false"
+      REQUIRE_MANUAL_APPROVAL: "true"
+      FREE_AI_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: pending-previews-${{ inputs.artifact_run_id }}
+          path: pending
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.artifact_run_id }}
+      - env:
+          APPROVAL_HASH: ${{ inputs.approval_hash }}
+        run: python -m scripts.stage_all_approved
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: site}
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ vars.INSTAGRAM_USER_ID }}
+          META_API_VERSION: ${{ vars.META_API_VERSION }}
+          PAGES_BASE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: python -m scripts.publish_all

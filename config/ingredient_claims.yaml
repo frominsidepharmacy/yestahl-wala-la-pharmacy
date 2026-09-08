@@ -1,0 +1,97 @@
+ingredients:
+  niacinamide:
+    display: Niacinamide
+    explanation_ar: "بيدعم حاجز البشرة ويساعد في تحسين مظهر الدهون وتفاوت اللون."
+    uses: [دعم حاجز البشرة, مظهر الدهون, تفاوت اللون]
+    limitations_ar: "النتيجة تدريجية ومش علاج منفرد للتصبغات أو الحبوب."
+    warnings_ar: "ابدأ تدريجيًا لو بشرتك حساسة."
+    source: https://pubchem.ncbi.nlm.nih.gov/compound/Niacinamide
+    source_date: "2026-09-08"
+  hyaluronic_acid:
+    display: Hyaluronic Acid
+    explanation_ar: "مرطب جاذب للمياه يساعد البشرة تبان ممتلئة وأقل جفافًا."
+    uses: [الترطيب, الجفاف]
+    limitations_ar: "يحسن الترطيب لكنه لا يعالج سبب كل أنواع الجفاف."
+    warnings_ar: "استخدم بعده مرطب مناسب في الجو الجاف."
+    source: https://pubchem.ncbi.nlm.nih.gov/compound/Hyaluronic-Acid
+    source_date: "2026-09-08"
+  salicylic_acid:
+    display: Salicylic Acid
+    explanation_ar: "مقشر ذائب في الدهون يساعد على تنظيف المسام وتقليل مظهر الرؤوس السوداء."
+    uses: [المسام, الرؤوس السوداء, البشرة الدهنية]
+    limitations_ar: "مش بديل لتقييم طبي في الحبوب الشديدة."
+    warnings_ar: "قلل التكرار مع المقشرات الأخرى وتوقف عند التهيج."
+    source: https://pubchem.ncbi.nlm.nih.gov/compound/Salicylic-Acid
+    source_date: "2026-09-08"
+  ceramides:
+    display: Ceramides
+    explanation_ar: "دهون شبيهة بالموجودة طبيعيًا في الجلد وتدعم حاجز البشرة."
+    uses: [دعم الحاجز, الجفاف]
+    limitations_ar: "الفائدة تعتمد على باقي التركيبة والاستخدام المنتظم."
+    warnings_ar: "اختبر المنتج لو عندك حساسية من أي مكوّن آخر."
+    source: https://pubmed.ncbi.nlm.nih.gov/12553851/
+    source_date: "2026-09-08"
+  panthenol:
+    display: Panthenol
+    explanation_ar: "مكوّن مرطب ومهدئ يدعم راحة وحاجز البشرة."
+    uses: [الترطيب, التهدئة]
+    limitations_ar: "لا يعالج الأمراض الجلدية بمفرده."
+    warnings_ar: "توقف عند ظهور حساسية غير معتادة."
+    source: https://pubchem.ncbi.nlm.nih.gov/compound/Panthenol
+    source_date: "2026-09-08"
+  retinol:
+    display: Retinol
+    explanation_ar: "أحد مشتقات فيتامين A وقد يحسن مظهر الخطوط والملمس مع الوقت."
+    uses: [الملمس, علامات التقدم, الحبوب الخفيفة]
+    limitations_ar: "يحتاج وقتًا وقد يسبب تهيجًا؛ التركيز غير المعلن لا يُفترض."
+    warnings_ar: "يُستخدم ليلًا تدريجيًا مع واقي شمس، ويُتجنب أثناء الحمل إلا بتوجيه طبي."
+    source: https://pubmed.ncbi.nlm.nih.gov/17515510/
+    source_date: "2026-09-08"
+  vitamin_c:
+    display: Vitamin C
+    explanation_ar: "مضاد أكسدة؛ وظيفته تختلف حسب الشكل والتركيز وثبات التركيبة."
+    uses: [مضادات الأكسدة, تفاوت اللون]
+    limitations_ar: "وجود الاسم وحده لا يضمن فاعلية التركيبة."
+    warnings_ar: "قد يسبب لسعًا للبشرة الحساسة."
+    source: https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/
+    source_date: "2026-09-08"
+  vitamin_d:
+    display: Vitamin D
+    explanation_ar: "فيتامين مهم لصحة العظام ووظائف أخرى، والاحتياج يختلف حسب التحاليل والحالة."
+    uses: [تعويض النقص المثبت, دعم صحة العظام]
+    limitations_ar: "المكمل لا يغني عن التشخيص أو متابعة التحاليل."
+    warnings_ar: "الجرعات العالية تحتاج إشرافًا طبيًا لتجنب السمية والتداخلات."
+    source: https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/
+    source_date: "2026-09-08"
+  magnesium:
+    display: Magnesium
+    explanation_ar: "معدن يدخل في وظائف العضلات والأعصاب وإنتاج الطاقة."
+    uses: [تعويض النقص, دعم الوظائف الطبيعية]
+    limitations_ar: "الفائدة تعتمد على وجود احتياج فعلي وشكل المركب والجرعة."
+    warnings_ar: "استشر مختصًا مع أمراض الكلى؛ قد يسبب اضطرابًا هضميًا ويتداخل مع أدوية."
+    source: https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/
+    source_date: "2026-09-08"
+  omega_3:
+    display: Omega-3
+    explanation_ar: "أحماض دهنية تشمل EPA وDHA؛ كمية المكونات الفعلية أهم من رقم زيت السمك وحده."
+    uses: [تعويض المدخول, دعم صحة القلب ضمن نمط صحي]
+    limitations_ar: "ليس بديلًا للدواء أو النظام الغذائي."
+    warnings_ar: "راجع طبيبك مع مميعات الدم أو قبل الجراحة."
+    source: https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/
+    source_date: "2026-09-08"
+  zinc:
+    display: Zinc
+    explanation_ar: "معدن أساسي للمناعة والتئام الجروح ووظائف خلوية متعددة."
+    uses: [تعويض النقص]
+    limitations_ar: "زيادته لا تعني مناعة أفضل وقد تسبب نقص النحاس."
+    warnings_ar: "تجنب الاستخدام العالي طويل المدى دون إشراف، وافصل عن بعض المضادات الحيوية."
+    source: https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/
+    source_date: "2026-09-08"
+  aloe_vera:
+    display: Aloe Vera
+    explanation_ar: "مكوّن نباتي يُستخدم للتهدئة والترطيب، لكن تأثيره يعتمد على التركيبة كاملة."
+    uses: [التهدئة, الترطيب]
+    limitations_ar: "مش علاج للتصبغات أو الالتهابات بمفرده."
+    warnings_ar: "اختبره على مساحة صغيرة لو بشرتك شديدة الحساسية."
+    source: https://www.nccih.nih.gov/health/aloe-vera
+    source_date: "2026-09-08"

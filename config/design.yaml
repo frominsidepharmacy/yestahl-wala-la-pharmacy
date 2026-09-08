@@ -1,0 +1,15 @@
+width: 1080
+height: 1350
+margin: 70
+colors:
+  navy: "#0B1F3A"
+  sky: "#DDF3FF"
+  gold: "#F3A83B"
+  off_white: "#FAFBF8"
+font_candidates:
+  - /System/Library/Fonts/Supplemental/Arial Unicode.ttf
+  - /System/Library/Fonts/GeezaPro.ttc
+  - /System/Library/Fonts/SFArabic.ttf
+  - /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+  - /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf
+  - /System/Library/Fonts/Supplemental/Arial.ttf

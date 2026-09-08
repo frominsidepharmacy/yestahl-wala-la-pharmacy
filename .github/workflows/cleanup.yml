@@ -1,0 +1,20 @@
+name: Clean public media
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "40 12 * * *"
+      timezone: "Asia/Dubai"
+permissions: {pages: write, id-token: write, contents: read}
+concurrency: {group: pages, cancel-in-progress: false}
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    environment: {name: github-pages}
+    steps:
+      - run: mkdir -p site
+      - run: touch site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: site}
+      - uses: actions/deploy-pages@v4
+

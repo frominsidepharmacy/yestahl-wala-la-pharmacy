@@ -1,0 +1,30 @@
+name: Revise draft
+on:
+  workflow_dispatch:
+    inputs:
+      publication_key: {required: true, type: string}
+      artifact_run_id: {required: true, type: string}
+      instruction: {required: true, type: string}
+permissions: {actions: read, contents: read}
+jobs:
+  revise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: pending-previews-${{ inputs.artifact_run_id }}
+          path: pending
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.artifact_run_id }}
+      - env:
+          EDIT_INSTRUCTION: ${{ inputs.instruction }}
+        run: python -m scripts.revise --publication-key "${{ inputs.publication_key }}" --pending-root pending
+      - uses: actions/upload-artifact@v4
+        with:
+          name: revised-${{ inputs.publication_key }}-${{ github.run_id }}
+          path: output/revised

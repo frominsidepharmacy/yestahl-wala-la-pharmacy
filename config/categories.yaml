@@ -1,0 +1,12 @@
+categories:
+  korean_skincare:
+    label: Korean Skincare
+    queries: [korean skincare, COSRX, Beauty of Joseon, Anua]
+    korean_brands: [COSRX, Beauty of Joseon, Anua, Some By Mi, Laneige, Dr. Jart, Innisfree, Isntree, Round Lab, Skin1004]
+  vitamins_supplements:
+    label: Vitamins / Supplements
+    queries: [vitamin d, magnesium, omega 3, probiotics]
+  personal_care:
+    label: Personal Care
+    queries: [deodorant, oral care, hair care, body care]
+

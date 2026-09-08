@@ -1,0 +1,65 @@
+name: Publish approved carousel
+on:
+  workflow_dispatch:
+    inputs:
+      publication_key:
+        required: true
+        type: string
+      content_hash:
+        required: true
+        type: string
+      artifact_run_id:
+        required: true
+        type: string
+permissions:
+  actions: read
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: publish-${{ inputs.publication_key }}
+  cancel-in-progress: false
+jobs:
+  deploy-approved-media:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ALLOW_PAID_SERVICES: "false"
+      REQUIRE_MANUAL_APPROVAL: "true"
+      FREE_AI_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: pending-previews-${{ inputs.artifact_run_id }}
+          path: pending
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.artifact_run_id }}
+      - name: Verify approval and stage only approved images
+        env:
+          PUBLICATION_KEY: ${{ inputs.publication_key }}
+          CONTENT_HASH: ${{ inputs.content_hash }}
+        run: python -m scripts.stage_approved
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: site}
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Publish through official Meta API
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ vars.INSTAGRAM_USER_ID }}
+          META_API_VERSION: ${{ vars.META_API_VERSION }}
+          PAGES_BASE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: python -m scripts.publish --publication-key "${{ inputs.publication_key }}" --expected-hash "${{ inputs.content_hash }}" --pending-dir "approved/${{ inputs.publication_key }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: publish-record-${{ inputs.publication_key }}
+          path: data/runtime
+          retention-days: 90

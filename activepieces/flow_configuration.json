@@ -1,0 +1,20 @@
+{
+  "displayName": "Yestahl Wala La — Telegram Control",
+  "trigger": {"piece": "@activepieces/piece-telegram-bot", "action": "new_update"},
+  "security": {
+    "allowedUserIdExpression": "{{trigger.callback_query.from.id || trigger.message.from.id}}",
+    "allowedUserIdVariable": "TELEGRAM_ALLOWED_USER_ID",
+    "unauthorizedAction": "log_and_ignore"
+  },
+  "state": {"table": "yestahl_edit_state", "fields": ["user_id", "waiting_for_edit", "publication_key", "version", "artifact_run_id"]},
+  "routes": [
+    {"match": "callback_query.data startsWith approve:", "parse": "action:publication_key:version:hash_prefix:artifact_run_id", "githubWorkflow": "publish.yml", "inputs": ["publication_key", "hash_prefix as content_hash", "artifact_run_id"]},
+    {"match": "callback_query.data startsWith regenerate:", "parse": "action:publication_key:version:hash_prefix:artifact_run_id", "githubWorkflow": "regenerate.yml", "inputs": ["publication_key", "artifact_run_id"]},
+    {"match": "callback_query.data startsWith reject:", "action": "send Telegram confirmation and clear state"},
+    {"match": "callback_query.data startsWith edit:", "action": "upsert state waiting_for_edit=true; prompt ابعتلي التعديل اللي عايزه."},
+    {"match": "message.text and state.waiting_for_edit", "githubWorkflow": "revise.yml", "inputs": ["state.publication_key", "state.artifact_run_id", "message.text as instruction"], "after": "clear state"},
+    {"match": "callback_query.data startsWith approve_all:", "parse": "action:approval_hash:artifact_run_id", "githubWorkflow": "publish_all.yml", "inputs": ["approval_hash", "artifact_run_id"]}
+  ],
+  "githubAction": {"piece": "@activepieces/piece-github", "action": "trigger_workflow_dispatch", "ref": "main"},
+  "notes": "Connect Telegram and GitHub OAuth in Activepieces Free Cloud, replace repository owner/name, test, then publish the flow. No paid step is used."
+}
