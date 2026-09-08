@@ -1,0 +1,57 @@
+name: Telegram approval control
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Validated Telegram action payload from Activepieces
+        required: true
+        type: string
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      CONTROL_PAYLOAD: ${{ inputs.payload }}
+    steps:
+      - name: Validate payload and dispatch requested workflow
+        shell: python
+        run: |
+          import json
+          import os
+          import subprocess
+
+          payload = json.loads(os.environ["CONTROL_PAYLOAD"])
+          action = payload.get("action", "")
+          allowed = {
+              "approve": (
+                  "publish.yml",
+                  ("publication_key", "content_hash", "artifact_run_id"),
+              ),
+              "regenerate": (
+                  "regenerate.yml",
+                  ("publication_key", "artifact_run_id"),
+              ),
+              "approve_all": (
+                  "publish_all.yml",
+                  ("approval_hash", "artifact_run_id"),
+              ),
+          }
+          if action not in allowed:
+              raise SystemExit(f"Unsupported action: {action!r}")
+
+          workflow, required = allowed[action]
+          command = ["gh", "workflow", "run", workflow, "--ref", "main"]
+          for key in required:
+              value = str(payload.get(key, "")).strip()
+              if not value:
+                  raise SystemExit(f"Missing required field: {key}")
+              command.extend(["-f", f"{key}={value}"])
+
+          subprocess.run(command, check=True)
