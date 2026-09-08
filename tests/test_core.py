@@ -108,6 +108,15 @@ def test_caption_branding_and_product():
     assert p.product_name in cap and "يستاهل ولا لأ؟" in cap and "من جوه الصيدلية" in cap
 
 
+def test_reference_story_structure_and_no_retailer_name():
+    p = product(); ingredients, _ = map_product_ingredients(p); content = build_content(p, ingredients, 70)
+    titles = [slide["title"] for slide in content["slides"]]
+    assert titles[0] == "٥ حاجات لازم تعرفهم"
+    assert titles[2:] == ["بيعمل إيه؟", "الطريقة الصح", "خد بالك", "الخلاصة"]
+    public_copy = json.dumps(content, ensure_ascii=False) + build_caption(p, content, ingredients)
+    assert p.retailer not in public_copy
+
+
 def test_render_six_rtl_slides(tmp_path):
     p = product(primary_image=None); ingredients, _ = map_product_ingredients(p); content = build_content(p, ingredients, 70)
     paths = render_carousel(p, content, tmp_path, Image.new("RGBA", (400, 500), "white"))

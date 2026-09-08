@@ -74,7 +74,6 @@ def main():
 
 CATEGORY: {config['label']}
 PRODUCT: {p.product_name}
-STORE: {p.retailer}
 PRICE: AED {p.price_aed if p.price_aed is not None else 'غير متاح'}
 SIZE: {p.pack_size or 'غير متاح'}
 RATING: {p.rating if p.rating is not None else 'غير متاح'}

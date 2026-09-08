@@ -6,6 +6,10 @@ colors:
   sky: "#DDF3FF"
   gold: "#F3A83B"
   off_white: "#FAFBF8"
+font_bold_candidates:
+  - /System/Library/Fonts/Supplemental/Arial Bold.ttf
+  - /System/Library/Fonts/SFArabicRounded.ttf
+  - /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
 font_candidates:
   - /System/Library/Fonts/Supplemental/Arial Unicode.ttf
   - /System/Library/Fonts/GeezaPro.ttc

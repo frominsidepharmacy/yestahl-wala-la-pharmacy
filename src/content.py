@@ -12,7 +12,7 @@ def choose_hook(product: Product, ingredients: List[Dict]) -> str:
         "reviews": product.reviews_count, "rating": product.rating,
         "discount": round(product.discount_percentage or 0),
         "ingredient": ingredients[0]["display"] if ingredients else None,
-        "price": product.price_aed, "retailer": product.retailer,
+        "price": product.price_aed, "retailer": None,
         "use_case": ingredients[0]["uses"][0] if ingredients else None,
         "claim": ingredients[0]["uses"][0] if ingredients else None,
     }
@@ -37,19 +37,76 @@ def _available(value, suffix=""):
     return f"{value}{suffix}" if value is not None else "غير متاح"
 
 
+def _product_kind(product: Product) -> str:
+    if product.category == "korean_skincare":
+        return "منتج عناية بالبشرة"
+    if product.category == "vitamins_supplements":
+        return "مكمل غذائي"
+    return "منتج عناية شخصية"
+
+
+def _usage_copy(product: Product, warning: str) -> List[str]:
+    if product.category == "korean_skincare":
+        return [
+            "ابدأ بكمية صغيرة على بشرة نظيفة",
+            "استخدمه مرة يوميًا في البداية",
+            "لو بشرتك حساسة ابدأ يوم بعد يوم",
+            "استخدم واقي شمس صباحًا",
+        ]
+    if product.category == "vitamins_supplements":
+        return [
+            "التزم بالجرعة المكتوبة على العبوة",
+            "خده في ميعاد ثابت مناسب للتعليمات",
+            "ما تزودش الجرعة من نفسك",
+            "جرعة الأطفال يحددها العمر وتوجيه الطبيب أو الصيدلي",
+        ]
+    return [
+        "استخدم كمية مناسبة على المكان المطلوب",
+        "التزم بالطريقة المكتوبة على العبوة",
+        "ما تكررش الاستخدام أكتر من الموصى به",
+        "اغسل إيدك بعد الاستخدام لو المنتج موضعي",
+    ]
+
+
+def _warning_copy(product: Product, warning: str) -> List[str]:
+    common = [warning]
+    if product.category == "korean_skincare":
+        common += [
+            "وقفه لو ظهر تهيج شديد أو حرقان مستمر",
+            "ما تجمعش مواد فعالة قوية مرة واحدة من غير خطة واضحة",
+            "ابعده عن العين والجروح",
+        ]
+    elif product.category == "vitamins_supplements":
+        common += [
+            "ما تزودش الجرعة لأن الزيادة مش معناها نتيجة أسرع",
+            "اسأل مختص لو بتاخد أدوية أو عندك مرض مزمن",
+            "احفظه بعيدًا عن متناول الأطفال",
+        ]
+    else:
+        common += [
+            "وقف الاستخدام لو حصل تهيج واضح",
+            "ابعده عن العين والجروح إلا لو العبوة بتقول غير كده",
+            "للاستعمال الخارجي فقط لو ده مذكور على العبوة",
+        ]
+    return common[:4]
+
+
+def _short_product_name(product: Product) -> str:
+    words = product.product_name.split()
+    without_size = [word for word in words if not any(char.isdigit() for char in word)]
+    return " ".join((without_size or words)[:4])
+
+
 def build_content(product: Product, ingredients: List[Dict], score: float) -> Dict:
-    hook = choose_hook(product, ingredients)
     decision, reason = verdict(product, score, ingredients)
     uses = []
     for ingredient in ingredients:
         uses.extend(ingredient.get("uses", []))
     uses = list(dict.fromkeys(uses))[:4] or ["اللي محتاج معلومات أوضح قبل الشراء"]
     warning = ingredients[0]["warnings_ar"] if ingredients else "راجع مختص لو عندك حالة صحية أو بتستخدم أدوية."
-    category_usage = {
-        "korean_skincare": ["كمية صغيرة على بشرة نظيفة", "مرة يوميًا وابدأ تدريجيًا", "حسب نوع المنتج صباحًا أو مساءً", warning],
-        "vitamins_supplements": ["التزم بالجرعة الرسمية على العبوة", "حسب الاحتياج وتوجيه المختص", "خده في توقيت ثابت مناسب للتعليمات", warning],
-        "personal_care": ["استخدم كمية مناسبة على المنطقة المقصودة", "حسب تعليمات العبوة", "انتظم بدون إفراط", warning],
-    }[product.category]
+    hook = f"{product.product_name}: أبرز استخدام موثق هو {uses[0]}."
+    category_usage = _usage_copy(product, warning)
+    cautions = _warning_copy(product, warning)
     slide3 = [{"title": x["display"], "body": x["explanation_ar"]} for x in ingredients[:4]]
     if not slide3:
         slide3 = [{"title": "المعلومات المتاحة", "body": "قائمة المكونات الرسمية غير كافية؛ وده مؤثر على الحكم."}]
@@ -57,12 +114,29 @@ def build_content(product: Product, ingredients: List[Dict], score: float) -> Di
     return {
         "hook": hook, "verdict": decision, "verdict_reason": reason,
         "slides": [
-            {"title": "يستاهل ولا لأ؟", "subtitle": product.product_name, "blocks": [hook]},
-            {"title": "هو إيه أصلًا؟", "blocks": [f"الفئة: {product.category.replace('_', ' ')}", f"الهدف: {uses[0]}", f"الحجم: {_available(product.pack_size)}", f"المتاح حاليًا: {'أيوه' if product.availability is not False else 'لأ'}"]},
-            {"title": "إيه جوه التركيبة؟", "blocks": [f"{x['title']} — {x['body']}" for x in slide3]},
-            {"title": "مناسب لمين؟", "blocks": [f"• {x}" for x in uses] + ["مش أفضل اختيار لو المعلومات الرسمية مش كافية لهدفك."]},
-            {"title": "استخدمه إزاي؟", "blocks": category_usage},
-            {"title": "يستاهل ولا لأ؟", "blocks": [decision, reason, f"السعر: AED {_available(product.price_aed)}", f"العبوة: {_available(product.pack_size)}", f"المتجر: {product.retailer}", f"التقييم: {_available(product.rating)} | المراجعات: {_available(product.reviews_count)}", f"السعر وقت إعداد البوست: {checked}", "الأسعار والعروض ممكن تتغير.", "إيه المنتج اللي عايزني أحطه تحت الميكروسكوب المرة الجاية؟"]},
+            {"title": "٥ حاجات لازم تعرفهم", "subtitle": product.product_name, "blocks": [
+                f"استخدامه: {uses[0]}",
+                f"أبرز مكوّن: {ingredients[0]['display'] if ingredients else 'غير موضح بالكامل'}",
+                f"أهم تحذير: {warning}",
+                f"السعر: {_available(product.price_aed)} درهم | الحجم: {_available(product.pack_size)}",
+            ]},
+            {"title": f"هو إيه {product.brand or _short_product_name(product)}؟", "blocks": [
+                f"{product.product_name}",
+                _product_kind(product),
+                f"أبرز مكوّن موثق: {ingredients[0]['display'] if ingredients else 'المكونات غير موضحة بالكامل'}",
+                f"حجم العبوة: {_available(product.pack_size)}",
+            ]},
+            {"title": "بيعمل إيه؟", "blocks": [f"{x['title']}: {x['body']}" for x in slide3]},
+            {"title": "الطريقة الصح", "blocks": category_usage},
+            {"title": "خد بالك", "blocks": cautions},
+            {"title": "الخلاصة", "blocks": [
+                decision,
+                reason,
+                f"السعر: {_available(product.price_aed)} درهم",
+                f"الحجم: {_available(product.pack_size)}",
+                f"التقييم: {_available(product.rating)} من 5",
+                f"السعر اتراجع يوم {checked} وممكن يتغير",
+            ]},
         ],
     }
 
@@ -80,8 +154,7 @@ def build_caption(product: Product, content: Dict, ingredients: List[Dict]) -> s
 الحكم: {content['verdict']}
 {content['verdict_reason']}
 
-السعر وقت المراجعة: AED {_available(product.price_aed)}
-المتجر: {product.retailer}
+السعر وقت المراجعة: {_available(product.price_aed)} درهم
 تاريخ المراجعة: {datetime.now().strftime('%d/%m/%Y')}
 الأسعار والعروض ممكن تتغير، والمحتوى للتثقيف ومش بديل عن نصيحة طبية شخصية.
 
