@@ -55,6 +55,7 @@ jobs:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ vars.INSTAGRAM_USER_ID }}
           META_API_VERSION: ${{ vars.META_API_VERSION }}
+          META_GRAPH_HOST: ${{ vars.META_GRAPH_HOST }}
           PAGES_BASE_URL: ${{ steps.deploy.outputs.page_url }}
         run: python -m scripts.publish --publication-key "${{ inputs.publication_key }}" --expected-hash "${{ inputs.content_hash }}" --pending-dir "approved/${{ inputs.publication_key }}"
       - uses: actions/upload-artifact@v4

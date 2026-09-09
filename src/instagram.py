@@ -6,15 +6,20 @@ import requests
 
 
 class InstagramPublisher:
-    def __init__(self, access_token=None, user_id=None, api_version=None, session=None):
+    ALLOWED_GRAPH_HOSTS = {"graph.instagram.com", "graph.facebook.com"}
+
+    def __init__(self, access_token=None, user_id=None, api_version=None, session=None, graph_host=None):
         self.token = access_token or os.getenv("META_ACCESS_TOKEN")
         self.user_id = user_id or os.getenv("INSTAGRAM_USER_ID")
         self.version = api_version or os.getenv("META_API_VERSION")
+        self.graph_host = graph_host or os.getenv("META_GRAPH_HOST", "graph.facebook.com")
         if not self.token or not self.user_id or not self.version:
             raise RuntimeError("META_ACCESS_TOKEN, INSTAGRAM_USER_ID and META_API_VERSION are required")
         if not self.version.startswith("v"):
             raise ValueError("META_API_VERSION must look like vNN.0")
-        self.base = f"https://graph.facebook.com/{self.version}"
+        if self.graph_host not in self.ALLOWED_GRAPH_HOSTS:
+            raise ValueError("META_GRAPH_HOST must be graph.instagram.com or graph.facebook.com")
+        self.base = f"https://{self.graph_host}/{self.version}"
         self.session = session or requests.Session()
 
     def _post(self, path: str, data: Dict) -> Dict:

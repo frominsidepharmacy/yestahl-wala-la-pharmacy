@@ -45,6 +45,16 @@ def test_instagram_version_is_configurable():
     with pytest.raises(ValueError): InstagramPublisher("t", "i", "99", Session())
 
 
+def test_instagram_login_uses_instagram_graph_host():
+    api = InstagramPublisher("token", "ig", "v23.0", Session(), "graph.instagram.com")
+    assert api.base == "https://graph.instagram.com/v23.0"
+
+
+def test_instagram_rejects_untrusted_graph_host():
+    with pytest.raises(ValueError):
+        InstagramPublisher("token", "ig", "v23.0", Session(), "example.com")
+
+
 def test_pages_url_validation():
     class S:
         def head(self, url, timeout, allow_redirects): return Response({}, 200, "image/png")
@@ -89,7 +99,9 @@ def test_activepieces_routes_complete():
 
 def test_schedule_timezone_and_time():
     text = (Path(__file__).parents[1]/".github/workflows/daily.yml").read_text()
-    assert 'cron: "7 10 * * *"' in text and 'timezone: "Asia/Dubai"' in text
+    assert all(f'cron: "0 {hour} * * *"' in text for hour in (12, 17, 22))
+    assert text.count('timezone: "Asia/Dubai"') == 3
+    assert all(category in text for category in ("korean_skincare", "vitamins_supplements", "personal_care"))
 
 
 def test_zero_cost_guardrails_are_permanent():

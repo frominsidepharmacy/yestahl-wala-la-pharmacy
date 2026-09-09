@@ -14,13 +14,18 @@ from src.telegram import TelegramClient, inline_keyboard
 def main():
     assert_guardrails()
     categories = load_yaml("categories.yaml")["categories"]
+    target_category = os.getenv("TARGET_CATEGORY", "all")
+    if target_category != "all" and target_category not in categories:
+        raise ValueError(f"Unsupported TARGET_CATEGORY: {target_category}")
+    selected_categories = categories if target_category == "all" else {target_category: categories[target_category]}
     fallback_sources = load_yaml("dry_run_sources.yaml")["sources"]
     history = History()
     summary, request_count = {}, 0
     if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
+        count = len(selected_categories)
         TelegramClient().call("sendMessage", chat_id=os.getenv("TELEGRAM_CHAT_ID"),
-            text="صباح الخير 👋\n\nجهزت 3 منتجات جديدة لسلسلة:\n\nيستاهل ولا لأ؟\nمن جوه الصيدلية")
-    for category, config in categories.items():
+            text=f"جهزت {count} منتج للمراجعة قبل النشر:\n\nيستاهل ولا لأ؟\nمن جوه الصيدلية")
+    for category, config in selected_categories.items():
         candidates = []
         failures = []
         for retailer, cls in ADAPTERS.items():
@@ -88,9 +93,10 @@ VERSION: v1
     daily_root = ROOT / "output" / "daily"
     daily_root.mkdir(parents=True, exist_ok=True)
     (daily_root / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
+    approved_items = [v for v in summary.values() if v.get("content_hash")]
+    if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID") and len(approved_items) > 1:
         run_id = os.getenv("GITHUB_RUN_ID", "0")
-        combined = hashlib.sha256("".join(sorted(v["content_hash"] for v in summary.values() if v.get("content_hash"))).encode()).hexdigest()[:12]
+        combined = hashlib.sha256("".join(sorted(v["content_hash"] for v in approved_items)).encode()).hexdigest()[:12]
         TelegramClient().call("sendMessage", chat_id=os.getenv("TELEGRAM_CHAT_ID"),
             text="راجع النسخ الثلاثة، أو وافق عليهم كلهم:",
             reply_markup={"inline_keyboard": [[{"text": "✅ APPROVE ALL", "callback_data": f"approve_all:{combined}:{run_id}"}]]})

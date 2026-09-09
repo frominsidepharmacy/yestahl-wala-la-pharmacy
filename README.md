@@ -4,7 +4,7 @@ Zero-cost daily Instagram carousel engine for **د. عمرو أبوبكر**. The
 
 ## Architecture
 
-At 10:07 `Asia/Dubai`, one workflow searches LIFE Pharmacy UAE, Boots UAE, and BinSina UAE across Korean skincare, vitamins/supplements, and personal care. It normalizes exact packs, excludes the last 90 days, builds an explainable 0–100 score, maps claims to the local evidence library, generates deterministic Egyptian-Arabic copy, renders six 1080×1350 PNG files, runs QC, and uploads a private Actions artifact. Telegram receives each album and the approval controls.
+Three daily `Asia/Dubai` slots prepare one category each: Korean skincare at 12:00, vitamins/supplements at 17:00, and personal care at 22:00. Each run searches the configured UAE retailers, normalizes exact packs, excludes the last 90 days, builds an explainable 0–100 score, maps claims to the local evidence library, generates deterministic Egyptian-Arabic copy and a product-specific caption, renders six 1080×1350 PNG files, runs QC, and uploads a private Actions artifact. Telegram receives the album, caption, and approval controls. Publication remains blocked until manual approval.
 
 Activepieces Free Cloud accepts only updates from `TELEGRAM_ALLOWED_USER_ID`. APPROVE dispatches `publish.yml`; EDIT stores one lightweight table row and dispatches `revise.yml`; REGENERATE and REJECT have separate routes. Publishing recomputes the SHA-256 over all six slides, caption, and metadata. Only that approved version is staged into a GitHub Pages deployment. The official Meta API creates six child containers, waits for readiness, creates the carousel parent, publishes once, and retrieves the permalink. A per-publication caption marker plus serialized workflow execution prevents duplicate posts after retries or timeouts.
 
@@ -22,7 +22,7 @@ The forbidden combined creator-as-series title is not used.
 
 1. Create a public GitHub repository named `yestahl-wala-la-pharmacy`, push this directory to `main`, and enable GitHub Pages with **GitHub Actions** as its source.
 2. Add repository secrets `TELEGRAM_BOT_TOKEN` and `META_ACCESS_TOKEN`.
-3. Add repository variables `TELEGRAM_ALLOWED_USER_ID`, `TELEGRAM_CHAT_ID`, `INSTAGRAM_USER_ID`, and `META_API_VERSION`. Set the Graph version supported by the connected account at setup time; it is deliberately not spread through the code.
+3. Add repository variables `TELEGRAM_ALLOWED_USER_ID`, `TELEGRAM_CHAT_ID`, `INSTAGRAM_USER_ID`, `META_API_VERSION`, and `META_GRAPH_HOST`. Use `graph.instagram.com` for Instagram Login or `graph.facebook.com` for Facebook Login. Set the Graph version supported by the connected app at setup time; it is deliberately not spread through the code.
 4. In Activepieces Free Cloud, connect the Telegram Bot and GitHub pieces, build/import the single flow described by `activepieces/flow_configuration.json`, select this repository and `main`, test, and publish it.
 5. Run **Tests and credential-free dry run**, then manually dispatch **Daily content** once.
 
@@ -34,7 +34,7 @@ For Meta account setup, use the current official authentication path appropriate
 
 - Pause: disable `daily.yml` in GitHub Actions and unpublish/pause the Activepieces flow.
 - Restart: enable the workflow and republish the same Activepieces flow.
-- Change time: edit `cron` and `timezone` together in `.github/workflows/daily.yml`. The current official Actions syntax supports an IANA timezone.
+- Change a slot: edit its `cron`, `timezone`, and category mapping together in `.github/workflows/daily.yml`. The current official Actions syntax supports an IANA timezone.
 - Add a retailer: subclass `RetailerAdapter`, add its URLs to `config/retailers.yaml`, register it in `src/pipeline.py`, and add extraction fixtures.
 - Add a category: add queries/detection to `config/categories.yaml`, a one-letter publication code, copy rules, and tests.
 - Change design: edit `config/design.yaml` or `src/design.py`; keep 1080×1350, 70 px minimum margins, RTL, and six separate files. Category identity is fixed: teal/mint for Skin Care, plum/coral for Personal Care, and royal-blue/sunshine for Vitamins. A sampled product-package color may appear only as a micro accent (maximum 15% of the visual), never as a replacement for the category palette.

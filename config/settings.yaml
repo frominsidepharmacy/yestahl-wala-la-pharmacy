@@ -5,8 +5,10 @@ brand:
   full_series_name_ar: "يستاهل ولا لأ؟ | من جوه الصيدلية"
 schedule:
   timezone: Asia/Dubai
-  hour: 10
-  minute: 7
+  slots:
+    korean_skincare: {hour: 12, minute: 0}
+    vitamins_supplements: {hour: 17, minute: 0}
+    personal_care: {hour: 22, minute: 0}
 guardrails:
   allow_paid_services: false
   require_manual_approval: true
@@ -22,4 +24,3 @@ selection:
   request_delay_seconds: 1.0
   timeout_seconds: 20
   max_retries: 2
-

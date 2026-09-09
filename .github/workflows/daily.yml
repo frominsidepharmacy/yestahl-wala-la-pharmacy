@@ -1,9 +1,24 @@
 name: Daily content
 on:
   schedule:
-    - cron: "7 10 * * *"
+    - cron: "0 12 * * *"
+      timezone: "Asia/Dubai"
+    - cron: "0 17 * * *"
+      timezone: "Asia/Dubai"
+    - cron: "0 22 * * *"
       timezone: "Asia/Dubai"
   workflow_dispatch:
+    inputs:
+      category:
+        description: Category slot to prepare
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - korean_skincare
+          - vitamins_supplements
+          - personal_care
 permissions:
   contents: read
 concurrency:
@@ -20,6 +35,11 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_ALLOWED_USER_ID: ${{ vars.TELEGRAM_ALLOWED_USER_ID }}
       TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+      TARGET_CATEGORY: >-
+        ${{ github.event_name == 'workflow_dispatch' && inputs.category ||
+            (github.event.schedule == '0 12 * * *' && 'korean_skincare' ||
+             github.event.schedule == '0 17 * * *' && 'vitamins_supplements' ||
+             'personal_care') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

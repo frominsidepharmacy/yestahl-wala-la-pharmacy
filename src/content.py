@@ -143,6 +143,11 @@ def build_content(product: Product, ingredients: List[Dict], score: float) -> Di
 
 def build_caption(product: Product, content: Dict, ingredients: List[Dict]) -> str:
     ingredient_text = "\n".join(f"• {i['display']}: {i['explanation_ar']}" for i in ingredients[:3]) or "• قائمة المكونات الرسمية المتاحة غير كافية للحكم التفصيلي."
+    category_tags = {
+        "korean_skincare": "#العناية_بالبشرة #سكين_كير",
+        "vitamins_supplements": "#فيتامينات #مكملات_غذائية",
+        "personal_care": "#العناية_الشخصية #برودكت_ريفيو",
+    }[product.category]
     return f"""يستاهل ولا لأ؟ 🔍
 من جوه الصيدلية، النهارده بنبص على {product.product_name}.
 
@@ -154,10 +159,9 @@ def build_caption(product: Product, content: Dict, ingredients: List[Dict]) -> s
 الحكم: {content['verdict']}
 {content['verdict_reason']}
 
-السعر وقت المراجعة: {_available(product.price_aed)} درهم
-تاريخ المراجعة: {datetime.now().strftime('%d/%m/%Y')}
+السعر: {_available(product.price_aed)} درهم
 الأسعار والعروض ممكن تتغير، والمحتوى للتثقيف ومش بديل عن نصيحة طبية شخصية.
 
 إيه المنتج اللي عايزني أحطه تحت الميكروسكوب المرة الجاية؟
 
-#يستاهل_ولا_لأ #من_جوه_الصيدلية #صيدلي #العناية_الشخصية"""
+#يستاهل_ولا_لأ #من_جوه_الصيدلية #صيدلي {category_tags}"""

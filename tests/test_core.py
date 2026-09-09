@@ -119,6 +119,18 @@ def test_caption_branding_and_product():
     p = product(); ingredients, _ = map_product_ingredients(p); content = build_content(p, ingredients, 70)
     cap = build_caption(p, content, ingredients)
     assert p.product_name in cap and "يستاهل ولا لأ؟" in cap and "من جوه الصيدلية" in cap
+    assert "السعر وقت المراجعة" not in cap and "تاريخ المراجعة" not in cap
+
+
+@pytest.mark.parametrize("category,tag", [
+    ("korean_skincare", "#العناية_بالبشرة"),
+    ("vitamins_supplements", "#فيتامينات"),
+    ("personal_care", "#العناية_الشخصية"),
+])
+def test_caption_uses_category_specific_tags(category, tag):
+    p = product(category=category)
+    ingredients, _ = map_product_ingredients(p)
+    assert tag in build_caption(p, build_content(p, ingredients, 70), ingredients)
 
 
 def test_reference_story_structure_and_no_retailer_name():
