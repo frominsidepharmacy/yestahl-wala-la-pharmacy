@@ -36,7 +36,12 @@ class InstagramPublisher:
         if self.graph_host == "graph.instagram.com":
             account = self._get("me", {"fields": "id,username"})
             if str(account.get("id")) != str(self.user_id):
-                raise RuntimeError("The Instagram token belongs to a different account")
+                received_id = account.get("id", "unknown")
+                received_username = account.get("username", "unknown")
+                raise RuntimeError(
+                    "Instagram account mismatch: "
+                    f"expected id {self.user_id}, received @{received_username} ({received_id})"
+                )
             return account
         return self._get(self.user_id, {"fields": "id,username,account_type"})
 
