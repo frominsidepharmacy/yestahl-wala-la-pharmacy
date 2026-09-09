@@ -46,8 +46,11 @@ def test_instagram_version_is_configurable():
 
 
 def test_instagram_login_uses_instagram_graph_host():
-    api = InstagramPublisher("token", "ig", "v23.0", Session(), "graph.instagram.com")
+    session = Session()
+    api = InstagramPublisher("token", "media-1", "v23.0", session, "graph.instagram.com")
     assert api.base == "https://graph.instagram.com/v23.0"
+    assert api.validate_account()["id"] == "media-1"
+    assert session.calls[-1][1].endswith("/me")
 
 
 def test_instagram_rejects_untrusted_graph_host():

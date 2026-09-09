@@ -33,6 +33,11 @@ class InstagramPublisher:
         return response.json()
 
     def validate_account(self) -> Dict:
+        if self.graph_host == "graph.instagram.com":
+            account = self._get("me", {"fields": "id,username"})
+            if str(account.get("id")) != str(self.user_id):
+                raise RuntimeError("The Instagram token belongs to a different account")
+            return account
         return self._get(self.user_id, {"fields": "id,username,account_type"})
 
     def find_by_caption_marker(self, marker: str) -> Optional[Dict]:
