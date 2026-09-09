@@ -8,4 +8,6 @@ data/cache/
 data/runtime/
 output/*
 !output/.gitkeep
+business_pending/
+approved_business/
 site/media/

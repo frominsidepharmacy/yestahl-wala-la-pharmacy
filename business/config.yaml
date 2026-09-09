@@ -1,0 +1,16 @@
+brand:
+  account: business.by.dr_amrou
+  display_line: "من جوة البيزنس | د. عمرو أبوبكر"
+schedule:
+  timezone: Asia/Dubai
+  slots:
+    cartoon-he-said: "13:00"
+    editorial-focus: "21:00"
+publishing:
+  require_manual_telegram_approval: true
+  instagram_user_variable: BUSINESS_INSTAGRAM_USER_ID
+  access_token_secret: BUSINESS_META_ACCESS_TOKEN
+isolation:
+  publication_key_prefix: "biz-"
+  pending_artifact_prefix: "pending-business-previews-"
+  pharmacy_credentials_forbidden: true

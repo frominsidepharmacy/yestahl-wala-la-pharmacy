@@ -21,6 +21,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy-approved-media:
+    if: ${{ !startsWith(inputs.publication_key, 'biz-') }}
     environment:
       name: github-pages
     runs-on: ubuntu-latest
@@ -64,3 +65,44 @@ jobs:
           name: publish-record-${{ inputs.publication_key }}
           path: data/runtime
           retention-days: 90
+  deploy-approved-business-media:
+    if: ${{ startsWith(inputs.publication_key, 'biz-') }}
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ALLOW_PAID_SERVICES: "false"
+      REQUIRE_MANUAL_APPROVAL: "true"
+      FREE_AI_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: pending-business-previews-${{ inputs.artifact_run_id }}
+          path: pending_business
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.artifact_run_id }}
+      - name: Verify and stage only the approved business images
+        env:
+          PUBLICATION_KEY: ${{ inputs.publication_key }}
+          CONTENT_HASH: ${{ inputs.content_hash }}
+        run: python -m scripts.stage_business_approved
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: site}
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Publish to the dedicated business Instagram account
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.BUSINESS_META_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ vars.BUSINESS_INSTAGRAM_USER_ID }}
+          META_API_VERSION: ${{ vars.META_API_VERSION }}
+          META_GRAPH_HOST: ${{ vars.META_GRAPH_HOST }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          PAGES_BASE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: python -m scripts.publish_business --publication-key "${{ inputs.publication_key }}" --expected-hash "${{ inputs.content_hash }}" --pending-dir "approved_business/${{ inputs.publication_key }}"

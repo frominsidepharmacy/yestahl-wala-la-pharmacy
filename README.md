@@ -8,6 +8,10 @@ Three daily `Asia/Dubai` slots prepare one category each: Korean skincare at 12:
 
 Activepieces Free Cloud accepts only updates from `TELEGRAM_ALLOWED_USER_ID`. APPROVE dispatches `publish.yml`; EDIT stores one lightweight table row and dispatches `revise.yml`; REGENERATE and REJECT have separate routes. Publishing recomputes the SHA-256 over all six slides, caption, and metadata. Only that approved version is staged into a GitHub Pages deployment. The official Meta API creates six child containers, waits for readiness, creates the carousel parent, publishes once, and retrieves the permalink. A per-publication caption marker plus serialized workflow execution prevents duplicate posts after retries or timeouts.
 
+## Independent business account
+
+`business_preview.yml` sends the two daily `@business.by_dr_amrou` carousels at 13:00 and 21:00 Dubai time. Business publication keys start with `biz-`; `publish.yml` routes only those keys to the dedicated `BUSINESS_META_ACCESS_TOKEN` and `BUSINESS_INSTAGRAM_USER_ID`. Every other key continues through the original pharmacy job with its existing schedules, artifacts, credentials, and approval path.
+
 Permanent guardrails are `ALLOW_PAID_SERVICES=false`, `REQUIRE_MANUAL_APPROVAL=true`, and `FREE_AI_ENABLED=false`. Runtime, request, product, slide, and Telegram-control limits are in `config/settings.yaml`; limit breaches stop safely rather than upgrade a service.
 
 ## Brand hierarchy

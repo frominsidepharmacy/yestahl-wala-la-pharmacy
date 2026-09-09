@@ -1,0 +1,49 @@
+name: Business carousel preview
+
+on:
+  schedule:
+    # 09:00/17:00 UTC = 13:00/21:00 Asia/Dubai year-round.
+    - cron: "0 9 * * *"
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+    inputs:
+      style:
+        description: Business carousel style
+        required: true
+        default: cartoon-he-said
+        type: choice
+        options:
+          - cartoon-he-said
+          - editorial-focus
+
+permissions:
+  contents: read
+
+concurrency:
+  group: business-preview
+  cancel-in-progress: false
+
+jobs:
+  send-for-approval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ALLOW_PAID_SERVICES: "false"
+      REQUIRE_MANUAL_APPROVAL: "true"
+      FREE_AI_ENABLED: "false"
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+      BUSINESS_STYLE: >-
+        ${{ github.event_name == 'workflow_dispatch' && inputs.style ||
+            (github.event.schedule == '0 9 * * *' && 'cartoon-he-said' || 'editorial-focus') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - run: python -m scripts.send_business_preview
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pending-business-previews-${{ github.run_id }}
+          path: business_pending
+          retention-days: 7
