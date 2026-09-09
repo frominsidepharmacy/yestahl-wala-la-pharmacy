@@ -1,12 +1,11 @@
 name: Daily content
 on:
   schedule:
-    - cron: "0 12 * * *"
-      timezone: "Asia/Dubai"
-    - cron: "0 17 * * *"
-      timezone: "Asia/Dubai"
-    - cron: "0 22 * * *"
-      timezone: "Asia/Dubai"
+    # GitHub cron is evaluated in UTC: 08:00/13:00/18:00 UTC are
+    # 12:00/17:00/22:00 in Asia/Dubai year-round.
+    - cron: "0 8 * * *"
+    - cron: "0 13 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
     inputs:
       category:
@@ -37,8 +36,8 @@ jobs:
       TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
       TARGET_CATEGORY: >-
         ${{ github.event_name == 'workflow_dispatch' && inputs.category ||
-            (github.event.schedule == '0 12 * * *' && 'korean_skincare' ||
-             github.event.schedule == '0 17 * * *' && 'vitamins_supplements' ||
+            (github.event.schedule == '0 8 * * *' && 'korean_skincare' ||
+             github.event.schedule == '0 13 * * *' && 'vitamins_supplements' ||
              'personal_care') }}
     steps:
       - uses: actions/checkout@v4
