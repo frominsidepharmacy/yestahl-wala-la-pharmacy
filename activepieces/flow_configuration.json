@@ -6,6 +6,9 @@
     "allowedUserIdVariable": "TELEGRAM_ALLOWED_USER_ID",
     "unauthorizedAction": "log_and_ignore"
   },
+  "normalization": {
+    "updateInput": "Parse trigger input with JSON.parse when Activepieces supplies it as a string; otherwise use the object unchanged. On parse failure, use an empty object and do not dispatch."
+  },
   "state": {"table": "yestahl_edit_state", "fields": ["user_id", "waiting_for_edit", "publication_key", "version", "artifact_run_id"]},
   "routes": [
     {"match": "callback_query.data startsWith approve:", "parse": "action:publication_key:version:hash_prefix:artifact_run_id", "githubWorkflow": "publish.yml", "inputs": ["publication_key", "hash_prefix as content_hash", "artifact_run_id"]},
@@ -16,5 +19,5 @@
     {"match": "callback_query.data startsWith approve_all:", "parse": "action:approval_hash:artifact_run_id", "githubWorkflow": "publish_all.yml", "inputs": ["approval_hash", "artifact_run_id"]}
   ],
   "githubAction": {"piece": "@activepieces/piece-github", "action": "trigger_workflow_dispatch", "ref": "main"},
-  "notes": "Connect Telegram and GitHub OAuth in Activepieces Free Cloud, replace repository owner/name, test, then publish the flow. No paid step is used."
+  "notes": "Connect Telegram and GitHub OAuth in Activepieces Free Cloud, replace repository owner/name, normalize the Telegram update input before reading callback_query, test, then publish the flow. No paid step is used."
 }

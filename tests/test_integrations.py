@@ -98,6 +98,13 @@ def test_activepieces_routes_complete():
     spec = json.loads((Path(__file__).parents[1]/"activepieces/flow_configuration.json").read_text())
     blob = json.dumps(spec)
     assert all(action in blob for action in ("approve:", "edit:", "regenerate:", "reject:", "approve_all:"))
+    assert "JSON.parse" in spec["normalization"]["updateInput"]
+
+
+def test_telegram_control_dispatches_with_explicit_repository():
+    text = (Path(__file__).parents[1]/".github/workflows/telegram_control.yml").read_text()
+    assert '"--repo"' in text
+    assert 'os.environ["GITHUB_REPOSITORY"]' in text
 
 
 def test_schedule_timezone_and_time():

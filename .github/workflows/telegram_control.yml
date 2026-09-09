@@ -47,7 +47,16 @@ jobs:
               raise SystemExit(f"Unsupported action: {action!r}")
 
           workflow, required = allowed[action]
-          command = ["gh", "workflow", "run", workflow, "--ref", "main"]
+          command = [
+              "gh",
+              "workflow",
+              "run",
+              workflow,
+              "--repo",
+              os.environ["GITHUB_REPOSITORY"],
+              "--ref",
+              "main",
+          ]
           for key in required:
               value = str(payload.get(key, "")).strip()
               if not value:
