@@ -102,8 +102,9 @@ def test_activepieces_routes_complete():
 
 def test_schedule_timezone_and_time():
     text = (Path(__file__).parents[1]/".github/workflows/daily.yml").read_text()
-    assert all(f'cron: "0 {hour} * * *"' in text for hour in (12, 17, 22))
-    assert text.count('timezone: "Asia/Dubai"') == 3
+    # GitHub evaluates cron in UTC. These are 12:00, 17:00 and 22:00 Dubai.
+    assert all(f'cron: "0 {hour} * * *"' in text for hour in (8, 13, 18))
+    assert "Asia/Dubai" in text
     assert all(category in text for category in ("korean_skincare", "vitamins_supplements", "personal_care"))
 
 

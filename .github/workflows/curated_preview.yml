@@ -1,0 +1,32 @@
+name: Send curated carousel for approval
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ALLOW_PAID_SERVICES: "false"
+      REQUIRE_MANUAL_APPROVAL: "true"
+      FREE_AI_ENABLED: "false"
+      CURATED_DIR: curated/cosrx-salicylic-cleanser-v1
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m scripts.send_curated_preview
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pending-previews-${{ github.run_id }}
+          path: curated/cosrx-salicylic-cleanser-v1
+          retention-days: 7
