@@ -54,7 +54,7 @@ def main() -> None:
     control = f"""━━━━━━━━━━
 🎨 من جوة البيزنس | د. عمرو أبوبكر
 
-الحساب: @business.by_dr_amrou
+الحساب: @business.by.dr_amrou
 النوع: {STYLES[style]['label']}
 موعد النشر: {STYLES[style]['slot']} بتوقيت دبي
 الإصدار: v2
