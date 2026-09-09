@@ -7,7 +7,7 @@ from PIL import Image
 from src.approval import calculate_version_hash, freeze_manifest, verify_manifest
 from src.config import load_yaml
 from src.content import build_caption, build_content, choose_hook, verdict
-from src.design import render_carousel, validate_slides
+from src.design import _palette, render_carousel, validate_slides
 from src.evidence import map_product_ingredients, validate_claims
 from src.history import History
 from src.models import Claim, Product
@@ -27,6 +27,19 @@ def product(**overrides):
                 primary_image="https://example.com/p.png", retailer_description="Contains salicylic acid")
     data.update(overrides)
     return Product(**data)
+
+
+def test_category_palettes_are_distinct_and_product_color_is_micro_accent():
+    config = load_yaml("design.yaml")
+    package = Image.new("RGB", (30, 30), "#E71D36")
+    palettes = {
+        category: _palette(product(category=category), config, package)
+        for category in ("korean_skincare", "personal_care", "vitamins_supplements")
+    }
+    assert len({palette["accent"] for palette in palettes.values()}) == 3
+    assert len({palette["paper_blue"] for palette in palettes.values()}) == 3
+    assert all(palette["product_accent"] == "#E71D36" for palette in palettes.values())
+    assert config["product_color"]["max_visual_share_percent"] <= 15
 
 
 @pytest.mark.parametrize("raw,expected", [("AED 19.50", 19.5), ("D 18.95", 18.95), ("1,299.00", 1299), (None, None)])

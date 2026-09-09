@@ -37,7 +37,7 @@ For Meta account setup, use the current official authentication path appropriate
 - Change time: edit `cron` and `timezone` together in `.github/workflows/daily.yml`. The current official Actions syntax supports an IANA timezone.
 - Add a retailer: subclass `RetailerAdapter`, add its URLs to `config/retailers.yaml`, register it in `src/pipeline.py`, and add extraction fixtures.
 - Add a category: add queries/detection to `config/categories.yaml`, a one-letter publication code, copy rules, and tests.
-- Change design: edit `config/design.yaml` or `src/design.py`; keep 1080×1350, 70 px minimum margins, RTL, and six separate files.
+- Change design: edit `config/design.yaml` or `src/design.py`; keep 1080×1350, 70 px minimum margins, RTL, and six separate files. Category identity is fixed: teal/mint for Skin Care, plum/coral for Personal Care, and royal-blue/sunshine for Vitamins. A sampled product-package color may appear only as a micro accent (maximum 15% of the visual), never as a replacement for the category palette.
 - Update evidence: edit `config/ingredient_claims.yaml` with a safe explanation, limitations, warnings, authoritative HTTPS source, and review date. Retailer copy is never used as scientific evidence.
 
 ## Testing and dry run

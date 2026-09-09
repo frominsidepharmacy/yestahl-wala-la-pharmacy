@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from io import BytesIO
 from pathlib import Path
+import colorsys
 import math
 import random
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -89,13 +90,39 @@ def _tape(draw, x: int, y: int, width: int = 92, height: int = 31):
     draw.line((x + 10, y + 7, x + width - 10, y + 3), fill="#C6AE7C", width=2)
 
 
-def _palette(product: Product, base: Dict) -> Dict:
-    palette = {
-        "vitamins_supplements": {"accent": "#F6B51F", "accent2": "#FF7A00", "paper_blue": "#D9F0FF", "paper_alt": "#FAD9E2"},
-        "korean_skincare": {"accent": "#087E78", "accent2": "#55C4C0", "paper_blue": "#D7EFEB", "paper_alt": "#EAF6F2"},
-        "personal_care": {"accent": "#087E78", "accent2": "#55C4C0", "paper_blue": "#D7EFEB", "paper_alt": "#E9F4F1"},
-    }[product.category]
-    return {"navy": base["navy"], "off_white": "#F7F2E8", "paper": "#FFFDF7", "ink_blue": "#315C91", **palette}
+def _product_accent(image: Optional[Image.Image], rules: Dict, fallback: str) -> str:
+    """Choose a restrained package-derived micro accent, never a category base color."""
+    if image is None or not rules.get("enabled", False):
+        return fallback
+    sample = image.convert("RGB")
+    sample.thumbnail((96, 96))
+    quantized = sample.quantize(colors=10).convert("RGB")
+    counts = quantized.getcolors(maxcolors=96 * 96) or []
+    candidates = []
+    for count, (red, green, blue) in counts:
+        _hue, lightness, saturation = colorsys.rgb_to_hls(red / 255, green / 255, blue / 255)
+        if (
+            saturation >= float(rules.get("min_saturation", 0.28))
+            and float(rules.get("min_lightness", 0.25)) <= lightness <= float(rules.get("max_lightness", 0.78))
+        ):
+            candidates.append((count * saturation, (red, green, blue)))
+    if not candidates:
+        return fallback
+    _, rgb = max(candidates, key=lambda item: item[0])
+    return "#%02X%02X%02X" % rgb
+
+
+def _palette(product: Product, config: Dict, product_image: Optional[Image.Image] = None) -> Dict:
+    palette = dict(config["category_palettes"][product.category])
+    palette.pop("name", None)
+    palette["product_accent"] = _product_accent(product_image, config.get("product_color", {}), palette["accent2"])
+    return {
+        "navy": config["colors"]["navy"],
+        "off_white": "#F7F2E8",
+        "paper": "#FFFDF7",
+        "ink_blue": "#315C91",
+        **palette,
+    }
 
 
 def load_product_image(url: Optional[str]) -> Optional[Image.Image]:
@@ -149,17 +176,17 @@ def _brand_header(draw, colors, number: int, total: int):
 
 def _doodles(draw, colors, number: int):
     for offset in (0, 23, 46):
-        draw.line((455 + offset, 252 - offset // 2, 427 + offset, 223 - offset // 2), fill=colors["accent2"], width=8)
+        draw.line((455 + offset, 252 - offset // 2, 427 + offset, 223 - offset // 2), fill=colors["product_accent"], width=8)
     draw.arc((878, 92, 919, 137), 200, 520, fill=colors["ink_blue"], width=4)
     draw.arc((910, 92, 951, 137), 20, 340, fill=colors["ink_blue"], width=4)
     draw.line((884, 119, 916, 151, 946, 113), fill=colors["ink_blue"], width=4)
     draw.line((835, 163, 1014, 142), fill=colors["ink_blue"], width=3)
     if number % 2 == 0:
-        draw.ellipse((23, 1120, 145, 1242), outline=colors["accent2"], width=6)
+        draw.ellipse((23, 1120, 145, 1242), outline=colors["product_accent"], width=6)
         for angle in range(0, 360, 45):
             x1, y1 = 84 + int(72 * math.cos(math.radians(angle))), 1181 + int(72 * math.sin(math.radians(angle)))
             x2, y2 = 84 + int(96 * math.cos(math.radians(angle))), 1181 + int(96 * math.sin(math.radians(angle)))
-            draw.line((x1, y1, x2, y2), fill=colors["accent2"], width=5)
+            draw.line((x1, y1, x2, y2), fill=colors["product_accent"], width=5)
 
 
 def _headline(draw, title: str, colors, number: int):
@@ -199,9 +226,9 @@ def _footer(draw, colors, number: int):
 def render_carousel(product: Product, content: Dict, output_dir: Path, image: Optional[Image.Image] = None) -> List[Path]:
     cfg = load_yaml("design.yaml")
     w, h = cfg["width"], cfg["height"]
-    colors = _palette(product, cfg["colors"])
     output_dir.mkdir(parents=True, exist_ok=True)
     product_image = image or load_product_image(product.primary_image)
+    colors = _palette(product, cfg, product_image)
     paths = []
     total = len(content["slides"])
     for number, slide in enumerate(content["slides"], 1):

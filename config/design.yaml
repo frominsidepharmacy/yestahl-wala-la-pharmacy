@@ -6,6 +6,32 @@ colors:
   sky: "#DDF3FF"
   gold: "#F3A83B"
   off_white: "#FAFBF8"
+category_palettes:
+  korean_skincare:
+    name: Skin Care Teal
+    accent: "#087E78"
+    accent2: "#55C4C0"
+    paper_blue: "#D7EFEB"
+    paper_alt: "#F2E2DE"
+  personal_care:
+    name: Personal Care Plum
+    accent: "#6D3F72"
+    accent2: "#E98271"
+    paper_blue: "#E8DDF0"
+    paper_alt: "#F8E5DC"
+  vitamins_supplements:
+    name: Vitamins Sunshine
+    accent: "#1261A8"
+    accent2: "#F5B72E"
+    paper_blue: "#DCEEFF"
+    paper_alt: "#FFE1D5"
+product_color:
+  enabled: true
+  role: micro_accent_only
+  max_visual_share_percent: 15
+  min_saturation: 0.28
+  min_lightness: 0.25
+  max_lightness: 0.78
 font_bold_candidates:
   - /System/Library/Fonts/Supplemental/Arial Bold.ttf
   - /System/Library/Fonts/SFArabicRounded.ttf
