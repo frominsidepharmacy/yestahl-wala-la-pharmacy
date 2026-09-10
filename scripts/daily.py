@@ -4,6 +4,7 @@ import json, os, hashlib
 from pathlib import Path
 from src.config import ROOT, assert_guardrails, load_yaml
 from src.category_rotation import query_for_day
+from src.content import original_price
 from src.evidence import map_product_ingredients
 from src.history import History
 from src.models import Product
@@ -69,6 +70,15 @@ def main():
                                      "message": "النهارده مفيش منتج يستحق النشر في الفئة دي بعد التحقق."}
                 continue
         _, selected = max(filtered, key=lambda item: item[0])
+        same_product = [p for _, p in filtered if p.normalized_id == selected.normalized_id and p.price_aed is not None]
+        if same_product:
+            best_offer = min(same_product, key=lambda p: p.price_aed)
+            if best_offer.old_price_aed is not None and best_offer.price_aed < best_offer.old_price_aed:
+                selected.best_offer_price_aed = best_offer.price_aed
+                selected.best_offer_retailer = best_offer.retailer
+                selected.offer_flag = True
+                selected.old_price_aed = best_offer.old_price_aed
+                selected.discount_percentage = best_offer.discount_percentage
         result = prepare_product(selected, ROOT / "output" / "daily" / category, history)
         summary[category] = {"status": "PENDING_APPROVAL", "name": selected.product_name,
                              "discovery_query": discovery_query,
@@ -82,7 +92,8 @@ def main():
 
 CATEGORY: {config['label']}
 PRODUCT: {p.product_name}
-PRICE: AED {p.price_aed if p.price_aed is not None else 'غير متاح'}
+ORIGINAL PRICE: AED {original_price(p) if original_price(p) is not None else 'غير متاح'}
+BEST OFFER: {f'AED {p.best_offer_price_aed} at {p.best_offer_retailer}' if p.best_offer_price_aed is not None else 'لا يوجد عرض موثق'}
 SIZE: {p.pack_size or 'غير متاح'}
 RATING: {p.rating if p.rating is not None else 'غير متاح'}
 REVIEWS: {p.reviews_count if p.reviews_count is not None else 'غير متاح'}

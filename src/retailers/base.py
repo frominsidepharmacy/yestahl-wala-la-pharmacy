@@ -121,12 +121,21 @@ def parse_html_product(html: str, retailer: str, category: str, page_url: str) -
     if price is None:
         match = re.search(r"(?:AED|D|د\.?إ\.?)\s*([0-9]+(?:\.[0-9]{1,2})?)", body, re.I)
         price = parse_price(match.group(1)) if match else None
+    old_price = parse_price(meta(
+        "product:original_price:amount", "product:regular_price:amount",
+        "og:price:standard_amount", "original_price", "old_price",
+    ))
+    if old_price is not None and price is not None and old_price <= price:
+        old_price = None
+    discount = round((old_price - price) / old_price * 100, 2) if old_price and price is not None else None
     sku_match = re.search(r"\bSKU\s*[:#]?\s*([A-Za-z0-9-]+)", body, re.I)
     pack = parse_pack(name)
     pack_match = re.search(r"\b\d+(?:\.\d+)?\s*(?:ml|g|tablets?|capsules?|sachets?|pcs?)\b", name, re.I)
     description = meta("description", "og:description")
     return Product(product_name=name, brand=None, retailer=retailer, product_url=page_url,
-                   category=category, price_aed=price, retailer_sku=sku_match.group(1) if sku_match else None,
+                   category=category, price_aed=price, old_price_aed=old_price,
+                   discount_percentage=discount, offer_flag=old_price is not None,
+                   retailer_sku=sku_match.group(1) if sku_match else None,
                    pack_size=pack_match.group(0) if pack_match else None, primary_image=meta("og:image", "twitter:image"),
                    retailer_description=description, availability=("out of stock" not in body.lower()), **pack)
 

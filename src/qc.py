@@ -10,6 +10,12 @@ def run_qc(product: Product, content: Dict, caption: str, claims: List[Claim], s
         errors.append("invalid product URL")
     if product.price_aed is None:
         errors.append("current price unavailable")
+    if (product.offer_flag or product.discount_percentage) and product.old_price_aed is None:
+        errors.append("original pre-offer price unavailable")
+    if product.competitive_advantage and not (product.competitive_advantage_source or "").startswith("https://"):
+        errors.append("competitive advantage missing source")
+    if product.best_offer_price_aed is not None and not product.best_offer_retailer:
+        errors.append("best offer missing retailer")
     if not product.primary_image:
         errors.append("valid product image unavailable")
     if not image_loaded:
@@ -21,7 +27,7 @@ def run_qc(product: Product, content: Dict, caption: str, claims: List[Claim], s
             errors.append(f"missing brand phrase: {phrase}")
     errors.extend(validate_slides(slide_paths))
     return {"passed": not errors, "errors": errors, "checks": {
-        "product": "pass" if product.price_aed is not None and product.primary_image and image_loaded else "fail",
+        "product": "pass" if product.price_aed is not None and not ((product.offer_flag or product.discount_percentage) and product.old_price_aed is None) and product.primary_image and image_loaded else "fail",
         "science": "pass" if not validate_claims(claims, combined) else "fail",
         "design": "pass" if not validate_slides(slide_paths) else "fail",
         "caption": "pass" if product.product_name in caption else "fail",

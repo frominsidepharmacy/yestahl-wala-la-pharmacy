@@ -25,6 +25,8 @@ class Product:
     price_aed: Optional[float] = None
     old_price_aed: Optional[float] = None
     discount_percentage: Optional[float] = None
+    best_offer_price_aed: Optional[float] = None
+    best_offer_retailer: Optional[str] = None
     retailer_sku: Optional[str] = None
     ean: Optional[str] = None
     pack_size: Optional[str] = None
@@ -44,6 +46,10 @@ class Product:
     retailer_description: Optional[str] = None
     ingredients: List[str] = field(default_factory=list)
     usage: Optional[str] = None
+    written_side_effects: List[str] = field(default_factory=list)
+    available_sizes: List[str] = field(default_factory=list)
+    competitive_advantage: Optional[str] = None
+    competitive_advantage_source: Optional[str] = None
     retrieved_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
     @property

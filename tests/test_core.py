@@ -6,7 +6,7 @@ from PIL import Image
 
 from src.approval import calculate_version_hash, freeze_manifest, verify_manifest
 from src.config import load_yaml
-from src.content import build_caption, build_content, choose_hook, verdict
+from src.content import build_caption, build_content, choose_hook, original_price, verdict
 from src.design import _palette, render_carousel, validate_slides
 from src.evidence import map_product_ingredients, validate_claims
 from src.history import History
@@ -61,6 +61,50 @@ def test_html_fallback():
     assert p.price_aed == 23.5 and p.volume_ml == 50
 
 
+def test_html_fallback_extracts_original_pre_offer_price():
+    html = '''<h1>Thing 50ml</h1>
+    <meta property="product:price:amount" content="23.5">
+    <meta property="product:original_price:amount" content="47">
+    <meta property="og:image" content="https://x/i.png">'''
+    p = parse_html_product(html, "Boots", "personal_care", "https://x/p")
+    assert p.price_aed == 23.5
+    assert p.old_price_aed == 47
+    assert p.discount_percentage == 50
+    assert p.offer_flag
+
+
+def test_public_price_prefers_verified_original_before_offer():
+    p = product(price_aed=18.95, old_price_aed=72.45)
+    ingredients, _ = map_product_ingredients(p)
+    content = build_content(p, ingredients, 70)
+    public_copy = json.dumps(content, ensure_ascii=False) + build_caption(p, content, ingredients)
+    assert original_price(p) == 72.45
+    assert "السعر الأصلي قبل العرض: 72.45 درهم" in public_copy
+    assert "السعر: 18.95 درهم" not in public_copy
+
+
+def test_best_offer_and_retailer_appear_in_caption_only():
+    p = product(best_offer_price_aed=18.95, best_offer_retailer="LIFE Pharmacy UAE")
+    ingredients, _ = map_product_ingredients(p)
+    content = build_content(p, ingredients, 70)
+    caption = build_caption(p, content, ingredients)
+    assert "أفضل سعر عرض وجدناه وقت المراجعة: 18.95 درهم لدى LIFE Pharmacy UAE" in caption
+    assert "LIFE Pharmacy UAE" not in json.dumps(content, ensure_ascii=False)
+
+
+def test_written_usage_side_effects_and_sizes_are_used():
+    p = product(
+        usage="قرص واحد يوميًا بعد الأكل",
+        written_side_effects=["قد يسبب اضطرابًا بسيطًا بالمعدة"],
+        available_sizes=["30 قرص", "60 قرص"],
+    )
+    ingredients, _ = map_product_ingredients(p)
+    content = build_content(p, ingredients, 70)
+    assert content["slides"][3]["blocks"][0] == "قرص واحد يوميًا بعد الأكل"
+    assert content["slides"][4]["blocks"][0] == "قد يسبب اضطرابًا بسيطًا بالمعدة"
+    assert "30 قرص, 60 قرص" in content["slides"][1]["blocks"][3]
+
+
 def test_pack_aware_normalization():
     assert product(pack_size="30 capsules", volume_ml=None, capsule_count=30).normalized_id != product(pack_size="60 capsules", volume_ml=None, capsule_count=60).normalized_id
 
@@ -91,6 +135,21 @@ def test_score_breakdown_totals():
 def test_popularity_cannot_overcome_missing_evidence():
     total, parts = score_product(product(reviews_count=100000), False, 0, 0)
     assert parts["scientific_researchability"] == 0 and total < 50
+
+
+def test_worthiness_score_rewards_decision_factors_not_popularity():
+    strong = product(
+        usage="قرص واحد يوميًا بعد الأكل",
+        written_side_effects=["قد يسبب اضطرابًا بسيطًا بالمعدة"],
+        competitive_advantage="تركيز المادة الفعالة موضح بوضوح",
+        competitive_advantage_source="https://example.com/label",
+    )
+    weak = product(reviews_count=100000, rating=5, usage=None, written_side_effects=[])
+    strong_score, strong_parts = score_product(strong, True, 2)
+    weak_score, _ = score_product(weak, True, 2)
+    assert strong_score > weak_score
+    assert strong_parts["written_usage"] == 15
+    assert strong_parts["verified_competitive_advantage"] == 10
 
 
 def test_ingredient_mapping():
@@ -137,9 +196,19 @@ def test_reference_story_structure_and_no_retailer_name():
     p = product(); ingredients, _ = map_product_ingredients(p); content = build_content(p, ingredients, 70)
     titles = [slide["title"] for slide in content["slides"]]
     assert titles[0] == "٥ حاجات لازم تعرفهم"
-    assert titles[2:] == ["بيعمل إيه؟", "الطريقة الصح", "خد بالك", "الخلاصة"]
+    assert titles[1:] == ["المادة الفعالة ودورها", "إيه اللي يميزه؟", "الطريقة الصح", "خد بالك", "الخلاصة"]
     public_copy = json.dumps(content, ensure_ascii=False) + build_caption(p, content, ingredients)
     assert p.retailer not in public_copy
+    assert all(phrase not in public_copy for phrase in ("يختلف من شخص لآخر", "كل جسم", "كل بشرة مختلفة"))
+
+
+def test_qc_rejects_sale_without_verified_original_price(tmp_path):
+    p = product(old_price_aed=None, discount_percentage=20, offer_flag=True)
+    ingredients, claims = map_product_ingredients(p)
+    content = build_content(p, ingredients, 70)
+    caption = build_caption(p, content, ingredients)
+    report = run_qc(p, content, caption, claims, [], image_loaded=True)
+    assert "original pre-offer price unavailable" in report["errors"]
 
 
 def test_render_six_rtl_slides(tmp_path):

@@ -24,7 +24,12 @@ Pharmacy requirements:
 - Never write a retailer or pharmacy name on artwork or in the caption.
 - Skin Care: teal/mint. Personal Care: plum/coral. Vitamins: royal blue/sunshine. Product colors are supporting accents only.
 - Rotate Personal Care across deodorant, baby care, mother care, feminine wash, oral care, hair care, body care, and other distinct subcategories. Avoid the most recently used subcategory when alternatives exist.
-- Use the selected product's exact pack, price, warnings, and topic. Do not fill space with generic copy.
+- Confirm and display the verified original pre-offer price on the slides, not the temporary sale price. If a page shows a promotion but the original price cannot be verified, do not state a price as original and do not approve the carousel.
+- When an offer exists, compare the same exact pack across the configured retailers. Put the best verified offer price and retailer name in the caption only, together with the original price. Never put the retailer name on the artwork.
+- Name the primary active ingredient and explain its practical role in clear Arabic. Research beyond the retailer page and add a competitive advantage only when it is explicitly written in a product source or supported by a clear source.
+- Make the written usage directions prominent. Record written side effects/warnings and list other verified pack sizes when the source provides them; do not invent missing sizes or adverse effects.
+- Use the selected product's exact pack, warnings, and topic. Do not copy retailer prose or fill space with generic text.
+- Avoid weak stock disclaimers such as “يختلف من شخص لآخر”، “كل جسم غير الثاني”، or “كل بشرة مختلفة”. Write with expert confidence and use specific limitations or warnings only when they materially affect the decision.
 - Boots, BinSina, Life, Aster, and other configured UAE retailers may establish availability, pack, and price; they are not medical evidence. Trace factual/medical claims to the evidence bundle and flag unsupported wording for the user's decision instead of inventing a claim.
 
 Business requirements:
@@ -36,6 +41,10 @@ Business requirements:
 - Do not invent statistics, quotations, attributions, or business claims.
 
 The user is the final creative approver. The automation must not send or publish artwork that failed exact-copy, reference-fidelity, account-branding, dimensions, factual/medical, or visual-integrity checks.
+
+### The “يستاهل ولا لأ؟” decision
+
+Every pharmacy carousel must finish with one unambiguous verdict: `يستاهل`, `يستاهل بشروط واضحة`, or `لا يستاهل`. State the decisive reason in the same block. The verdict is based primarily on documented active-ingredient value, written usage clarity, written safety/side effects, a verified competitive advantage, exact-pack availability, and value against the original price plus the best verified offer. Ratings, reviews, brand fame, and discount percentage can make a topic interesting but cannot by themselves make a product worth buying.
 
 ## Preview and approval lifecycle
 
