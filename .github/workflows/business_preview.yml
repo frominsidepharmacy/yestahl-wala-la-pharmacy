@@ -15,6 +15,7 @@ on:
         options:
           - cartoon-he-said
           - editorial-focus
+          - succession-gap-v1
 
 permissions:
   contents: read

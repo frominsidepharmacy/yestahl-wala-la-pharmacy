@@ -2,6 +2,12 @@ name: Send curated carousel for approval
 
 on:
   workflow_dispatch:
+    inputs:
+      curated_dir:
+        description: Curated carousel directory
+        required: true
+        default: curated/d-spray-vitamin-d3-v1
+        type: string
 
 permissions:
   contents: read
@@ -14,7 +20,7 @@ jobs:
       ALLOW_PAID_SERVICES: "false"
       REQUIRE_MANUAL_APPROVAL: "true"
       FREE_AI_ENABLED: "false"
-      CURATED_DIR: curated/cosrx-salicylic-cleanser-v1
+      CURATED_DIR: ${{ inputs.curated_dir }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
     steps:
@@ -28,5 +34,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: pending-previews-${{ github.run_id }}
-          path: curated/cosrx-salicylic-cleanser-v1
+          path: ${{ inputs.curated_dir }}
           retention-days: 7

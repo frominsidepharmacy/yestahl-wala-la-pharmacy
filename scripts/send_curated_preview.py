@@ -3,11 +3,13 @@ from __future__ import annotations
 
 import json
 import os
+import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 
 from src.approval import freeze_manifest
 from src.config import ROOT, assert_guardrails, load_yaml
+from src.curated_qc import require_approved_qc
 from src.telegram import TelegramClient, inline_keyboard
 
 
@@ -18,9 +20,20 @@ def main() -> None:
     missing = [path.name for path in slides if not path.exists()]
     if missing:
         raise SystemExit(f"Missing curated slides: {', '.join(missing)}")
+    require_approved_qc(source, slides)
 
     caption = (source / "caption.txt").read_text(encoding="utf-8").strip()
     product = json.loads((source / "product.json").read_text(encoding="utf-8"))
+    product.setdefault(
+        "product_id",
+        str(product.get("retailer_sku") or hashlib.sha256(product["product_url"].encode()).hexdigest()[:16]),
+    )
+    category_labels = {
+        "korean_skincare": "Skin Care — Teal / Mint",
+        "vitamins_supplements": "Vitamins — Royal Blue / Sunshine Yellow",
+        "personal_care": "Personal Care — Plum / Coral",
+    }
+    category_label = category_labels.get(product.get("category"), product.get("category", "Curated"))
     metadata = {
         "brand": load_yaml("settings.yaml")["brand"],
         "product": product,
@@ -38,7 +51,7 @@ def main() -> None:
 🎨 النسخة المعتمدة بصريًا للمراجعة
 
 المنتج: {product['product_name']}
-الفئة: Skin Care — Teal / Mint
+الفئة: {category_label}
 الحكم: يستاهل بشروط
 الإصدار: v1
 

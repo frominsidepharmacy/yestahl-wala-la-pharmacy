@@ -1,0 +1,10 @@
+{
+  "product_source": "https://www.lifepharmacy.com/product/d-spray-400-iu-190mcl-15ml-soln",
+  "medical_source": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/",
+  "checked_at": "2026-09-09",
+  "notes": [
+    "Product page supports 400 IU per spray, 15 ml size, AED 75 price, one spray daily unless otherwise prescribed, and storage below 25 C.",
+    "NIH ODS supports roles in calcium absorption, bones, muscles, nerves and immune function.",
+    "Retailer absorption-percentage and disease-treatment claims were intentionally excluded."
+  ]
+}

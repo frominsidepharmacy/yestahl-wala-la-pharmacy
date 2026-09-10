@@ -1,0 +1,18 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-10",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All six slides visually inspected after targeted text correction.",
+    "Retailer name is absent from every slide and caption.",
+    "Manufacturer performance statements are explicitly framed as company claims.",
+    "Final files are 1080x1350 and use the Personal Care plum/coral palette."
+  ]
+}

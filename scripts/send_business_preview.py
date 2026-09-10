@@ -9,12 +9,14 @@ from zoneinfo import ZoneInfo
 
 from src.approval import freeze_manifest
 from src.config import ROOT, assert_guardrails
+from src.curated_qc import require_approved_qc
 from src.telegram import TelegramClient, inline_keyboard
 
 
 STYLES = {
     "cartoon-he-said": {"label": "كرتوني ساخر — هو قال… بس هو يقصد", "slot": "13:00"},
     "editorial-focus": {"label": "Editorial — حماية التركيز", "slot": "21:00"},
+    "succession-gap-v1": {"label": "كرتوني إداري — خطة الإحلال", "slot": "21:00"},
 }
 
 
@@ -27,6 +29,8 @@ def main() -> None:
     source = ROOT / "business" / "curated" / style
     pending = ROOT / "business_pending" / style
     pending.mkdir(parents=True, exist_ok=True)
+    source_slides = [source / f"slide{number:02d}.png" for number in range(1, 7)]
+    require_approved_qc(source, source_slides)
     slides = []
     for number in range(1, 7):
         source_slide = source / f"slide{number:02d}.png"
@@ -38,10 +42,14 @@ def main() -> None:
 
     caption = (source / "caption.txt").read_text(encoding="utf-8").strip()
     now = datetime.now(ZoneInfo("Asia/Dubai"))
-    short_style = "cartoon" if style == "cartoon-he-said" else "editorial"
+    short_style = {
+        "cartoon-he-said": "cartoon",
+        "editorial-focus": "editorial",
+        "succession-gap-v1": "succession",
+    }[style]
     publication_key = f"biz-{now:%y%m%d}-{short_style}"
     metadata = {
-        "account": "business.by.dr_amrou",
+        "account": "dramrou.business",
         "brand_line": "من جوة البيزنس | د. عمرو أبوبكر",
         "style": style,
         "slot_dubai": STYLES[style]["slot"],
@@ -54,7 +62,7 @@ def main() -> None:
     control = f"""━━━━━━━━━━
 🎨 من جوة البيزنس | د. عمرو أبوبكر
 
-الحساب: @business.by.dr_amrou
+الحساب: @dramrou.business
 النوع: {STYLES[style]['label']}
 موعد النشر: {STYLES[style]['slot']} بتوقيت دبي
 الإصدار: v2
@@ -71,7 +79,7 @@ def main() -> None:
     )
     print(json.dumps({
         "status": "PENDING_APPROVAL",
-        "account": "business.by.dr_amrou",
+        "account": "dramrou.business",
         "publication_key": publication_key,
         "content_hash_prefix": manifest["content_hash"][:12],
         "artifact_run_id": run_id,
