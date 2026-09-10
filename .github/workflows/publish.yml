@@ -17,7 +17,9 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: publish-${{ inputs.publication_key }}
+  # GitHub Pages is a single shared deployment. Serializing prevents one
+  # carousel deployment from replacing another while Meta is fetching it.
+  group: instagram-publish-pages
   cancel-in-progress: false
 jobs:
   deploy-approved-media:

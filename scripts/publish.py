@@ -18,7 +18,7 @@ if not manifest["content_hash"].startswith(args.expected_hash) or not verify_man
     raise SystemExit("⚠️ النسخة اتغيرت بعد الموافقة، محتاجة موافقة جديدة.")
 base = os.environ["PAGES_BASE_URL"].rstrip("/")
 urls = [f"{base}/media/{args.publication_key}/{name}" for name in manifest["slides"]]
-validate_public_urls(urls)
+validate_public_urls(urls, timeout=120)
 result = publish_once(args.publication_key, pending, urls)
 if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
     TelegramClient().send_publish_confirmation(

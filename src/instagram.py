@@ -24,12 +24,20 @@ class InstagramPublisher:
 
     def _post(self, path: str, data: Dict) -> Dict:
         response = self.session.post(f"{self.base}/{path}", data={**data, "access_token": self.token}, timeout=30)
-        response.raise_for_status()
+        if response.status_code >= 400:
+            raise RuntimeError(
+                f"Instagram API POST {path} failed ({response.status_code}): "
+                f"{getattr(response, 'text', '')[:1000]}"
+            )
         return response.json()
 
     def _get(self, path: str, params: Dict) -> Dict:
         response = self.session.get(f"{self.base}/{path}", params={**params, "access_token": self.token}, timeout=30)
-        response.raise_for_status()
+        if response.status_code >= 400:
+            raise RuntimeError(
+                f"Instagram API GET {path} failed ({response.status_code}): "
+                f"{getattr(response, 'text', '')[:1000]}"
+            )
         return response.json()
 
     def validate_account(self) -> Dict:

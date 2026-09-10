@@ -31,7 +31,7 @@ if not manifest["content_hash"].startswith(args.expected_hash) or not verify_man
 
 base = os.environ["PAGES_BASE_URL"].rstrip("/")
 urls = [f"{base}/media/{args.publication_key}/{name}" for name in manifest["slides"]]
-validate_public_urls(urls)
+validate_public_urls(urls, timeout=120)
 publisher = InstagramPublisher()
 publisher.validate_account()
 marker = f"#ref_{args.publication_key.replace('-', '_')}"

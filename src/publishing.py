@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import shutil
+import time
 import requests
 from src.approval import verify_manifest
 from src.history import History
@@ -20,12 +21,24 @@ def prepare_approved_site(pending_dir: Path, site_dir: Path, publication_key: st
     return target
 
 
-def validate_public_urls(urls, session=None):
+def validate_public_urls(urls, session=None, timeout: int = 0, interval: int = 5):
     client = session or requests.Session()
     for url in urls:
-        response = client.head(url, timeout=20, allow_redirects=True)
-        if response.status_code != 200 or not response.headers.get("content-type", "").startswith("image/"):
-            raise RuntimeError(f"media URL not ready: {url} ({response.status_code})")
+        deadline = time.monotonic() + timeout
+        last_status = None
+        last_content_type = ""
+        while True:
+            response = client.head(url, timeout=20, allow_redirects=True)
+            last_status = response.status_code
+            last_content_type = response.headers.get("content-type", "")
+            if last_status == 200 and last_content_type.startswith("image/"):
+                break
+            if time.monotonic() >= deadline:
+                raise RuntimeError(
+                    f"media URL not ready after {timeout}s: {url} "
+                    f"({last_status}, {last_content_type or 'no content-type'})"
+                )
+            time.sleep(interval)
 
 
 def publish_once(publication_key: str, pending_dir: Path, image_urls, history: History = None, publisher=None):
