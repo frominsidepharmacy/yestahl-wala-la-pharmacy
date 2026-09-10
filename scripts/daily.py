@@ -3,6 +3,7 @@ from __future__ import annotations
 import json, os, hashlib
 from pathlib import Path
 from src.config import ROOT, assert_guardrails, load_yaml
+from src.category_rotation import query_for_day
 from src.evidence import map_product_ingredients
 from src.history import History
 from src.models import Product
@@ -26,12 +27,13 @@ def main():
         TelegramClient().call("sendMessage", chat_id=os.getenv("TELEGRAM_CHAT_ID"),
             text=f"جهزت {count} منتج للمراجعة قبل النشر:\n\nيستاهل ولا لأ؟\nمن جوه الصيدلية")
     for category, config in selected_categories.items():
+        discovery_query = query_for_day(config["queries"])
         candidates = []
         failures = []
         for retailer, cls in ADAPTERS.items():
             adapter = cls()
             try:
-                candidates.extend(adapter.discover(config["queries"][0], category))
+                candidates.extend(adapter.discover(discovery_query, category))
             except Exception as exc:
                 failures.append(f"{retailer}: {exc}")
             request_count += adapter.requests_used
@@ -69,6 +71,7 @@ def main():
         _, selected = max(filtered, key=lambda item: item[0])
         result = prepare_product(selected, ROOT / "output" / "daily" / category, history)
         summary[category] = {"status": "PENDING_APPROVAL", "name": selected.product_name,
+                             "discovery_query": discovery_query,
                              "publication_key": result["publication_key"], "content_hash": result["content_hash"]}
         if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
             manifest = json.loads((ROOT / "output" / "daily" / category / "manifest.json").read_text(encoding="utf-8"))

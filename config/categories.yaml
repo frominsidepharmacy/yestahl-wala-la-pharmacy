@@ -8,5 +8,11 @@ categories:
     queries: [vitamin d, magnesium, omega 3, probiotics]
   personal_care:
     label: Personal Care
-    queries: [deodorant, oral care, hair care, body care]
-
+    queries:
+      - deodorant
+      - baby care
+      - mother care
+      - feminine wash
+      - oral care
+      - hair care
+      - body care
