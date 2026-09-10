@@ -1,0 +1,21 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-10T17:45:00+00:00",
+  "review_method": "Human-visible inspection of all six final 1080x1350 renders after deterministic Arabic overlay",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "evidence": {
+    "slides_reviewed": ["slide01.png", "slide02.png", "slide03.png", "slide04.png", "slide05.png", "slide06.png"],
+    "reference_style": "Warm textured torn-paper editorial composition with teal/mint Skin Care palette, tape, hand-drawn accents, product-led photography and strong RTL hierarchy",
+    "product_identity": "Exact Beauty of Joseon Relief Sun Rice + Probiotics SPF50+ PA++++ 50ml tube reference retained",
+    "commerce": "Verified original price AED 50.75 on slide 6; current observed AED 42 price appears only in caption",
+    "safety": "External-use, eye-contact, irritation/rash, child-storage and direct-sunlight warnings included",
+    "verdict": "يستاهل بشروط"
+  }
+}
