@@ -36,6 +36,8 @@ For Meta account setup, use the current official authentication path appropriate
 
 ## Operations
 
+The complete production contract—including the two accounts, schedules, design gates, Telegram approval states, Activepieces field mappings, serialized Pages publishing, retry rules, and permalink confirmation—is maintained in [`docs/PRODUCTION_RUNBOOK.md`](docs/PRODUCTION_RUNBOOK.md). Update that runbook whenever the live workflow changes.
+
 - Pause: disable `daily.yml` in GitHub Actions and unpublish/pause the Activepieces flow.
 - Restart: enable the workflow and republish the same Activepieces flow.
 - Change a slot: edit its `cron`, `timezone`, and category mapping together in `.github/workflows/daily.yml`. The current official Actions syntax supports an IANA timezone.
@@ -60,5 +62,7 @@ The dry run uses live UAE product pages and writes `output/dry-run/<category>/` 
 - A retailer failure does not stop the other retailers; an unverified category sends the configured Arabic no-product message.
 - A changed slide/caption/metadata hash stops publication and requests new approval.
 - `PUBLISH_FAILED_SAFE` retains approved assets. Check whether the marker exists in recent Instagram media before any retry; the publisher does this automatically.
+- GitHub Pages is a single shared media surface. Every publish uses the global `instagram-publish-pages` concurrency group and waits for each deployed image URL before asking Meta to fetch it. Do not change this back to per-publication concurrency.
+- If business validation reports an account mismatch, confirm that the token resolves to `@dramrou.business`, then update `BUSINESS_INSTAGRAM_USER_ID` to the returned ID. Never remove the identity check.
 - Public scheduled workflows may be disabled after 60 days without repository activity; re-enable the workflow in Actions if GitHub reports this.
 - The official references used during implementation are [GitHub Actions schedule syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax), [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [Activepieces GitHub integration](https://www.activepieces.com/pieces/github), [Activepieces Telegram Bot integration](https://www.activepieces.com/pieces/telegram-bot), and [Meta Instagram content publishing](https://developers.facebook.com/docs/instagram-platform/content-publishing/).
