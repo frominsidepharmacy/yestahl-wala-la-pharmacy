@@ -20,7 +20,7 @@ matches = []
 for manifest_path in Path("pending_business").rglob("manifest.json"):
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     metadata = manifest.get("metadata", {})
-    if metadata.get("account") == "business.by.dr_amrou" and metadata.get("publication_key") == key:
+    if metadata.get("account") == "dramrou.business" and metadata.get("publication_key") == key:
         matches.append(manifest_path.parent)
 if len(matches) != 1:
     raise SystemExit(f"Expected one business pending version for {key}, found {len(matches)}")

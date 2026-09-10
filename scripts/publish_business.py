@@ -24,7 +24,7 @@ if not args.publication_key.startswith("biz-"):
     raise SystemExit("Business publishing refuses a non-business publication key")
 pending = Path(args.pending_dir)
 manifest = json.loads((pending / "manifest.json").read_text(encoding="utf-8"))
-if manifest.get("metadata", {}).get("account") != "business.by.dr_amrou":
+if manifest.get("metadata", {}).get("account") != "dramrou.business":
     raise SystemExit("Business manifest account mismatch")
 if not manifest["content_hash"].startswith(args.expected_hash) or not verify_manifest(pending):
     raise SystemExit("⚠️ النسخة اتغيرت بعد الموافقة، محتاجة موافقة جديدة.")
@@ -48,10 +48,10 @@ else:
     result = {"already_published": False, "media_id": media_id, "permalink": publisher.permalink(media_id)}
 
 if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
-    TelegramClient().call(
-        "sendMessage",
-        chat_id=os.environ["TELEGRAM_CHAT_ID"],
-        text=f"✅ تم نشر كاروسيل «من جوة البيزنس» على @business.by_dr_amrou بعد موافقتك.\nالرابط: {result.get('permalink') or 'غير متاح'}",
-        disable_web_page_preview=True,
+    TelegramClient().send_publish_confirmation(
+        "من جوة البيزنس",
+        "dramrou.business",
+        result.get("permalink"),
+        result.get("already_published", False),
     )
 print(json.dumps(result, ensure_ascii=False))

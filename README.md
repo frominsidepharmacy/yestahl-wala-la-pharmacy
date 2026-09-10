@@ -10,7 +10,7 @@ Activepieces Free Cloud accepts only updates from `TELEGRAM_ALLOWED_USER_ID`. AP
 
 ## Independent business account
 
-`business_preview.yml` sends the two daily `@business.by_dr_amrou` carousels at 13:00 and 21:00 Dubai time. Business publication keys start with `biz-`; `publish.yml` routes only those keys to the dedicated `BUSINESS_META_ACCESS_TOKEN` and `BUSINESS_INSTAGRAM_USER_ID`. Every other key continues through the original pharmacy job with its existing schedules, artifacts, credentials, and approval path.
+`business_preview.yml` sends the two daily `@dramrou.business` carousels at 13:00 and 21:00 Dubai time. Business publication keys start with `biz-`; `publish.yml` routes only those keys to the dedicated `BUSINESS_META_ACCESS_TOKEN` and `BUSINESS_INSTAGRAM_USER_ID`. Every other key continues through the original pharmacy job for `@dramrouaboubakr`, with its existing schedules, artifacts, credentials, and approval path.
 
 Permanent guardrails are `ALLOW_PAID_SERVICES=false`, `REQUIRE_MANUAL_APPROVAL=true`, and `FREE_AI_ENABLED=false`. Runtime, request, product, slide, and Telegram-control limits are in `config/settings.yaml`; limit breaches stop safely rather than upgrade a service.
 

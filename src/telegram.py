@@ -58,6 +58,16 @@ class TelegramClient:
             raise RuntimeError(response.json().get("description"))
         return self.call("sendMessage", chat_id=self.chat_id, text=f"{control_text}\n\n{caption}", reply_markup=keyboard, disable_web_page_preview=True)
 
+    def send_publish_confirmation(self, series_name: str, account: str, permalink: Optional[str], already_published: bool = False):
+        status = "كان منشورًا بالفعل" if already_published else "تم النشر بنجاح"
+        link = permalink or "تعذّر جلب الرابط من Instagram"
+        return self.call(
+            "sendMessage",
+            chat_id=self.chat_id,
+            text=f"✅ {status}\nالسلسلة: {series_name}\nالحساب: @{account}\nرابط البوست للتأكيد:\n{link}",
+            disable_web_page_preview=True,
+        )
+
 
 def inline_keyboard(key: str, version: int, digest: str, artifact_run_id: str = "0") -> Dict:
     return {"inline_keyboard": [

@@ -16,7 +16,7 @@ from src.retailers import BinSinaAdapter, BootsAdapter, LifeAdapter
 from src.retailers.base import parse_html_product, parse_jsonld_products, parse_pack, parse_price
 from src.revision import apply_safe_revision, classify_edit
 from src.scoring import score_product
-from src.telegram import authorized_user, callback_data, inline_keyboard, parse_callback
+from src.telegram import TelegramClient, authorized_user, callback_data, inline_keyboard, parse_callback
 
 
 def product(**overrides):
@@ -151,7 +151,7 @@ def test_render_six_rtl_slides(tmp_path):
 
 def test_brand_config_exact():
     brand = load_yaml("settings.yaml")["brand"]
-    assert brand == {"series_name_ar": "يستاهل ولا لأ؟", "brand_line_ar": "من جوه الصيدلية", "creator_name_ar": "د. عمرو أبوبكر", "full_series_name_ar": "يستاهل ولا لأ؟ | من جوه الصيدلية"}
+    assert brand == {"account": "dramrouaboubakr", "series_name_ar": "يستاهل ولا لأ؟", "brand_line_ar": "من جوه الصيدلية", "creator_name_ar": "د. عمرو أبوبكر", "full_series_name_ar": "يستاهل ولا لأ؟ | من جوه الصيدلية"}
 
 
 def test_telegram_authorization():
@@ -167,6 +167,16 @@ def test_callback_round_trip():
 def test_keyboard_contains_all_actions():
     raw = json.dumps(inline_keyboard("260908-k-12345678", 1, "b"*64, "9"))
     assert all(action in raw for action in ("approve", "edit", "regenerate", "reject"))
+
+
+def test_publish_confirmation_contains_real_link_and_account(monkeypatch):
+    client = TelegramClient(token="token", chat_id="42")
+    sent = {}
+    monkeypatch.setattr(client, "call", lambda method, **data: sent.update(method=method, **data))
+    client.send_publish_confirmation("من جوة الصيدلية", "dramrouaboubakr", "https://instagram.com/p/abc")
+    assert sent["method"] == "sendMessage"
+    assert "@dramrouaboubakr" in sent["text"]
+    assert "https://instagram.com/p/abc" in sent["text"]
 
 
 @pytest.mark.parametrize("text,area", [("خلي الهوك أقوى", "content"), ("غير الكابشن بس", "caption"), ("كبر صورة المنتج", "design"), ("السعر ده راجعه", "data_accuracy"), ("خلي من جوه الصيدلية أوضح", "branding")])
