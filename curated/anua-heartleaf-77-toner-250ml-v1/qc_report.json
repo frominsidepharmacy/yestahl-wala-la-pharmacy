@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T18:00:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three final 1080x1350 slides were visually inspected after resizing.",
+    "The carousel visibly matches the retained warm torn-paper editorial reference and Skin Care teal/mint palette.",
+    "The ANUA 250ml package identity is consistent across all slides.",
+    "Arabic copy is complete, readable, unclipped, and follows the approved three-slide direct-talk script.",
+    "The series identity and Dr. Amrou Aboubakr name are visible on every slide.",
+    "No retailer or pharmacy name, sale price, unsupported competitive claim, or acne-treatment claim appears in the artwork or caption."
+  ]
+}

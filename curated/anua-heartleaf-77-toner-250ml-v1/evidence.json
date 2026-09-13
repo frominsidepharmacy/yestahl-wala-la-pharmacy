@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-09-13",
+  "product_source": "https://www.nahdionline.com/en-ae/anua-heartleaf-77-soothing-toner-250ml-250ml/pdp/102967167",
+  "manufacturer_source": "https://anua.com/products/heartleaf-77-soothing-toner",
+  "sources": [
+    {
+      "url": "https://www.nahdionline.com/en-ae/anua-heartleaf-77-soothing-toner-250ml-250ml/pdp/102967167",
+      "supports": [
+        "UAE availability",
+        "250ml exact pack",
+        "AED 117 original price and AED 70.20 offer price",
+        "77% Houttuynia cordata extract",
+        "morning and evening use after cleansing",
+        "glycerin and panthenol in the ingredient list"
+      ]
+    },
+    {
+      "url": "https://anua.com/products/heartleaf-77-soothing-toner",
+      "supports": [
+        "manufacturer product identity",
+        "250ml and 500ml variants",
+        "77% Heartleaf plus hyaluron",
+        "soothing and lightweight hydration positioning",
+        "apply after cleansing with fingertips or cotton pad and pat gently",
+        "morning and night use",
+        "fragrance-free, non-comedogenic and low-irritation claims"
+      ]
+    },
+    {
+      "url": "https://www.nahdionline.com/en-ae/anua-heartleaf-77-soothing-toner-40ml/pdp/103052621",
+      "supports": [
+        "verified 40ml size",
+        "hand or cotton-pad application method"
+      ]
+    },
+    {
+      "url": "https://www.noon.com/uae-en/heartleaf-77-soothing-toner-i-ph-5-5-trouble-care-calming-skin-refreshing-hydrating-purifying-cruelty-free-vegan-8-45-fl-oz-250ml/N70068459V/p/",
+      "supports": [
+        "same 250ml pack offered at AED 65.95 with AED 75 crossed-out price at check time"
+      ]
+    },
+    {
+      "url": "https://www.ulta.com/p/heartleaf-77-soothing-toner-pimprod2048929",
+      "supports": [
+        "ANUA brand response recommends a patch test before full application"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel does not claim that the toner treats acne.",
+    "The original UAE price shown in the artwork is AED 117, not an offer price.",
+    "Retailer identity and current offer details are kept out of the artwork and caption.",
+    "The worth-it verdict is based on a documented soothing/hydrating formula and whether the user needs an extra toner step."
+  ]
+}

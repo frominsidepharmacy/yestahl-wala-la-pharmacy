@@ -1,0 +1,16 @@
+{
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 1,
+  "reference_asset": "artifact-template-reference-design-2/assets/reference.png",
+  "category": "korean_skincare",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "generated_with": "ChatGPT built-in ImageGen",
+  "slide_sha256": {
+    "slide01.png": "e959e33527ebcc4e48d420cb7bab2cb565fa9962c2b5dfc12d4c834d4999304b",
+    "slide02.png": "4c352fd1686a2455bf39a9890029d2f749eacadefffb38ecb366ca5f7a2f715f",
+    "slide03.png": "62ab3e76b9290c07bb9546ba3afd50c755e8efedc5d23f237c11a265f973d434"
+  }
+}
