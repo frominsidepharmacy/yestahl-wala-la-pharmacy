@@ -1,0 +1,13 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T23:41:42+00:00",
+  "checks": {"arabic_text_fidelity":"PASS","reference_fidelity":"PASS","brand_identity":"PASS","layout_readability":"PASS","visual_integrity":"PASS","content_accuracy":"PASS"},
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "Warm torn paper, tactile tape, product-led photography and the teal/mint skincare palette visibly match the retained reference.",
+    "The Beauty of Joseon Glow Serum 30 ml packaging is recognizable and consistent.",
+    "Arabic copy is readable and unclipped, with the exact series identity and counters on every slide.",
+    "Concentrations, directions, original price, BHA warning, patch test and sunscreen instruction are evidence-backed.",
+    "No retailer name, offer price or unsupported medical claim appears in artwork or caption."
+  ]
+}

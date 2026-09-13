@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-09-14",
+  "product_source": "https://www.lifepharmacy.com/product/beauty-of-joseon-glow-serum-30ml/",
+  "manufacturer_source": "https://beautyofjoseon.com/products/glow-serum-propolis-niacinamide",
+  "sources": [
+    {
+      "url": "https://www.lifepharmacy.com/product/beauty-of-joseon-glow-serum-30ml/",
+      "supports": ["UAE availability and exact 30 ml pack", "AED 75.60 original price and AED 39.90 offer price", "60% propolis extract and 2% niacinamide"]
+    },
+    {
+      "url": "https://beautyofjoseon.com/products/glow-serum-propolis-niacinamide",
+      "supports": ["2–3 drops applied gently to face and neck and tapped until absorbed", "propolis supports soothing, hydration and the skin barrier", "niacinamide supports sebum balance", "contains BHA", "24-hour patch test for sensitive skin", "wear under sunscreen during the day"]
+    }
+  ],
+  "content_decisions": [
+    "The carousel uses the verified 60% propolis and 2% niacinamide concentrations as the documented differentiator.",
+    "The original UAE price shown is AED 75.60, not the offer price.",
+    "Retailer identity and offer price are omitted from artwork and caption.",
+    "The verdict is conditional because BHA and the manufacturer's sensitive-skin patch-test instruction are material."
+  ]
+}
