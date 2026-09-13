@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T20:08:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "The warm torn-paper reference and Vitamins royal-blue/sunshine palette are retained.",
+    "The Centrum Women 30-tablet package remains recognizable and consistent.",
+    "Arabic copy is readable and unclipped, with exact series identity on every slide.",
+    "Dose, age, key nutrient roles, duplicate-supplement warning and original AED 80.85 price are accurate.",
+    "No retailer name, offer price or disease-treatment claim appears in artwork or caption."
+  ]
+}

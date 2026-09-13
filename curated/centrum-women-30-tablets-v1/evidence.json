@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-14",
+  "product_source": "https://www.lifepharmacy.com/product/centrum-women-tab-30s",
+  "manufacturer_source": "https://www.haleonhealthpartner.com/en-gb/wellness/brands/centrum/products/adult-women/",
+  "sources": [
+    {
+      "url": "https://www.lifepharmacy.com/product/centrum-women-tab-30s",
+      "supports": [
+        "UAE availability and exact 30-tablet pack",
+        "AED 80.85 original price and AED 43.95 offer price",
+        "adult women aged 18 years and above",
+        "one tablet daily with water, preferably with food",
+        "do not exceed the recommended daily intake",
+        "iron and folic acid contribute to normal blood formation",
+        "vitamins B6 and B12 contribute to reducing tiredness and fatigue"
+      ]
+    },
+    {
+      "url": "https://www.haleonhealthpartner.com/en-gb/wellness/brands/centrum/products/adult-women/",
+      "supports": [
+        "manufacturer formula for women's nutritional needs",
+        "vitamin D supports normal immune function",
+        "vitamin B12 contributes to reduction of tiredness and fatigue",
+        "ingredient amounts per tablet"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/brand/centrum/",
+      "supports": [
+        "verified 100-tablet Centrum Women size"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel treats Centrum Women as a dietary-gap supplement, not a substitute for food or a treatment for fatigue.",
+    "The original UAE price shown is AED 80.85, not the offer price.",
+    "Retailer identity and offer price are omitted from artwork and caption.",
+    "The warning focuses on avoiding duplicate nutrient intake from overlapping supplements."
+  ]
+}
