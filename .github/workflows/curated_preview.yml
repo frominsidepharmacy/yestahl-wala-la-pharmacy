@@ -1,6 +1,10 @@
 name: Send curated carousel for approval
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "curated/**/ready.json"
   workflow_dispatch:
     inputs:
       curated_dir:
@@ -20,19 +24,40 @@ jobs:
       ALLOW_PAID_SERVICES: "false"
       REQUIRE_MANUAL_APPROVAL: "true"
       FREE_AI_ENABLED: "false"
-      CURATED_DIR: ${{ inputs.curated_dir }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Resolve curated carousel
+        id: source
+        env:
+          MANUAL_DIR: ${{ inputs.curated_dir }}
+          BEFORE_SHA: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+        run: |
+          if [ -n "$MANUAL_DIR" ]; then
+            curated_dir="$MANUAL_DIR"
+          else
+            ready_file="$(git diff --name-only "$BEFORE_SHA" "$CURRENT_SHA" -- 'curated/*/ready.json' | tail -n 1)"
+            if [ -z "$ready_file" ]; then
+              echo "No new curated ready marker found" >&2
+              exit 1
+            fi
+            curated_dir="${ready_file%/ready.json}"
+          fi
+          echo "curated_dir=$curated_dir" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
       - run: python -m scripts.send_curated_preview
+        env:
+          CURATED_DIR: ${{ steps.source.outputs.curated_dir }}
       - uses: actions/upload-artifact@v4
         with:
           name: pending-previews-${{ github.run_id }}
-          path: ${{ inputs.curated_dir }}
+          path: ${{ steps.source.outputs.curated_dir }}
           retention-days: 7

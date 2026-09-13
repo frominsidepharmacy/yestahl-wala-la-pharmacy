@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from io import BytesIO
 from pathlib import Path
+import hashlib
+import json
 import colorsys
 import math
 import random
@@ -14,6 +16,10 @@ import requests
 
 from src.config import load_yaml
 from src.models import Product
+
+
+REFERENCE_RENDERER_ID = "men-gowa-el-saydalia-torn-paper"
+REFERENCE_RENDERER_VERSION = 2
 
 
 def _font(size: int, bold: bool = False):
@@ -252,7 +258,45 @@ def render_carousel(product: Product, content: Dict, output_dir: Path, image: Op
         path = output_dir / f"slide{number:02d}.png"
         canvas.save(path, "PNG", optimize=True)
         paths.append(path)
+    manifest = {
+        "renderer_id": REFERENCE_RENDERER_ID,
+        "renderer_version": REFERENCE_RENDERER_VERSION,
+        "category": product.category,
+        "dimensions": [w, h],
+        "slide_sha256": {
+            path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in paths
+        },
+    }
+    (output_dir / "design_provenance.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     return paths
+
+
+def validate_reference_template(paths: List[Path]) -> List[str]:
+    """Verify that slides came unchanged from the locked reference renderer."""
+    if not paths:
+        return ["reference template has no slides"]
+    manifest_path = paths[0].parent / "design_provenance.json"
+    if not manifest_path.exists():
+        return ["missing locked-reference design provenance"]
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return ["invalid locked-reference design provenance"]
+    errors = []
+    if manifest.get("renderer_id") != REFERENCE_RENDERER_ID:
+        errors.append("carousel was not created by the approved torn-paper renderer")
+    if manifest.get("renderer_version") != REFERENCE_RENDERER_VERSION:
+        errors.append("carousel uses an unapproved renderer version")
+    if manifest.get("dimensions") != [1080, 1350]:
+        errors.append("reference renderer dimensions are invalid")
+    expected = manifest.get("slide_sha256", {})
+    for path in paths:
+        digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
+        if expected.get(path.name) != digest:
+            errors.append(f"{path.name} changed after reference rendering")
+    return errors
 
 
 def validate_slides(paths: List[Path]) -> List[str]:

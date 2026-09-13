@@ -21,8 +21,9 @@ ADAPTERS = {"life": LifeAdapter, "boots": BootsAdapter, "binsina": BinSinaAdapte
 def prepare_product(product: Product, output_dir: Path, history: Optional[History] = None, allow_recent=False) -> Dict:
     assert_guardrails()
     history = history or History()
-    if not allow_recent and history.used_recently(product.normalized_id, 90):
-        raise RuntimeError("90-day no-repeat rule blocked product")
+    no_repeat_days = int(load_yaml("settings.yaml")["selection"]["no_repeat_days"])
+    if not allow_recent and history.used_recently(product.normalized_id, no_repeat_days):
+        raise RuntimeError(f"{no_repeat_days}-day no-repeat rule blocked product")
     ingredients, claims = map_product_ingredients(product)
     score, score_breakdown = score_product(product, bool(claims), len(ingredients))
     content = build_content(product, ingredients, score)
@@ -39,6 +40,8 @@ def prepare_product(product: Product, output_dir: Path, history: Optional[Histor
                         ("content.json", content), ("qc_report.json", qc)):
         (output_dir / name).write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
     (output_dir / "caption.txt").write_text(caption, encoding="utf-8")
+    if not qc["passed"]:
+        raise RuntimeError("QC blocked preview: " + "; ".join(qc["errors"]))
     code = {"korean_skincare": "k", "vitamins_supplements": "v", "personal_care": "p"}[product.category]
     publication_key = f"{datetime.now(timezone.utc).strftime('%y%m%d')}-{code}-{product.normalized_id[:8]}"
     history.upsert(publication_key, product, "PENDING_APPROVAL", score=score, verdict=content["verdict"], content_hash=manifest["content_hash"])

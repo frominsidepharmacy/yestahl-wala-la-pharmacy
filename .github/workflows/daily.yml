@@ -1,11 +1,7 @@
 name: Daily content
 on:
-  schedule:
-    # GitHub cron is evaluated in UTC: 08:00/13:00/18:00 UTC are
-    # 12:00/17:00/22:00 in Asia/Dubai year-round.
-    - cron: "0 8 * * *"
-    - cron: "0 13 * * *"
-    - cron: "0 18 * * *"
+  # Scheduled generation moved to the local Codex/ImageGen automation.
+  # Keep this workflow manual for diagnostics only.
   workflow_dispatch:
     inputs:
       category:
@@ -34,19 +30,26 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_ALLOWED_USER_ID: ${{ vars.TELEGRAM_ALLOWED_USER_ID }}
       TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
-      TARGET_CATEGORY: >-
-        ${{ github.event_name == 'workflow_dispatch' && inputs.category ||
-            (github.event.schedule == '0 8 * * *' && 'korean_skincare' ||
-             github.event.schedule == '0 13 * * *' && 'vitamins_supplements' ||
-             'personal_care') }}
+      TARGET_CATEGORY: ${{ inputs.category }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/runtime/history.sqlite3
+          key: product-history-${{ github.run_id }}
+          restore-keys: |
+            product-history-
       - run: pip install -r requirements.txt
       - run: python -m scripts.daily
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/runtime/history.sqlite3
+          key: product-history-${{ github.run_id }}
       - uses: actions/cache/save@v4
         with:
           path: output/daily

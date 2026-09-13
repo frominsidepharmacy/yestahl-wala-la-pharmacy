@@ -16,7 +16,9 @@ from src.telegram import TelegramClient, inline_keyboard
 def main() -> None:
     assert_guardrails()
     source = ROOT / os.environ.get("CURATED_DIR", "curated/cosrx-salicylic-cleanser-v1")
-    slides = [source / f"slide{number:02d}.png" for number in range(1, 7)]
+    slides = sorted(source.glob("slide[0-9][0-9].png"))
+    if len(slides) not in {3, 6}:
+        raise SystemExit(f"Expected 3 or 6 curated slides, found {len(slides)}")
     missing = [path.name for path in slides if not path.exists()]
     if missing:
         raise SystemExit(f"Missing curated slides: {', '.join(missing)}")

@@ -1,5 +1,5 @@
 from typing import Dict, List
-from src.design import validate_slides
+from src.design import validate_reference_template, validate_slides
 from src.evidence import validate_claims
 from src.models import Claim, Product
 
@@ -25,10 +25,14 @@ def run_qc(product: Product, content: Dict, caption: str, claims: List[Claim], s
     for phrase in ("يستاهل ولا لأ؟", "من جوه الصيدلية", "د. عمرو أبوبكر"):
         if phrase not in (caption + " يستاهل ولا لأ؟ من جوه الصيدلية د. عمرو أبوبكر"):
             errors.append(f"missing brand phrase: {phrase}")
-    errors.extend(validate_slides(slide_paths))
+    slide_errors = validate_slides(slide_paths)
+    reference_errors = validate_reference_template(slide_paths)
+    errors.extend(slide_errors)
+    errors.extend(reference_errors)
     return {"passed": not errors, "errors": errors, "checks": {
         "product": "pass" if product.price_aed is not None and not ((product.offer_flag or product.discount_percentage) and product.old_price_aed is None) and product.primary_image and image_loaded else "fail",
         "science": "pass" if not validate_claims(claims, combined) else "fail",
-        "design": "pass" if not validate_slides(slide_paths) else "fail",
+        "design": "pass" if not slide_errors else "fail",
+        "reference_fidelity": "pass" if not reference_errors else "fail",
         "caption": "pass" if product.product_name in caption else "fail",
     }}

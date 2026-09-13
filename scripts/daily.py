@@ -22,6 +22,7 @@ def main():
     selected_categories = categories if target_category == "all" else {target_category: categories[target_category]}
     fallback_sources = load_yaml("dry_run_sources.yaml")["sources"]
     history = History()
+    no_repeat_days = int(load_yaml("settings.yaml")["selection"]["no_repeat_days"])
     summary, request_count = {}, 0
     if os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID"):
         count = len(selected_categories)
@@ -42,7 +43,7 @@ def main():
                 raise RuntimeError("MAX_RETAILER_PAGE_REQUESTS_PER_RUN reached; stopped safely")
         filtered = []
         for product in candidates:
-            if history.used_recently(product.normalized_id, 90) or product.price_aed is None or not product.primary_image:
+            if history.used_recently(product.normalized_id, no_repeat_days) or product.price_aed is None or not product.primary_image:
                 continue
             if category == "korean_skincare" and not any(b.lower() in f"{product.brand} {product.product_name}".lower() for b in config["korean_brands"]):
                 continue
@@ -60,6 +61,12 @@ def main():
                     category=category,
                     **fallback,
                 )
+                if history.used_recently(product.normalized_id, no_repeat_days):
+                    failures.append(
+                        f"Fallback blocked: product already used within {no_repeat_days} days."
+                    )
+                    fallback = None
+            if fallback:
                 ingredients, claims = map_product_ingredients(product)
                 if claims:
                     score, _ = score_product(product, True, len(ingredients))

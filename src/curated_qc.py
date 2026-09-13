@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 
 from PIL import Image
@@ -35,8 +36,8 @@ def require_approved_qc(source: Path, slides: list[Path]) -> dict:
             f"missing={missing or 'none'} failed={failed or 'none'}"
         )
 
-    if len(slides) != 6:
-        raise SystemExit(f"QC BLOCK: expected 6 slides, got {len(slides)}")
+    if len(slides) not in {3, 6}:
+        raise SystemExit(f"QC BLOCK: expected 3 or 6 slides, got {len(slides)}")
     for slide in slides:
         if not slide.exists():
             raise SystemExit(f"QC BLOCK: missing slide {slide}")
@@ -45,4 +46,24 @@ def require_approved_qc(source: Path, slides: list[Path]) -> dict:
                 raise SystemExit(
                     f"QC BLOCK: {slide.name} is {image.size}, expected (1080, 1350)"
                 )
+    provenance_path = source / "design_provenance.json"
+    if not provenance_path.exists():
+        raise SystemExit("QC BLOCK: missing locked-reference design provenance")
+    provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+    approved_renderers = {
+        "men-gowa-el-saydalia-torn-paper": {6},
+        "chatgpt-imagegen-reference": {3, 6},
+    }
+    renderer_id = provenance.get("renderer_id")
+    if renderer_id not in approved_renderers:
+        raise SystemExit("QC BLOCK: unapproved design renderer")
+    if renderer_id == "men-gowa-el-saydalia-torn-paper" and provenance.get("renderer_version") != 2:
+        raise SystemExit("QC BLOCK: unapproved design renderer version")
+    if len(slides) not in approved_renderers[renderer_id]:
+        raise SystemExit("QC BLOCK: renderer does not support this slide count")
+    expected = provenance.get("slide_sha256", {})
+    for slide in slides:
+        actual = hashlib.sha256(slide.read_bytes()).hexdigest()
+        if expected.get(slide.name) != actual:
+            raise SystemExit(f"QC BLOCK: {slide.name} changed after locked rendering")
     return report
