@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T18:08:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three final 1080x1350 slides were visually inspected after resizing.",
+    "A mixed-direction microflora line failed the first visual review; slide 1 was regenerated with exact Arabic wording before acceptance.",
+    "The carousel visibly matches the retained torn-paper reference and Personal Care plum/coral palette.",
+    "The Sebamed 200ml package identity remains consistent across all slides.",
+    "Copy is legible and unclipped, and the external-use limitation is explicit.",
+    "No retailer or pharmacy name, offer price, anatomical imagery, or treatment claim appears in the artwork or caption."
+  ]
+}

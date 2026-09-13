@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-13",
+  "product_source": "https://www.unioncoop.ae/english/sebamed-feminine-intimate-wash-ph3-8-200-ml-1065456.html",
+  "manufacturer_source": "https://sebamed.com/en/p/intimate-wash-3-8-for-women-aged-15-50/",
+  "sources": [
+    {
+      "url": "https://sebamed.com/en/p/intimate-wash-3-8-for-women-aged-15-50/",
+      "supports": [
+        "exact 200ml product and pH 3.8",
+        "external intimate-area cleansing only",
+        "lather a few drops in the hand, cleanse gently and rinse thoroughly",
+        "lactic acid supports the natural acidic environment",
+        "aloe and bisabolol soothe and moisturize",
+        "for external use only",
+        "ingredient list includes fragrance"
+      ]
+    },
+    {
+      "url": "https://www.unioncoop.ae/english/sebamed-feminine-intimate-wash-ph3-8-200-ml-1065456.html",
+      "supports": [
+        "UAE availability",
+        "200ml exact pack",
+        "AED 31.50 non-promotional listed price",
+        "soap-free external cleansing positioning"
+      ]
+    },
+    {
+      "url": "https://www.noon.com/uae-en/feminine-intimate-wash-ph-3-8/ZFB3CCFE66A671EBBB34DZ/p/",
+      "supports": [
+        "same pH 3.8 product offered at AED 11.60 with AED 21.07 crossed-out price at check time"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel clearly limits use to the external genital area.",
+    "No claim says the wash treats an infection, discharge or other medical condition.",
+    "The artwork shows the verified non-promotional AED 31.50 price, not a sale price.",
+    "Retailer identity and offer details are excluded from the artwork and caption."
+  ]
+}
