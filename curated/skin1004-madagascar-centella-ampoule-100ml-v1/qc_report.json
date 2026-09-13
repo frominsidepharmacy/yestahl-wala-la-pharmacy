@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T20:28:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "Warm torn-paper reference fidelity and Skin Care teal/mint palette are present.",
+    "The SKIN1004 100ml glass dropper bottle remains visually consistent.",
+    "Arabic copy is readable and unclipped, with exact series identity on every slide.",
+    "Centella role, use method, sizes, warnings and AED 114.50 original price are accurate.",
+    "No retailer name, offer price or acne-treatment claim appears in artwork or caption."
+  ]
+}

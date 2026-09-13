@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-09-14",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/Skin1004-Madagascar-Centella-Ampoule-Soothing-Facial-Serum-100ml/1061869",
+  "manufacturer_source": "https://www.skin1004.com/products/skin1004-madagascar-centella-ampoule",
+  "sources": [
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/Skin1004-Madagascar-Centella-Ampoule-Soothing-Facial-Serum-100ml/1061869",
+      "supports": [
+        "UAE availability and exact 100ml pack",
+        "AED 114.50 original price and AED 62.98 offer price",
+        "pure Madagascar Centella asiatica extract",
+        "calming, hydration and barrier-support positioning",
+        "lightweight watery texture"
+      ]
+    },
+    {
+      "url": "https://www.nahdionline.com/en-ae/103644781/pdp/103644781",
+      "supports": [
+        "same 100ml pack available at AED 45.17 offer and AED 75.29 crossed-out price"
+      ]
+    },
+    {
+      "url": "https://www.nahdionline.com/en-ae/skin1004-centella-ampoule-30ml/pdp/103231055",
+      "supports": [
+        "verified 30ml size",
+        "apply an appropriate amount evenly and pat for absorption",
+        "external use only, avoid eyes, avoid broken or inflamed skin, discontinue if irritated"
+      ]
+    },
+    {
+      "url": "https://www.nahdionline.com/en-ae/skin1004-centella-ampoule-55ml/pdp/103231291",
+      "supports": [
+        "verified 55ml size",
+        "apply a few drops to clean skin and pat until absorbed"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel presents soothing and hydration only and explicitly avoids an acne-treatment claim.",
+    "The original UAE price shown is AED 114.50 from the selected exact-pack source.",
+    "Retailer identities and offer prices are omitted from artwork and caption.",
+    "The three verified pack sizes are listed without claiming identical pricing."
+  ]
+}
