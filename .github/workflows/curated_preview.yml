@@ -1,20 +1,29 @@
-name: Send curated carousel for approval
+name: Release queued carousel for approval
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "curated/**/ready.json"
+  schedule:
+    # 08:00/13:00/18:00 UTC = 12:00/17:00/22:00 Asia/Dubai year-round.
+    - cron: "0 8 * * *"
+    - cron: "0 13 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
     inputs:
-      curated_dir:
-        description: Curated carousel directory
+      category:
+        description: Inventory category to release
         required: true
-        default: curated/d-spray-vitamin-d3-v1
-        type: string
+        default: korean_skincare
+        type: choice
+        options:
+          - korean_skincare
+          - vitamins_supplements
+          - personal_care
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: pharmacy-curated-inventory
+  cancel-in-progress: false
 
 jobs:
   send:
@@ -29,35 +38,54 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-      - name: Resolve curated carousel
-        id: source
+          fetch-depth: 0
+      - name: Resolve schedule category
+        id: category
         env:
-          MANUAL_DIR: ${{ inputs.curated_dir }}
-          BEFORE_SHA: ${{ github.event.before }}
-          CURRENT_SHA: ${{ github.sha }}
+          MANUAL_CATEGORY: ${{ inputs.category }}
+          SCHEDULE: ${{ github.event.schedule }}
         run: |
-          if [ -n "$MANUAL_DIR" ]; then
-            curated_dir="$MANUAL_DIR"
+          if [ -n "$MANUAL_CATEGORY" ]; then
+            category="$MANUAL_CATEGORY"
+          elif [ "$SCHEDULE" = "0 8 * * *" ]; then
+            category="korean_skincare"
+          elif [ "$SCHEDULE" = "0 13 * * *" ]; then
+            category="vitamins_supplements"
           else
-            ready_file="$(git diff --name-only "$BEFORE_SHA" "$CURRENT_SHA" -- 'curated/*/ready.json' | tail -n 1)"
-            if [ -z "$ready_file" ]; then
-              echo "No new curated ready marker found" >&2
-              exit 1
-            fi
-            curated_dir="${ready_file%/ready.json}"
+            category="personal_care"
           fi
-          echo "curated_dir=$curated_dir" >> "$GITHUB_OUTPUT"
+          echo "category=$category" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m scripts.send_curated_preview
+      - name: Select oldest queued carousel
+        id: source
+        run: python -m scripts.curated_inventory select --category "${{ steps.category.outputs.category }}"
+      - name: Notify empty category inventory
+        if: steps.source.outputs.found != 'true'
+        run: python -m scripts.notify
+        env:
+          NOTIFICATION_MESSAGE: "⚠️ مخزون ${{ steps.category.outputs.category }} فارغ؛ لم تُرسل معاينة في هذا الموعد. سيُعوَّض عند أول تشغيل متاح لـ Codex."
+      - name: Send selected carousel to Telegram
+        if: steps.source.outputs.found == 'true'
+        run: python -m scripts.send_curated_preview
         env:
           CURATED_DIR: ${{ steps.source.outputs.curated_dir }}
       - uses: actions/upload-artifact@v4
+        if: steps.source.outputs.found == 'true'
         with:
           name: pending-previews-${{ github.run_id }}
           path: ${{ steps.source.outputs.curated_dir }}
           retention-days: 7
+      - name: Mark carousel as released
+        if: steps.source.outputs.found == 'true'
+        run: |
+          python -m scripts.curated_inventory mark-previewed --directory "${{ steps.source.outputs.curated_dir }}" --run-id "${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.source.outputs.curated_dir }}/ready.json" "${{ steps.source.outputs.curated_dir }}/previewed.json"
+          git commit -m "Release queued pharmacy carousel"
+          git pull --rebase origin main
+          git push origin HEAD:main

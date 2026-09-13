@@ -48,10 +48,12 @@ Every pharmacy carousel must finish with one unambiguous verdict: `يستاهل`
 
 ## Preview and approval lifecycle
 
-1. Generate the complete six-slide carousel and a topic/product-specific caption.
+The pharmacy stream keeps a GitHub-backed buffer of 10 unseen, QC-passed carousels: 4 Skin Care, 3 Vitamins, and 3 Personal Care. A local Codex run replenishes category deficits while the computer is awake. Merely adding a `ready.json` inventory marker never sends Telegram. GitHub releases the oldest ready item for the matching category at 12:00, 17:00, or 22:00 Asia/Dubai, so buffered previews continue while the local computer is offline. After a successful Telegram send, GitHub atomically replaces `ready.json` with `previewed.json`; that item can never be selected again.
+
+1. Generate the complete three-slide direct-talk carousel and a topic/product-specific caption.
 2. Run deterministic and visual QC. Correct only failed items and repeat QC; do not send a failed design.
-3. Upload an immutable private Actions artifact containing slides, caption, metadata, manifest, content hash, and QC report.
-4. Send the Telegram album, caption, and approval controls.
+3. Commit the immutable carousel to the GitHub inventory with `ready.json` written last. Pull/rebase in a clean temporary worktree before pushing so local user edits are never included.
+4. At the category's scheduled slot, GitHub selects the oldest queued item, uploads its immutable Actions artifact, and sends the Telegram album, caption, and approval controls.
 5. Wait for explicit approval from the authorized user. Closing the local computer does not stop cloud-hosted steps.
 6. Activepieces parses the callback, verifies the sender, and routes only when `dispatch` exactly matches the text `true`.
 7. Immediately answer the callback: `⏳ تم استلام موافقتك وبدأ النشر… سيصلك رابط البوست هنا بعد النجاح.`

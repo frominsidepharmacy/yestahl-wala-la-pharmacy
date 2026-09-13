@@ -108,7 +108,7 @@ def test_telegram_control_dispatches_with_explicit_repository():
 
 
 def test_schedule_timezone_and_time():
-    text = (Path(__file__).parents[1]/".github/workflows/daily.yml").read_text()
+    text = (Path(__file__).parents[1]/".github/workflows/curated_preview.yml").read_text()
     # GitHub evaluates cron in UTC. These are 12:00, 17:00 and 22:00 Dubai.
     assert all(f'cron: "0 {hour} * * *"' in text for hour in (8, 13, 18))
     assert "Asia/Dubai" in text
