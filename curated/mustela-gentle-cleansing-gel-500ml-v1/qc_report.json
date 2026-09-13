@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T21:15:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three final 1080x1350 slides were visually inspected after resizing.",
+    "Warm torn-paper reference fidelity and Personal Care plum/coral palette are present.",
+    "The Mustela 500ml turquoise pump bottle remains recognizable and consistent.",
+    "Arabic copy is readable and unclipped, with exact series identity on every slide.",
+    "From-birth use, wash-and-rinse method, avocado and B5, soap-free claim, warning and AED 75.75 original price are accurate.",
+    "No retailer name or offer price appears in artwork or caption."
+  ]
+}

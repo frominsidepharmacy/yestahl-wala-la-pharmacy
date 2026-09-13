@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-09-14",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/mustela-baby-gentle-cleansing-gel-for-hair-body-500-ml/1007331",
+  "manufacturer_source": "https://www.mustelausa.com/products/gentle-cleansing-gel",
+  "sources": [
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/mustela-baby-gentle-cleansing-gel-for-hair-body-500-ml/1007331",
+      "supports": [
+        "UAE availability and exact 500ml pack",
+        "AED 75.75 original price and AED 48.87 offer price",
+        "use from birth for hair and body",
+        "soap-free and tear-free formula",
+        "organically farmed avocado, vitamin B5 and mild surfactants",
+        "pump, lather, gently wash, rinse and dry without rubbing"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/product/mustela-gentle-cleansing-gel-500-ml",
+      "supports": [
+        "same exact 500ml pack offered at AED 34.95 with AED 75.60 crossed-out price",
+        "90% plant-based ingredients and hair-and-body use"
+      ]
+    },
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/brand/mustela/33182?page=1",
+      "supports": [
+        "verified twin pack of two 500ml bottles"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel explicitly distinguishes cleansing from moisturizing.",
+    "The original UAE price shown is AED 75.75 from the selected product source.",
+    "Retailer identity and offer prices are omitted from artwork and caption.",
+    "The verdict relies on documented from-birth use, soap-free formula and two-in-one convenience."
+  ]
+}
