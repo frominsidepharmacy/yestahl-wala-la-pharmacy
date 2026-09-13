@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-09-13",
+  "product_source": "https://www.lifepharmacy.com/product/cosrx-advanced-snail-96-mucin-power-essence-100ml",
+  "manufacturer_source": "https://www.cosrx.com/products/advanced-snail-96-mucin-power-essence",
+  "sources": [
+    {
+      "url": "https://www.cosrx.com/products/advanced-snail-96-mucin-power-essence",
+      "supports": [
+        "manufacturer product identity",
+        "100ml and 30ml sizes",
+        "96.3% snail secretion filtrate and 1000 ppm sodium hyaluronate",
+        "hydration and barrier-support positioning",
+        "apply a small amount after cleansing and toning, pat with fingertips, then follow with moisturizer"
+      ]
+    },
+    {
+      "url": "https://www.cosrx.com/products/all-about-snail-kit-4-step",
+      "supports": [
+        "verified 30ml travel size",
+        "apply evenly while avoiding the eye area"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/product/cosrx-advanced-snail-96-mucin-power-essence-100ml",
+      "supports": [
+        "UAE availability",
+        "exact 100ml pack and retailer SKU 135556",
+        "AED 110.25 original price and AED 29.66 offer price at check time",
+        "ingredient list including snail secretion filtrate, sodium hyaluronate, allantoin and panthenol"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel explicitly avoids presenting this cosmetic as an acne treatment.",
+    "The original UAE price shown in the artwork is AED 110.25, not the offer price.",
+    "Retailer identity and offer price are omitted from the artwork and caption.",
+    "The worth-it verdict is based on documented hydration and barrier-support ingredients and the user's need for an essence step."
+  ]
+}

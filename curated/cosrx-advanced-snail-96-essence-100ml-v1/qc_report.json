@@ -1,0 +1,21 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T19:05:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three final 1080x1350 slides were visually inspected after resizing.",
+    "The carousel visibly matches the warm torn-paper editorial reference and Skin Care teal/mint palette.",
+    "The COSRX 100ml pump-bottle identity is consistent across all slides.",
+    "Arabic copy is complete, readable and unclipped in the three-slide direct-talk format.",
+    "The series identity and Dr. Amrou Aboubakr name are visible on every slide.",
+    "The 96.3% snail-filtrate content, use order, eye-area caution, pack sizes and original AED 110.25 price are represented accurately.",
+    "No retailer name, offer price, acne-treatment claim or unsupported competitive claim appears in the artwork or caption."
+  ]
+}
