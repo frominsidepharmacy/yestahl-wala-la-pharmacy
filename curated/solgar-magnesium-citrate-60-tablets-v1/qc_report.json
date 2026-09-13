@@ -1,0 +1,21 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T18:45:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three final 1080x1350 slides were visually inspected after resizing.",
+    "The carousel matches the retained warm torn-paper editorial reference and the Vitamins royal-blue/sunshine palette.",
+    "The Solgar Magnesium Citrate 60 Tablets package identity is consistent across all slides.",
+    "Arabic copy is complete, readable, unclipped and follows the approved three-slide direct-talk format.",
+    "The series identity and Dr. Amrou Aboubakr name are visible on every slide.",
+    "The 400 mg serving, 200 mg per-tablet explanation, use directions, common gastrointestinal effects, kidney warning, 60-count pack and original AED 89.25 price are represented accurately.",
+    "No retailer or pharmacy name, offer price, unsupported competitive claim or disease-treatment claim appears in the artwork or caption."
+  ]
+}

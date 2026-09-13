@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-09-13",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/solgar-magnesium-citrate-tablets-60-tablets/1072308",
+  "manufacturer_source": "https://www.solgar.com/products/solgar-magnesium-citrate-tablets",
+  "sources": [
+    {
+      "url": "https://www.solgar.com/products/solgar-magnesium-citrate-tablets",
+      "supports": [
+        "manufacturer product identity",
+        "400 mg magnesium per 2-tablet serving",
+        "adult use: two tablets daily, preferably with a meal",
+        "60-tablet and 120-tablet sizes",
+        "consultation warning for pregnancy, nursing, medicines or medical conditions",
+        "discontinue use and consult a practitioner if an adverse reaction occurs"
+      ]
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "supports": [
+        "magnesium citrate tends to have higher bioavailability than magnesium oxide",
+        "high supplemental magnesium intake can cause diarrhea, nausea and abdominal cramping",
+        "adult tolerable upper intake level from supplements and medications is 350 mg per day",
+        "toxicity risk increases with impaired kidney function",
+        "magnesium supplements can interact with some medicines"
+      ]
+    },
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/solgar-magnesium-citrate-tablets-60-tablets/1072308",
+      "supports": [
+        "UAE availability",
+        "exact 60-tablet pack",
+        "AED 89.25 original price and AED 49.09 offer price at check time"
+      ]
+    },
+    {
+      "url": "https://www.nahdionline.com/en-ae/brands/solgar",
+      "supports": [
+        "UAE retail cross-check for Solgar availability and AED 89.25 crossed-out price"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The artwork clearly distinguishes the 400 mg two-tablet serving from the 200 mg amount per tablet.",
+    "The original UAE price shown in the artwork is AED 89.25, not the current offer price.",
+    "Retailer identity and the offer price are omitted from the artwork and caption.",
+    "The verdict is conditional because the labeled 400 mg supplemental dose exceeds the NIH adult supplemental upper limit of 350 mg without clinical supervision.",
+    "No disease-treatment, deficiency-diagnosis or unsupported superiority claim is made."
+  ]
+}
