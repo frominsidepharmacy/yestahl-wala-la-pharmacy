@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-13",
+  "product_source": "https://www.lifepharmacy.com/ae-ar/product/sensodyne-advance-repair-protect-toothpaste-75-ml",
+  "manufacturer_source": "https://www.sensodyne.com/en-nz/about-sensodyne/sensitive-toothpaste-ingredients/",
+  "sources": [
+    {
+      "url": "https://www.lifepharmacy.com/ae-ar/product/sensodyne-advance-repair-protect-toothpaste-75-ml",
+      "supports": [
+        "UAE availability and exact 75ml pack",
+        "AED 44.59 original price and AED 28.95 offer price",
+        "NovaMin concentrated calcium formula and protective-layer function",
+        "brush twice daily and no more than three times",
+        "minimize swallowing and spit out",
+        "not for children under 12 except on professional advice"
+      ]
+    },
+    {
+      "url": "https://www.sensodyne.com/en-nz/about-sensodyne/sensitive-toothpaste-ingredients/",
+      "supports": [
+        "NovaMin is the active ingredient in Repair & Protect Deep Repair in relevant markets",
+        "NovaMin builds a reparative layer over sensitive tooth areas",
+        "twice-daily brushing is required for lasting sensitivity protection"
+      ]
+    },
+    {
+      "url": "https://www.sensodyne.com/es-ar/productos/sensodyne-repair-protect-extra-fresh-toothpaste/",
+      "supports": [
+        "persistent or worsening sensitivity should be assessed by a dentist",
+        "discontinue if irritation occurs",
+        "mouth or face swelling requires prompt professional advice"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel uses NovaMin rather than stannous fluoride because the verified UAE Advanced pack is the NovaMin formulation.",
+    "The original UAE price shown is AED 44.59, not the current offer price.",
+    "Retailer identity and offer price are omitted from artwork and caption.",
+    "The verdict does not imply that toothpaste replaces dental assessment for persistent pain."
+  ]
+}

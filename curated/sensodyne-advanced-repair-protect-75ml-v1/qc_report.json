@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-13T19:20:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "Warm torn-paper reference fidelity and Personal Care plum/coral palette are present.",
+    "The modern Sensodyne Advanced Repair & Protect 75ml HALEON pack remains recognizable throughout.",
+    "Arabic text is readable and unclipped, with exact series identity on every slide.",
+    "NovaMin role, written brushing directions, age limit, persistent-pain advice, irritation warning and AED 44.59 original price are accurate.",
+    "No retailer name, offer price or unsupported claim appears in the artwork or caption."
+  ]
+}
