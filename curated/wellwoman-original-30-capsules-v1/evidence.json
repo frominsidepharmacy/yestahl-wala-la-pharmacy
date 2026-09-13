@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-14",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/Vitabiotics%20Wellwoman%20Capsules%2030%27s/1011524",
+  "manufacturer_source": "https://www.vitabiotics.com/products/wellwoman-original-tablets",
+  "sources": [
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/Vitabiotics%20Wellwoman%20Capsules%2030%27s/1011524",
+      "supports": [
+        "UAE availability and exact 30-capsule pack",
+        "AED 75 original price and AED 63.75 current offer price"
+      ]
+    },
+    {
+      "url": "https://www.vitabiotics.com/products/wellwoman-original-tablets",
+      "supports": [
+        "one capsule per day with the main meal",
+        "swallow with water or a cold drink and do not chew",
+        "take on a full stomach and do not exceed the recommended intake",
+        "24 nutrients including evening primrose oil 100 mg and starflower oil 100 mg",
+        "vitamin K warning for people taking anticoagulants",
+        "medical advice warning for pregnancy, breastfeeding or medical supervision",
+        "30-capsule and 90-capsule pack sizes"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel presents Wellwoman Original as a once-daily multivitamin, not a treatment for disease.",
+    "The original UAE price shown is AED 75, not the offer price.",
+    "Retailer identity and offer price are omitted from artwork and caption.",
+    "The verdict is conditional because the vitamin K interaction warning is clinically important."
+  ]
+}
