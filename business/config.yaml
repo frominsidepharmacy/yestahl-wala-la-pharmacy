@@ -4,8 +4,15 @@ brand:
 schedule:
   timezone: Asia/Dubai
   slots:
-    cartoon-he-said: "13:00"
-    editorial-focus: "21:00"
+    day: "13:00"
+    evening: "21:00"
+inventory:
+  root: business/inventory
+  target_total: 10
+  lane_targets:
+    day: 5
+    evening: 5
+  no_repeat_days: 365
 publishing:
   require_manual_telegram_approval: true
   instagram_user_variable: BUSINESS_INSTAGRAM_USER_ID

@@ -50,6 +50,8 @@ Every pharmacy carousel must finish with one unambiguous verdict: `يستاهل`
 
 The pharmacy stream keeps a GitHub-backed buffer of 10 unseen, QC-passed carousels: 4 Skin Care, 3 Vitamins, and 3 Personal Care. A local Codex run replenishes category deficits while the computer is awake. Merely adding a `ready.json` inventory marker never sends Telegram. GitHub releases the oldest ready item for the matching category at 12:00, 17:00, or 22:00 Asia/Dubai, so buffered previews continue while the local computer is offline. After a successful Telegram send, GitHub atomically replaces `ready.json` with `previewed.json`; that item can never be selected again.
 
+The business stream has a separate GitHub-backed buffer of 10 unseen, QC-passed carousels under `business/inventory`: 5 for the `day` lane (13:00) and 5 for the `evening` lane (21:00). Business topics cannot repeat within 365 days across ready, previewed, and published history. Its scheduled workflow selects the oldest item in the matching lane, uploads it with the `pending-business-previews-` artifact prefix, then atomically replaces its `ready.json` with `previewed.json`. It never reads from or writes to the pharmacy `curated/` queue.
+
 1. Generate the complete three-slide direct-talk carousel and a topic/product-specific caption.
 2. Run deterministic and visual QC. Correct only failed items and repeat QC; do not send a failed design.
 3. Commit the immutable carousel to the GitHub inventory with `ready.json` written last. Pull/rebase in a clean temporary worktree before pushing so local user edits are never included.

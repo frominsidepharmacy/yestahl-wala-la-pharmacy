@@ -94,3 +94,22 @@ def test_three_slide_imagegen_carousel_is_supported(tmp_path):
     }
     (tmp_path / "design_provenance.json").write_text(json.dumps(provenance), encoding="utf-8")
     assert require_approved_qc(tmp_path, slides) == report
+
+
+def test_six_slide_business_imagegen_carousel_is_supported(tmp_path):
+    report = {
+        "overall_status": "PASS",
+        "checks": {name: "PASS" for name in REQUIRED_CHECKS},
+    }
+    (tmp_path / "qc_report.json").write_text(json.dumps(report), encoding="utf-8")
+    slides = _slides(tmp_path, 6)
+    provenance = {
+        "renderer_id": "chatgpt-imagegen-business-reference",
+        "renderer_version": 1,
+        "dimensions": [1080, 1350],
+        "slide_sha256": {
+            path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in slides
+        },
+    }
+    (tmp_path / "design_provenance.json").write_text(json.dumps(provenance), encoding="utf-8")
+    assert require_approved_qc(tmp_path, slides) == report

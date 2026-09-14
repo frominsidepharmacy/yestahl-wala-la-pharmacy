@@ -115,6 +115,15 @@ def test_schedule_timezone_and_time():
     assert all(category in text for category in ("korean_skincare", "vitamins_supplements", "personal_care"))
 
 
+def test_business_schedule_uses_isolated_inventory_lanes():
+    text = (Path(__file__).parents[1]/".github/workflows/business_preview.yml").read_text()
+    assert all(f'cron: "0 {hour} * * *"' in text for hour in (9, 17))
+    assert "scripts.business_inventory select" in text
+    assert "BUSINESS_CURATED_DIR" in text
+    assert all(lane in text for lane in ("day", "evening"))
+    assert "scripts.curated_inventory" not in text
+
+
 def test_zero_cost_guardrails_are_permanent():
     text = (Path(__file__).parents[1]/"config/settings.yaml").read_text()
     assert "allow_paid_services: false" in text and "require_manual_approval: true" in text and "free_ai_enabled: false" in text

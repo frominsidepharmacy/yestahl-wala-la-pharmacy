@@ -7,18 +7,17 @@ on:
     - cron: "0 17 * * *"
   workflow_dispatch:
     inputs:
-      style:
-        description: Business carousel style
+      lane:
+        description: Business inventory lane
         required: true
-        default: cartoon-he-said
+        default: day
         type: choice
         options:
-          - cartoon-he-said
-          - editorial-focus
-          - succession-gap-v1
+          - day
+          - evening
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: business-preview
@@ -34,17 +33,53 @@ jobs:
       FREE_AI_ENABLED: "false"
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
-      BUSINESS_STYLE: >-
-        ${{ github.event_name == 'workflow_dispatch' && inputs.style ||
-            (github.event.schedule == '0 9 * * *' && 'cartoon-he-said' || 'editorial-focus') }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Resolve schedule lane
+        id: lane
+        env:
+          MANUAL_LANE: ${{ inputs.lane }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ -n "$MANUAL_LANE" ]; then
+            lane="$MANUAL_LANE"
+          elif [ "$SCHEDULE" = "0 9 * * *" ]; then
+            lane="day"
+          else
+            lane="evening"
+          fi
+          echo "lane=$lane" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with: {python-version: "3.12", cache: pip}
       - run: pip install -r requirements.txt
-      - run: python -m scripts.send_business_preview
+      - name: Select oldest queued business carousel
+        id: source
+        run: python -m scripts.business_inventory select --lane "${{ steps.lane.outputs.lane }}"
+      - name: Notify empty business inventory lane
+        if: steps.source.outputs.found != 'true'
+        run: python -m scripts.notify
+        env:
+          NOTIFICATION_MESSAGE: "⚠️ مخزون من جوة البيزنس (${{ steps.lane.outputs.lane }}) فارغ؛ لم تُرسل معاينة في هذا الموعد. سيُعوَّض عند أول تشغيل متاح لـ Codex."
+      - name: Send selected business carousel to Telegram
+        if: steps.source.outputs.found == 'true'
+        run: python -m scripts.send_business_preview
+        env:
+          BUSINESS_CURATED_DIR: ${{ steps.source.outputs.business_dir }}
       - uses: actions/upload-artifact@v4
+        if: steps.source.outputs.found == 'true'
         with:
           name: pending-business-previews-${{ github.run_id }}
           path: business_pending
           retention-days: 7
+      - name: Mark business carousel as released
+        if: steps.source.outputs.found == 'true'
+        run: |
+          python -m scripts.business_inventory mark-previewed --directory "${{ steps.source.outputs.business_dir }}" --run-id "${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.source.outputs.business_dir }}/ready.json" "${{ steps.source.outputs.business_dir }}/previewed.json"
+          git commit -m "Release queued business carousel"
+          git pull --rebase origin main
+          git push origin HEAD:main
