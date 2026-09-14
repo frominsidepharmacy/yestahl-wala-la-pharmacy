@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-09-14",
+  "product_source": "https://www.lifepharmacy.com/ae-ar/product/eucerin-10-urea-body-lotion-250-ml?eid=5bf628e0-5b1f-4682-8fff-d73546586901",
+  "manufacturer_source": "https://int.eucerin.com/home/products/urea-repair/plus-lotion-10percent-urea-variant-400ml",
+  "sources": [
+    {
+      "url": "https://www.lifepharmacy.com/ae-ar/product/eucerin-10-urea-body-lotion-250-ml?eid=5bf628e0-5b1f-4682-8fff-d73546586901",
+      "supports": ["UAE availability", "exact 250 ml pump pack", "AED 141 current and original price", "10% urea body lotion"]
+    },
+    {
+      "url": "https://int.eucerin.com/home/products/urea-repair/plus-lotion-10percent-urea-variant-400ml",
+      "supports": ["10% urea binds moisture and smooths rough skin", "ceramide supports the skin barrier and reduces moisture loss", "NMF complex supports water binding", "gently massage until fully absorbed and apply as often as required", "recommended for adults and not tested for children", "400 ml variant"]
+    },
+    {
+      "url": "https://images-1.eucerin.com/~/media/elearning%20relaunch/eadv%202023/eadv%20brochure%20images/productguide_2023_eadv_screen_v2.pdf",
+      "supports": ["10% urea, ceramide and NMF complex", "250 ml and 400 ml sizes", "very dry rough body skin", "perfume-free formula"]
+    }
+  ],
+  "content_decisions": [
+    "The carousel is classified as Personal Care body care, rotating away from recent baby, feminine and oral-care items.",
+    "The verdict is conditional because 10% urea is intended for very dry rough adult body skin, not as a light universal moisturizer.",
+    "AED 141 is shown as the verified original price; no unverified discount is claimed.",
+    "Retailer identity is omitted from artwork and caption."
+  ]
+}

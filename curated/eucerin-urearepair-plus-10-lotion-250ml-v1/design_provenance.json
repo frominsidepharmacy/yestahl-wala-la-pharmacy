@@ -1,0 +1,13 @@
+{
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 1,
+  "reference_asset": "artifact-template-reference-design-2/assets/reference.png",
+  "category": "personal_care",
+  "dimensions": [1080,1350],
+  "generated_with": "ChatGPT built-in ImageGen",
+  "slide_sha256": {
+    "slide01.png": "4cddf10e7a4ad768eff35d97bb4c35aa974f8c62eac68d56ec2441c152772c6e",
+    "slide02.png": "a623e8f1eda5040d1c0d030d88f78da25df7f811a5228a0b7bf6c7633a106a32",
+    "slide03.png": "5fa9ecf254abaa74ad86f4d4495c9d874c363d9f3e08596009438e5a9e338bbb"
+  }
+}

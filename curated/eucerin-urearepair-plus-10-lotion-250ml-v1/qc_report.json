@@ -1,0 +1,13 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-14T00:59:51+00:00",
+  "checks": {"arabic_text_fidelity":"PASS","reference_fidelity":"PASS","brand_identity":"PASS","layout_readability":"PASS","visual_integrity":"PASS","content_accuracy":"PASS"},
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "Warm torn paper, tape, tactile layering and plum/coral Personal Care palette visibly match the retained reference.",
+    "The Eucerin UreaRepair PLUS 10% 250 ml pump packaging is recognizable and consistent.",
+    "Arabic copy is readable and unclipped, with the exact series identity and counters on every slide.",
+    "Concentration, ingredient roles, directions, adult-use limitation, pack and AED 141 price are source-backed.",
+    "No retailer name, offer price or unsupported medical claim appears in artwork or caption."
+  ]
+}
