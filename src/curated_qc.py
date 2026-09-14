@@ -53,7 +53,7 @@ def require_approved_qc(source: Path, slides: list[Path]) -> dict:
     approved_renderers = {
         "men-gowa-el-saydalia-torn-paper": {6},
         "chatgpt-imagegen-reference": {3, 6},
-        "chatgpt-imagegen-business-reference": {6},
+        "chatgpt-imagegen-business-reference": {3, 6},
     }
     renderer_id = provenance.get("renderer_id")
     if renderer_id not in approved_renderers:

@@ -44,8 +44,11 @@ def main() -> None:
     pending = ROOT / "business_pending" / source.name
     pending.mkdir(parents=True, exist_ok=True)
     source_slides = sorted(source.glob("slide[0-9][0-9].png"))
-    if len(source_slides) != 6:
-        raise SystemExit(f"Expected 6 business slides, found {len(source_slides)}")
+    if len(source_slides) not in {3, 6}:
+        raise SystemExit(
+            f"Expected 3 business slides (or a legacy 6-slide carousel), "
+            f"found {len(source_slides)}"
+        )
     require_approved_qc(source, source_slides)
     slides = []
     for source_slide in source_slides:

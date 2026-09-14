@@ -9,6 +9,7 @@ schedule:
 inventory:
   root: business/inventory
   target_total: 10
+  slides_per_carousel: 3
   lane_targets:
     day: 5
     evening: 5
