@@ -1,0 +1,18 @@
+{
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": {
+    "dimensions": "All six slides are 1080x1350 PNG.",
+    "brand": "Every slide shows من جوة البيزنس and د. عمرو أبوبكر; no pharmacy branding is present.",
+    "visual": "Warm cinematic cartoon-office depth, recurring central character, navy/yellow/crimson hierarchy, paint strokes, speech bubbles, and editorial props match the retained reference system.",
+    "copy": "Topic-specific Egyptian Arabic; no invented statistics, quotations, or attributions.",
+    "review": "Each final standardized slide was visually inspected after resizing and padding. The rejected misspelled signature and extra wall sign were regenerated before PASS."
+  }
+}
