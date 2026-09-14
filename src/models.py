@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, fields
 from datetime import datetime, timezone
 from hashlib import sha256
 import json
@@ -51,6 +51,16 @@ class Product:
     competitive_advantage: Optional[str] = None
     competitive_advantage_source: Optional[str] = None
     retrieved_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "Product":
+        """Build a Product from persisted metadata while tolerating editorial fields."""
+        allowed = {item.name for item in fields(cls)}
+        raw = {key: value for key, value in data.items() if key in allowed}
+        active = data.get("active_ingredient")
+        if active and not raw.get("ingredients"):
+            raw["ingredients"] = [active]
+        return cls(**raw)
 
     @property
     def normalized_id(self) -> str:

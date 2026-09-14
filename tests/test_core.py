@@ -109,6 +109,21 @@ def test_pack_aware_normalization():
     assert product(pack_size="30 capsules", volume_ml=None, capsule_count=30).normalized_id != product(pack_size="60 capsules", volume_ml=None, capsule_count=60).normalized_id
 
 
+def test_product_from_dict_tolerates_curated_editorial_fields():
+    parsed = Product.from_dict({
+        "product_name": "Body Lotion 250ml",
+        "brand": "Example",
+        "retailer": "UAE retailer",
+        "product_url": "https://example.com/product",
+        "category": "personal_care",
+        "subcategory": "body_care",
+        "product_id": "persisted-id",
+        "active_ingredient": "10% urea",
+    })
+    assert parsed.product_name == "Body Lotion 250ml"
+    assert parsed.ingredients == ["10% urea"]
+
+
 def test_cross_retailer_same_pack_deduplicates():
     a = product(retailer="LIFE", retailer_sku=None, ean="123")
     b = product(retailer="Boots", retailer_sku="x", ean="123")

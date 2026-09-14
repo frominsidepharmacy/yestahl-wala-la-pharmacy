@@ -49,8 +49,7 @@ def publish_once(publication_key: str, pending_dir: Path, image_urls, history: H
     manifest = json.loads((pending_dir / "manifest.json").read_text(encoding="utf-8"))
     product_data = manifest["metadata"]["product"]
     from src.models import Product
-    product_data.pop("product_id", None)
-    product = Product(**product_data)
+    product = Product.from_dict(product_data)
     history.upsert(publication_key, product, "PUBLISHING", content_hash=manifest["content_hash"])
     publisher = publisher or InstagramPublisher()
     try:

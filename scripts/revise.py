@@ -13,10 +13,9 @@ manifest = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
 content = json.loads((source / "content.json").read_text(encoding="utf-8"))
 content, caption, edit = apply_safe_revision(content, manifest["caption"], os.environ["EDIT_INSTRUCTION"])
 meta = manifest["metadata"]; meta["version"] = int(meta.get("version", 1)) + 1
-raw = dict(meta["product"]); raw.pop("product_id", None); product = Product(**raw)
+raw = dict(meta["product"]); product = Product.from_dict(raw)
 target = Path("output/revised") / args.publication_key
 slides = render_carousel(product, content, target)
 freeze_manifest(target, slides, caption, meta)
 (target / "content.json").write_text(json.dumps(content, ensure_ascii=False, indent=2), encoding="utf-8")
 (target / "edit.json").write_text(json.dumps(edit, ensure_ascii=False, indent=2), encoding="utf-8")
-
