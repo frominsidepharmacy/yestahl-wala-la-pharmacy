@@ -1,0 +1,21 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-20T12:58:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three slides are 1080x1350 PNG and were visually inspected at original resolution after the final text composition.",
+    "ChatGPT ImageGen created all three product-led scenes from the retained torn-paper reference and the verified exact 50 ml product pack.",
+    "The Skin Care teal/mint palette, warm paper, tactile tape and hand-drawn accents match the retained reference.",
+    "The Torriden DIVE IN Serum 50 ml bottle remains recognizable and consistent on every slide.",
+    "Arabic and English copy is readable and unclipped, with the exact series identity on every slide.",
+    "Usage, ingredient role, original AED 120.75 price, pack sizes and written warnings are sourced.",
+    "No retailer name, offer price or disease-treatment claim appears in artwork or caption."
+  ]
+}

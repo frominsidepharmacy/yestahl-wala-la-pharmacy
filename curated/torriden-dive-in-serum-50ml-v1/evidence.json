@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-09-20",
+  "product_source": "https://www.lifepharmacy.com/product/torriden-dive-in-vegan-hyaluronic-acid-serum-50ml-1653",
+  "manufacturer_source": "https://torriden.us/products/dive-in-serum",
+  "sources": [
+    {
+      "url": "https://www.lifepharmacy.com/product/torriden-dive-in-vegan-hyaluronic-acid-serum-50ml-1653",
+      "supports": [
+        "UAE availability and exact 50 ml pack, SKU 144171 and UPC 8809504741653",
+        "AED 120.75 original price and AED 80.50 offer price",
+        "AM/PM use after cleansing and toning, followed by moisturizer",
+        "5D hyaluronic acid complex, panthenol and allantoin product positioning"
+      ]
+    },
+    {
+      "url": "https://torriden.us/products/dive-in-serum",
+      "supports": [
+        "50 ml pack",
+        "five molecular sizes of hyaluronic acid",
+        "panthenol helps retain hydration and allantoin soothes",
+        "apply an appropriate amount evenly and pat lightly until absorbed"
+      ]
+    },
+    {
+      "url": "https://us.oliveyoung.com/products/UA56625219",
+      "supports": [
+        "full ingredient list for the 50 ml serum",
+        "written usage method",
+        "stop and consult for redness, swelling or itching",
+        "do not apply to open wounds and keep away from direct sunlight"
+      ]
+    },
+    {
+      "url": "https://m.torriden.com/main/html.php?htmid=promotion%2Fpromotion_english%2Fproduct_view%2Fproduct_05.html",
+      "supports": [
+        "official 40 ml, 50 ml and 70 ml sizes",
+        "5D complex low-molecular-weight hyaluronic acid product description"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The verdict is conditional because the serum provides a hydration step but is not a complete moisturizer for water-loss control by itself.",
+    "The carousel names the documented five-size hyaluronic acid complex plus panthenol and allantoin without claiming disease treatment.",
+    "The verified original UAE price shown on artwork is AED 120.75, not the current offer price.",
+    "The verified offer price and retailer remain in evidence only; no retailer identity appears in artwork or caption."
+  ]
+}
