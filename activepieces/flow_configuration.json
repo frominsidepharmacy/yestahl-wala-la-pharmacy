@@ -12,9 +12,8 @@
   "approvalBranch": {
     "routerCondition": {
       "left": "{{step_2['dispatch']}}",
-      "operator": "Exactly matches (Text)",
-      "right": "true",
-      "warning": "Do not use Is true (Boolean); Activepieces presents the Code output as text in the Router."
+      "operator": "Is true (Boolean)",
+      "warning": "The Code step emits dispatch as a JSON Boolean. Comparing it with the text value true routes approvals to Otherwise and prevents GitHub dispatch."
     },
     "answerCallbackQuery": {
       "callbackQueryId": "{{trigger['callback_query']['id']}}",
