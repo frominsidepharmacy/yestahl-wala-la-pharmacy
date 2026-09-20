@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-20T15:36:20Z",
+  "review_type": "human visual review against retained business reference",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three slides are 1080x1350 and contain complete, readable Arabic copy with safe margins.",
+    "The premium cartoon-office system, warm cinematic depth, consistent founder, editorial props, and navy/yellow/crimson hierarchy match the retained reference.",
+    "The exact series signature appears on every slide and no pharmacy branding is present.",
+    "The topic progresses coherently from hook to operational conflict to practical action and CTA.",
+    "No statistics, research attributions, or fabricated claims are used."
+  ]
+}
