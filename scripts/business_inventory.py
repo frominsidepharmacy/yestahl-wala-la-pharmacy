@@ -108,8 +108,10 @@ def inventory_status(root: Path = ROOT) -> dict:
     }
 
 
-def select_item(lane: str, root: Path = ROOT) -> dict | None:
-    candidates = [item for item in ready_items(root) if item["lane"] == lane]
+def select_item(lane: str | None = None, root: Path = ROOT) -> dict | None:
+    candidates = ready_items(root)
+    if lane:
+        candidates = [item for item in candidates if item["lane"] == lane]
     if not candidates:
         return None
     return min(candidates, key=lambda item: (item["created_at"], item["directory"].name))
@@ -152,7 +154,7 @@ def main() -> None:
 
     subparsers.add_parser("status")
     select_parser = subparsers.add_parser("select")
-    select_parser.add_argument("--lane", required=True, choices=sorted(LANE_TARGETS))
+    select_parser.add_argument("--lane", choices=sorted(LANE_TARGETS))
     mark_parser = subparsers.add_parser("mark-previewed")
     mark_parser.add_argument("--directory", required=True)
     mark_parser.add_argument("--run-id", required=True)

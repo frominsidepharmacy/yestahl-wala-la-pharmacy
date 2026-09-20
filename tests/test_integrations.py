@@ -109,15 +109,17 @@ def test_telegram_control_dispatches_with_explicit_repository():
 
 def test_schedule_timezone_and_time():
     text = (Path(__file__).parents[1]/".github/workflows/curated_preview.yml").read_text()
-    # GitHub evaluates cron in UTC. These are 12:00, 17:00 and 22:00 Dubai.
-    assert all(f'cron: "0 {hour} * * *"' in text for hour in (8, 13, 18))
+    # GitHub evaluates cron in UTC. 16:00 UTC is 20:00 Dubai year-round.
+    assert text.count('cron: "0 16 * * *"') == 1
+    assert all(f'cron: "0 {hour} * * *"' not in text for hour in (8, 13, 18))
     assert "Asia/Dubai" in text
     assert all(category in text for category in ("korean_skincare", "vitamins_supplements", "personal_care"))
 
 
 def test_business_schedule_uses_isolated_inventory_lanes():
     text = (Path(__file__).parents[1]/".github/workflows/business_preview.yml").read_text()
-    assert all(f'cron: "0 {hour} * * *"' in text for hour in (9, 17))
+    assert text.count('cron: "0 16 * * *"') == 1
+    assert all(f'cron: "0 {hour} * * *"' not in text for hour in (9, 17))
     assert "scripts.business_inventory select" in text
     assert "BUSINESS_CURATED_DIR" in text
     assert all(lane in text for lane in ("day", "evening"))

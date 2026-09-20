@@ -34,6 +34,13 @@ def test_selects_oldest_ready_item_in_category(tmp_path):
     assert select_item("korean_skincare", tmp_path)["directory"] == old
 
 
+def test_selects_oldest_ready_item_across_categories(tmp_path):
+    _queued(tmp_path, "skin", "korean_skincare", "2026-09-13T09:00:00Z")
+    oldest = _queued(tmp_path, "personal", "personal_care", "2026-09-13T07:00:00Z")
+    _queued(tmp_path, "vitamin", "vitamins_supplements", "2026-09-13T08:00:00Z")
+    assert select_item(root=tmp_path)["directory"] == oldest
+
+
 def test_mark_previewed_removes_item_from_ready_inventory(tmp_path):
     directory = _queued(tmp_path, "vitamin-a", "vitamins_supplements", "2026-09-13T09:00:00Z")
     previewed = mark_previewed(directory, "123")

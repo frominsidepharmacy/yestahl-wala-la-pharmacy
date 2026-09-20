@@ -14,8 +14,8 @@ from src.telegram import TelegramClient, inline_keyboard
 
 
 LANES = {
-    "day": {"label": "قصة إدارية كرتونية", "slot": "13:00"},
-    "evening": {"label": "تحليل بيزنس كرتوني", "slot": "21:00"},
+    "day": {"label": "قصة إدارية كرتونية", "slot": "20:00"},
+    "evening": {"label": "تحليل بيزنس كرتوني", "slot": "20:00"},
 }
 
 

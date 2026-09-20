@@ -6,8 +6,8 @@ This is the source of truth for both Instagram content systems. It records stabl
 
 | Series | Instagram | Preview schedule (Asia/Dubai) | Design skill |
 |---|---|---|---|
-| من جوة الصيدلية | `@dramrouaboubakr` | 12:00 Skin Care, 17:00 Vitamins, 22:00 Personal Care | `artifact-template-reference-design-2` |
-| من جوة البيزنس | `@dramrou.business` | 13:00 and 21:00 | `artifact-template-reference-design` |
+| من جوة الصيدلية | `@dramrouaboubakr` | Once daily at 20:00 | `artifact-template-reference-design-2` |
+| من جوة البيزنس | `@dramrou.business` | Once daily at 20:00 | `artifact-template-reference-design` |
 
 The streams use separate Meta tokens, Instagram user IDs, preview artifacts, publication-key namespaces, and publishing branches. Business keys begin with `biz-`. A change to one stream must not alter the other stream's schedule, credentials, assets, or approval state.
 
@@ -48,14 +48,14 @@ Every pharmacy carousel must finish with one unambiguous verdict: `يستاهل`
 
 ## Preview and approval lifecycle
 
-The pharmacy stream keeps a GitHub-backed buffer of 10 unseen, QC-passed carousels: 4 Skin Care, 3 Vitamins, and 3 Personal Care. A local Codex run replenishes category deficits while the computer is awake. Merely adding a `ready.json` inventory marker never sends Telegram. GitHub releases the oldest ready item for the matching category at 12:00, 17:00, or 22:00 Asia/Dubai, so buffered previews continue while the local computer is offline. After a successful Telegram send, GitHub atomically replaces `ready.json` with `previewed.json`; that item can never be selected again.
+The pharmacy stream keeps a GitHub-backed buffer of 10 unseen, QC-passed carousels: 4 Skin Care, 3 Vitamins, and 3 Personal Care. A local Codex run replenishes category deficits while the computer is awake. Merely adding a `ready.json` inventory marker never sends Telegram. At 20:00 Asia/Dubai, GitHub releases the oldest ready item across all pharmacy categories, so buffered previews continue while the local computer is offline. After a successful Telegram send, GitHub atomically replaces `ready.json` with `previewed.json`; that item can never be selected again.
 
-The business stream has a separate GitHub-backed buffer of 10 unseen, QC-passed carousels under `business/inventory`: 5 for the `day` lane (13:00) and 5 for the `evening` lane (21:00). Business topics cannot repeat within 365 days across ready, previewed, and published history. Its scheduled workflow selects the oldest item in the matching lane, uploads it with the `pending-business-previews-` artifact prefix, then atomically replaces its `ready.json` with `previewed.json`. It never reads from or writes to the pharmacy `curated/` queue.
+The business stream has a separate GitHub-backed buffer of 10 unseen, QC-passed carousels under `business/inventory`: 5 in the `day` lane and 5 in the `evening` lane. Business topics cannot repeat within 365 days across ready, previewed, and published history. At 20:00 Asia/Dubai, its scheduled workflow selects the oldest ready item across both lanes, uploads it with the `pending-business-previews-` artifact prefix, then atomically replaces its `ready.json` with `previewed.json`. It never reads from or writes to the pharmacy `curated/` queue.
 
 1. Generate the complete three-slide direct-talk carousel and a topic/product-specific caption.
 2. Run deterministic and visual QC. Correct only failed items and repeat QC; do not send a failed design.
 3. Commit the immutable carousel to the GitHub inventory with `ready.json` written last. Pull/rebase in a clean temporary worktree before pushing so local user edits are never included.
-4. At the category's scheduled slot, GitHub selects the oldest queued item, uploads its immutable Actions artifact, and sends the Telegram album, caption, and approval controls.
+4. At 20:00 Asia/Dubai, GitHub selects the oldest queued item for each stream, uploads its immutable Actions artifact, and sends the Telegram album, caption, and approval controls.
 5. Wait for explicit approval from the authorized user. Closing the local computer does not stop cloud-hosted steps.
 6. Activepieces parses the callback, verifies the sender, and routes only when the Boolean `dispatch` value **Is true**.
 7. Immediately answer the callback: `⏳ تم استلام موافقتك وبدأ النشر… سيصلك رابط البوست هنا بعد النجاح.`

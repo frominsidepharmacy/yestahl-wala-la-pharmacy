@@ -46,6 +46,12 @@ def test_business_inventory_selects_oldest_in_lane(tmp_path):
     assert select_item("day", tmp_path)["directory"] == old
 
 
+def test_business_inventory_selects_oldest_across_lanes(tmp_path):
+    _queued(tmp_path, "day", "day", "2026-09-14T09:00:00Z")
+    oldest = _queued(tmp_path, "evening", "evening", "2026-09-14T07:00:00Z")
+    assert select_item(root=tmp_path)["directory"] == oldest
+
+
 def test_business_inventory_mark_previewed(tmp_path):
     directory = _queued(tmp_path, "day-a", "day", "2026-09-14T08:00:00Z")
     previewed = mark_previewed(directory, "456")

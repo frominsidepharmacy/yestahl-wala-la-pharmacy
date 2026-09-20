@@ -4,8 +4,8 @@ brand:
 schedule:
   timezone: Asia/Dubai
   slots:
-    day: "13:00"
-    evening: "21:00"
+    day: "20:00"
+    evening: "20:00"
 inventory:
   root: business/inventory
   target_total: 10
