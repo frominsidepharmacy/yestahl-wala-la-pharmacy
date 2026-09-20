@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-20T16:36:50Z",
+  "review_type": "human visual and factual review against retained pharmacy reference",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three slides are 1080x1350 and contain complete Arabic text with readable phone-size hierarchy.",
+    "Low-contrast ingredient copy and the slide-three warning panel were corrected before PASS.",
+    "The exact product pack is consistent across all slides and the teal/mint skincare palette matches the retained torn-paper editorial reference.",
+    "The series signature appears on every slide; no retailer or pharmacy brand appears in the artwork or caption.",
+    "Usage, actives, sizes, price, and warnings were revalidated against the evidence bundle."
+  ]
+}

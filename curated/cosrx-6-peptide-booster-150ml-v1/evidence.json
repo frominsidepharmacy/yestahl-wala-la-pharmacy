@@ -1,0 +1,63 @@
+{
+  "product_id": "cosrx-6-peptide-booster-150ml",
+  "verified_at": "2026-09-20T16:36:50Z",
+  "sources": [
+    {
+      "type": "official_brand",
+      "url": "https://www.cosrx.com/collections/monthly-picks/products/the-6-peptide-skin-booster-serum",
+      "supports": [
+        "150 ml pack",
+        "six peptide complex and supporting ingredients",
+        "first-step use after cleansing",
+        "2–3 pumps and patting",
+        "twice-daily use",
+        "50 ml mini size"
+      ]
+    },
+    {
+      "type": "manufacturer_safety_data_sheet",
+      "url": "https://digitalcontent.target.com/vault/1731715200/CLOUD_06862467-7b5e-4ce8-b7ac-95ffeb985b1d.pdf",
+      "supports": [
+        "external use only",
+        "avoid eye contact",
+        "discontinue on irritation or rash",
+        "keep away from children"
+      ]
+    },
+    {
+      "type": "uae_retailer_original_price",
+      "retailer": "Chemist Warehouse UAE",
+      "url": "https://www.chemistwarehouse.ae/products/cosrx-the-6-peptide-skin-booster-serum-150ml",
+      "supports": [
+        "exact 150 ml pack",
+        "verified original RSP AED 88.20",
+        "current offer AED 59.99"
+      ]
+    },
+    {
+      "type": "uae_offer_comparison",
+      "retailer": "Gulf Pharmacy",
+      "url": "https://gulfpharmacy.com/c/beauty-care/p/cosrx-the-6-peptide-skin-booster-serum-150ml-for-firming-hydration-anti-aging-care",
+      "supports": [
+        "current offer AED 54.24",
+        "listed regular price AED 72.32"
+      ]
+    },
+    {
+      "type": "product_pack_image",
+      "url": "https://uitccommerce-media.b-cdn.net/products/70056.webp",
+      "supports": [
+        "exact bottle identity and label"
+      ]
+    }
+  ],
+  "best_verified_offer": {
+    "price_aed": 54.24,
+    "retailer": "Gulf Pharmacy",
+    "note": "Stored only in evidence per workflow; not shown in artwork or caption."
+  },
+  "content_validation": {
+    "unsupported_claims_removed": true,
+    "notes": "All ingredient, use, size, price, and safety statements were checked against the listed sources. No clinical percentages or unsourced competitive claims are used."
+  }
+}

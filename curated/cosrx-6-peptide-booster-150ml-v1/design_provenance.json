@@ -1,0 +1,14 @@
+{
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 1,
+  "reference": "artifact-template-reference-design-2/assets/reference.png",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "a71b63c8da8a74c2df05587871c812e899f51ddd7246177a2b763a2b9d21142c",
+    "slide02.png": "62806160a1cb18bdf5268b7b6767639abc30866043f5d496e2d8438d4f87f8ef",
+    "slide03.png": "1b1b83229506251c192273f54c18d0dba57d8b7c19730f04281c1fc73edb37c2"
+  }
+}
