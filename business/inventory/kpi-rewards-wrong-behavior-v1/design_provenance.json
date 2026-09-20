@@ -1,0 +1,12 @@
+{
+  "renderer_id": "chatgpt-imagegen-business-reference",
+  "renderer_version": 1,
+  "reference": "/Users/amrouaboubakr/.codex/skills/artifact-template-reference-design/assets/reference.png",
+  "dimensions": [1080, 1350],
+  "standardization": "ImageGen outputs were resized to the required 1080x1350 canvas after visual approval.",
+  "slide_sha256": {
+    "slide01.png": "483b970ec9416b8999455bf78bdf2f3f932875266d5d6b31cafe78f9b84c4676",
+    "slide02.png": "c7722c4575224be992a70b9ec0664770bd6055a5ef2a5f5c63dce3c4727c0e61",
+    "slide03.png": "114b7c084169b15e8bbd45636202bd7bea5fc9f7dcac494d9cd0b8a7e79e76de"
+  }
+}
