@@ -1,0 +1,74 @@
+{
+  "product_id": "vichy-dercos-anti-dandruff-oily-200ml",
+  "retrieved_at": "2026-09-20T14:34:50+00:00",
+  "sources": [
+    {
+      "type": "uae_retailer",
+      "name": "Life Pharmacy UAE",
+      "url": "https://www.lifepharmacy.com/product/vichy-dercos-anti-dandruff-greasy-shampoo-200-ml",
+      "supports": [
+        "Exact normal-to-oily 200 ml pack and SKU 117234",
+        "Original pre-offer price AED 119 and current offer AED 49",
+        "Directions: first application leave for 2 minutes; subsequent washes massage and rinse; use as a 4-week programme",
+        "Eye-contact warning: rinse immediately"
+      ]
+    },
+    {
+      "type": "official_brand",
+      "name": "Vichy UK",
+      "url": "https://www.vichy.co.uk/all-products/haircare/shampoos/dandruff/dercos-antidandruff-shampoo-for-normal-to-oily-hair",
+      "supports": [
+        "1% selenium disulfide and 1% salicylic acid",
+        "Apply on wet hair and scalp, leave 2 minutes, massage and rinse",
+        "Treatment phase three times weekly for four weeks, then once weekly maintenance"
+      ]
+    },
+    {
+      "type": "official_brand_uae",
+      "name": "Vichy Middle East",
+      "url": "https://www.vichy-me.com/en-ae/all-products/haircare/shampoos/dandruff/dercos-anti-dandruff-ds-normal-to-oily-hair",
+      "supports": [
+        "Available sizes 200 ml and 400 ml",
+        "Selenium DS antifungal role and salicylic-acid exfoliating role",
+        "Intended for normal-to-oily dandruff-prone scalp"
+      ]
+    }
+  ],
+  "commerce": {
+    "exact_pack": "200 ml",
+    "original_price_aed": 119.0,
+    "best_verified_offer_aed": 49.0,
+    "best_verified_offer_retailer": "Life Pharmacy UAE"
+  },
+  "claim_notes": {
+    "competitive_advantage": "The dual 1% selenium disulfide plus 1% salicylic acid composition is explicitly stated by the official brand source.",
+    "limitation": "This is presented as a four-week treatment programme rather than an ordinary daily shampoo.",
+    "warning": "If the product contacts the eyes, rinse immediately."
+  },
+  "content_validation": {
+    "validated_at": "2026-09-20T14:34:50+00:00",
+    "validated_claims": [
+      {
+        "claim": "The exact product is the 200 ml normal-to-oily Dercos anti-dandruff shampoo and its original UAE price is AED 119.",
+        "source": "Life Pharmacy UAE product page, title/SKU/price lines"
+      },
+      {
+        "claim": "The formula contains 1% selenium disulfide and 1% salicylic acid.",
+        "source": "Official Vichy UK product page, description and key ingredients"
+      },
+      {
+        "claim": "Use on wet hair and scalp, leave two minutes, massage and rinse; three times weekly for four weeks, then once weekly maintenance.",
+        "source": "Official Vichy UK product page, How to use section"
+      },
+      {
+        "claim": "The product is available in 200 ml and 400 ml sizes.",
+        "source": "Official Vichy Middle East product page, size selector"
+      },
+      {
+        "claim": "If the shampoo contacts the eyes, rinse immediately.",
+        "source": "Life Pharmacy UAE product page, Directions of Use"
+      }
+    ],
+    "unsupported_claims_removed": true
+  }
+}

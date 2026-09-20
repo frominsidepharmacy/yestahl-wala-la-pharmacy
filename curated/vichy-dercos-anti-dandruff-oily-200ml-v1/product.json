@@ -1,0 +1,21 @@
+{
+  "product_id": "vichy-dercos-anti-dandruff-oily-200ml",
+  "product_name": "Vichy Dercos Anti-Dandruff DS Shampoo Normal to Oily Hair 200ml",
+  "brand": "Vichy",
+  "retailer": "Life Pharmacy UAE",
+  "retailer_sku": "117234",
+  "product_url": "https://www.lifepharmacy.com/product/vichy-dercos-anti-dandruff-greasy-shampoo-200-ml",
+  "category": "personal_care",
+  "subcategory": "hair_care",
+  "pack_size": "200 ml",
+  "price_aed": 49.0,
+  "old_price_aed": 119.0,
+  "best_offer_price_aed": 49.0,
+  "best_offer_retailer": "Life Pharmacy UAE",
+  "offer_flag": true,
+  "availability": true,
+  "active_ingredient": "1% selenium disulfide and 1% salicylic acid",
+  "primary_image": "https://cdn.lifepharmacy.com/products/vichy-dercos-anti-dandruff-greasy-shampoo-200-ml/117234-1.jpg",
+  "available_sizes": ["200 ml", "400 ml"],
+  "retrieved_at": "2026-09-20T14:34:50+00:00"
+}

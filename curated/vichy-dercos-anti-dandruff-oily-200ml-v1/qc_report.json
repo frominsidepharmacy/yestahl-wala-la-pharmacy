@@ -1,0 +1,22 @@
+{
+  "overall_status": "PASS",
+  "checks": {
+    "exact_product_pack": "PASS",
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "category_palette": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS",
+    "commerce_facts": "PASS",
+    "usage_and_warning": "PASS"
+  },
+  "notes": {
+    "dimensions": "All three slides are 1080x1350 PNG.",
+    "brand": "Every slide shows من جوة الصيدلية | د. عمرو أبوبكر; no retailer or pharmacy branding is present.",
+    "visual": "ChatGPT ImageGen used the retained torn-paper reference and exact product pack; plum/coral remains the dominant personal-care palette.",
+    "copy": "Direct-talk three-slide structure: product limitation, written usage protocol, decisive verdict and warning. Every medical, usage, size and price statement was revalidated against the source map in evidence.json.",
+    "review": "Every final slide was inspected at original resolution. Text is complete, readable and within safe margins; the bottle identity remains consistent."
+  }
+}
