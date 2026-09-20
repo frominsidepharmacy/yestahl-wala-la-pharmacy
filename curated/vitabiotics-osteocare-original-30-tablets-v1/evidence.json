@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-09-20",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/1008449",
+  "manufacturer_source": "https://www.vitabiotics.com/products/osteocare-original-tablets?cfQA=true",
+  "sources": [
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/1008449",
+      "supports": [
+        "UAE availability and exact 30-tablet pack",
+        "AED 41 original price and AED 30.75 offer price",
+        "two tablets daily with a main meal",
+        "calcium, magnesium, zinc and vitamin D product positioning"
+      ]
+    },
+    {
+      "url": "https://www.vitabiotics.com/products/osteocare-original-tablets?cfQA=true",
+      "supports": [
+        "calcium carbonate, magnesium, vitamin D3 and zinc formula",
+        "vitamin D contributes to calcium absorption and calcium, magnesium, vitamin D and zinc contribute to maintenance of normal bones",
+        "two tablets daily with the main meal, swallow with water or a cold drink, do not chew, do not exceed intake",
+        "not suitable for children and professional advice when under medical supervision, pregnant or breastfeeding",
+        "tablets may be relatively large",
+        "30-tablet and 90-tablet packs plus chewable, liquid and effervescent formats",
+        "separate from the main Vitabiotics multivitamin by at least one hour"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/ae-ar/product/vitabiotics-osteocare-tablets-30-s",
+      "supports": [
+        "additional UAE listing for the same 30-tablet pack",
+        "calcium, magnesium, zinc and vitamin D3 formula"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The verdict is conditional because supplementation should match an actual dietary or clinical need.",
+    "The carousel does not claim to treat osteoporosis or pain.",
+    "The verified original UAE price shown on artwork is AED 41, not the current offer price.",
+    "The verified offer price and retailer remain in evidence only; no retailer identity appears in artwork or caption."
+  ]
+}

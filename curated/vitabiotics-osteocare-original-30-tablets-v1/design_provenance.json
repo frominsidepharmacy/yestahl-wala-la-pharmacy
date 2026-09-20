@@ -1,0 +1,13 @@
+{
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 1,
+  "reference_asset": "artifact-template-reference-design-2/assets/reference.png",
+  "category": "vitamins_supplements",
+  "dimensions": [1080, 1350],
+  "generated_with": "ChatGPT built-in ImageGen",
+  "slide_sha256": {
+    "slide01.png": "f17f5d953f3772c2482ec8b514c6ed8e3e445b05a2459985d678b021e93b2410",
+    "slide02.png": "7ce3aadec34816e89a0acb7bb7c4a80f1ed80d0a17d602866ca4542f7d6ff24b",
+    "slide03.png": "7dd98908bf7845443596fb90ffab6ddee5e4dda99e9f1c0e9b7004f348141dce"
+  }
+}

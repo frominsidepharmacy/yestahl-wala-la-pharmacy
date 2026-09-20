@@ -1,0 +1,21 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-20T10:35:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three slides are 1080x1350 PNG and were visually inspected after standardization.",
+    "Warm torn-paper reference, tactile tape, product-led layout and Vitamins royal-blue/sunshine palette are retained.",
+    "The Osteocare Original 30-tablet package remains recognizable and consistent on every slide.",
+    "Arabic and English copy is readable and unclipped, with the exact series identity on every slide.",
+    "Dose, administration, ingredient role, original AED 41 price, pack, large-tablet limitation and child warning are sourced.",
+    "The first two slide-3 generations were rejected for a malformed Vitamin D3 label; the final corrected slide passed.",
+    "No retailer name, offer price or disease-treatment claim appears in artwork or caption."
+  ]
+}
