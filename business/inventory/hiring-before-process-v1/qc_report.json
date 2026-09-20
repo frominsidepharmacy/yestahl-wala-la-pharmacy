@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-20T17:37:21Z",
+  "review_type": "human visual review against retained business reference",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three slides are 1080x1350 with complete, high-contrast Arabic copy and safe margins.",
+    "Slide three was re-rendered after the first visual review to move the heading away from the counter and place each workflow question inside its board box.",
+    "The recurring founder, warm cinematic office depth, editorial props, and navy/yellow/crimson hierarchy match the retained reference.",
+    "The exact series signature appears on every slide and no pharmacy branding is present.",
+    "No statistics, external quotations, or fabricated research claims are used."
+  ]
+}
