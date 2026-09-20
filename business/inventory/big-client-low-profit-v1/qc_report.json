@@ -1,0 +1,18 @@
+{
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": {
+    "dimensions": "All three slides are 1080x1350 PNG.",
+    "brand": "Every slide shows من جوة البيزنس | د. عمرو أبوبكر; no pharmacy branding is present.",
+    "visual": "ChatGPT ImageGen produced three warm cinematic cartoon-office scenes from the retained reference; exact Arabic copy was composited in the navy/yellow/crimson system.",
+    "copy": "Three-slide topic-specific Egyptian Arabic narrative with no invented statistics, quotations, or research claims.",
+    "review": "Every final slide was visually inspected at original resolution. Text is complete, readable, within safe margins, and the recurring lead character is consistent."
+  }
+}
