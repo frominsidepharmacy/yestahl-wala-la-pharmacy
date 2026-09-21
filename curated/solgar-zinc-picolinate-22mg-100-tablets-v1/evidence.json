@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/solgar-zinc-picolinate-22mg-tablets-100-tablets/1072326",
+  "manufacturer_source": "https://www.solgar.com/products/zinc-picolinate-22-mg-tablets",
+  "sources": [
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/solgar-zinc-picolinate-22mg-tablets-100-tablets/1072326",
+      "supports": [
+        "UAE availability and exact 100-tablet pack",
+        "AED 94.50 original price and AED 51.98 offer price",
+        "22 mg zinc as zinc picolinate per tablet",
+        "Immune and skin-health support positioning"
+      ]
+    },
+    {
+      "url": "https://www.solgar.com/products/zinc-picolinate-22-mg-tablets",
+      "supports": [
+        "One tablet daily for adults, preferably at mealtime",
+        "22 mg zinc equals 200% of the listed daily value",
+        "Pregnancy, nursing, medication and medical-condition precautions",
+        "Exact 100-tablet product and label identity"
+      ]
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Zinc/Consumer/",
+      "supports": [
+        "Excess zinc can cause nausea, dizziness, headache, stomach upset and vomiting",
+        "Long-term excessive zinc can lower copper levels and impair immune function",
+        "Adult tolerable upper intake is 40 mg daily from all sources",
+        "Quinolone and tetracycline antibiotics require dose separation from zinc"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The verdict is conditional because 22 mg is 200% of the label daily value and should be used for a defined nutritional need.",
+    "The carousel does not claim disease prevention or treatment.",
+    "The verified original UAE price shown on artwork is AED 94.50; the offer and retailer remain only in evidence.",
+    "The copper and antibiotic-interaction cautions are included because they are specifically supported by NIH evidence."
+  ]
+}
