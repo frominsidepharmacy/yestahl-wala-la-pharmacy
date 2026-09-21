@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/isntree-hyaluronic-acid-watery-sunscreen-gel-with-spf-50-pa-50ml/1057588",
+  "manufacturer_source": "https://isntree-global.com/products/isntree-hyaluronic-acid-watery-sun-gel-50ml",
+  "sources": [
+    {
+      "url": "https://isntree-global.com/products/isntree-hyaluronic-acid-watery-sun-gel-50ml",
+      "supports": [
+        "Exact 50 ml product and full ingredient list",
+        "Water-based sun gel with eight types of hyaluronic acid",
+        "Use at the last skincare step and pat gently until absorbed"
+      ]
+    },
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/isntree-hyaluronic-acid-watery-sunscreen-gel-with-spf-50-pa-50ml/1057588",
+      "supports": [
+        "UAE availability and exact 50 ml pack",
+        "AED 114.50 original price and AED 62.98 offer price",
+        "SPF50+ PA++++ and eight types of hyaluronic acid",
+        "Application to face, ears and neck as the final skincare step"
+      ]
+    },
+    {
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=59ac747a-f9c7-2c18-e063-6394a90a2306",
+      "supports": [
+        "Apply liberally 15 minutes before sun exposure and reapply at least every two hours",
+        "Use a water-resistant sunscreen when swimming or sweating",
+        "External use only; keep out of eyes and rinse with water",
+        "Stop use and ask a doctor if rash or irritation develops and lasts"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The verdict is conditional because the formula combines high UV protection with hydration but is not presented as water resistant.",
+    "The artwork uses the verified original UAE price, not the offer price.",
+    "The verified offer and retailer remain in evidence only; no retailer identity appears in artwork or caption.",
+    "The eight-form hyaluronic acid claim and practical hydration role are stated without disease-treatment claims."
+  ]
+}

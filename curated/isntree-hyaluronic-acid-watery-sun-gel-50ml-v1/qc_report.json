@@ -1,0 +1,21 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-21T12:52:00+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three slides are 1080x1350 PNG and were visually inspected at original resolution.",
+    "ChatGPT ImageGen created all three product-led scenes from the retained torn-paper reference.",
+    "The Korean skincare teal and mint palette, warm paper, tactile tape and hand-drawn accents match the retained reference.",
+    "The Isntree 50 ml tube remains recognizable and consistent on every slide.",
+    "Arabic and English copy is obvious, readable and unclipped, with the series identity on every slide.",
+    "Usage, ingredient role, original UAE price and warnings are source-backed.",
+    "No retailer name or offer price appears in artwork or caption."
+  ]
+}
