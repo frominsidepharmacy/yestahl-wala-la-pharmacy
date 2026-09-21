@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-21T09:52:17+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "The warm torn-paper reference and Personal Care plum/coral palette are retained.",
+    "The white Lansinoh tube, purple cap, HPA Lanolin identity and 40 ml pack remain recognizable and consistent.",
+    "Arabic copy is prominent, readable and unclipped, with series identity and counters on every slide.",
+    "Ingredient, practical role, exact directions, warnings, pack sizes and original AED 76 price are evidence-backed.",
+    "No retailer name, offer price or cure claim appears in artwork or caption."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/c/breast-nipple-care/40728",
+  "manufacturer_source": "https://help.lansinoh.com/instructions-for-use-lanolin",
+  "sources": [
+    {
+      "url": "https://help.lansinoh.com/instructions-for-use-lanolin",
+      "supports": [
+        "wash hands before application",
+        "soften a pea-sized amount between fingers",
+        "apply to the entire nipple area after each feed or as needed",
+        "no need to remove before breastfeeding"
+      ]
+    },
+    {
+      "url": "https://healthcare.lansinoh.com/pages/lanolin-nipple-cream",
+      "supports": [
+        "single-ingredient ultra-purified lanolin composition",
+        "no petroleum, parabens, additives or preservatives",
+        "soothing and protection role for sore or cracked nipples"
+      ]
+    },
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/c/breast-nipple-care/40728",
+      "supports": [
+        "UAE availability of exact 40 ml product",
+        "AED 76 original price and AED 53.20 offer price",
+        "10 ml and 40 ml pack availability"
+      ]
+    },
+    {
+      "url": "https://www.chemistwarehouse.ae/products/lansinoh-hpa-lanolin-nipple-cream-40ml",
+      "supports": [
+        "100% highly purified anhydrous lanolin",
+        "external-use, clean-tube-tip and child-safety warnings",
+        "pea-sized application after feeding and no-removal direction"
+      ]
+    },
+    {
+      "url": "https://www.pharma-cie.be/media/product/doc/mode_d_emploi_creme_lanoline_hpa_lansinoh.pdf",
+      "supports": [
+        "importance of addressing the underlying cause of sore nipples while lanolin provides soothing and protection"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel presents lanolin as a soothing and protective barrier, not a cure for an underlying breastfeeding problem.",
+    "Persistent or severe pain is directed to breastfeeding or medical assessment because technique and other causes need evaluation.",
+    "The original UAE price shown is AED 76, not the offer price.",
+    "Retailer names and offer prices are omitted from artwork and caption."
+  ]
+}
