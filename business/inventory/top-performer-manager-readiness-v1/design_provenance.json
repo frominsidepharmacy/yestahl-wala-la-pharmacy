@@ -1,0 +1,11 @@
+{
+  "renderer_id": "chatgpt-imagegen-business-reference",
+  "renderer_version": 1,
+  "reference": "artifact-template-reference-design/assets/reference.png",
+  "dimensions": [1080, 1350],
+  "slide_sha256": {
+    "slide01.png": "80d8f0548052cac81001f4bd40f195ccdb6c4ef4d0e74d3cccbbc233855019b2",
+    "slide02.png": "33b21d5464de90dd9f39e658d804cb7ed5f8380aedcbd75975ab672ed983fae4",
+    "slide03.png": "57343789956619a330ef39a65b66b28cd190c56127ed8e698119b037de5d8ae6"
+  }
+}
