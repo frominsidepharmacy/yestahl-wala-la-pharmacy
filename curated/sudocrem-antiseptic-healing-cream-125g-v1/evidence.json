@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.lifepharmacy.com/product/sudocrem-antiseptic-cream-125-gm?found=true",
+  "manufacturer_source": "https://www.sudocrem.co.uk/hcp-page/",
+  "sources": [
+    {
+      "url": "https://www.sudocrem.co.uk/hcp-page/",
+      "supports": [
+        "15.25% zinc oxide concentration and protective role",
+        "benzyl alcohol and hypoallergenic lanolin roles",
+        "thin-layer administration as required",
+        "60 g, 125 g, 250 g and 400 g sizes",
+        "external-use, eye/mucosal, fire-risk, sodium-benzoate/newborn-jaundice and occasional-hypersensitivity warnings"
+      ]
+    },
+    {
+      "url": "https://www.sudocrem.co.uk/products/sudocrem-antiseptic-healing-cream/",
+      "supports": [
+        "thin-layer application",
+        "zinc oxide reduces fluid loss from skin",
+        "lanolin emollient role and benzyl alcohol properties"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/product/sudocrem-antiseptic-cream-125-gm?found=true",
+      "supports": [
+        "UAE availability and exact 125 g pack",
+        "AED 33.60 current non-offer price",
+        "clean-and-dry, thin-layer and nappy-change usage guidance"
+      ]
+    },
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/brand/sudocrem/18321",
+      "supports": [
+        "UAE availability of 60 g, 125 g and 250 g variants",
+        "AED 33.60 price for the 125 g pack"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel focuses on uncomplicated nappy rash barrier use and does not imply that every rash should be self-treated.",
+    "Severe, persistent or deeply wounded skin is directed to medical assessment.",
+    "The AED 33.60 price is a verified non-offer price, so no discounted price is presented.",
+    "The unusual but label-important fabric fire hazard is shown prominently.",
+    "Retailer names are omitted from artwork and caption."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "product_id": "sudocrem-antiseptic-healing-cream-125g",
+  "product_name": "Sudocrem Antiseptic Healing Cream 125 g",
+  "brand": "Sudocrem",
+  "retailer": "Life Pharmacy UAE",
+  "retailer_sku": "116694",
+  "product_url": "https://www.lifepharmacy.com/product/sudocrem-antiseptic-cream-125-gm?found=true",
+  "category": "personal_care",
+  "subcategory": "baby_care",
+  "pack_size": "125 g",
+  "price_aed": 33.60,
+  "old_price_aed": 33.60,
+  "best_offer_price_aed": 33.60,
+  "best_offer_retailer": "Life Pharmacy UAE",
+  "offer_flag": false,
+  "availability": true,
+  "active_ingredient": "Zinc oxide 15.25%, with benzyl alcohol and hypoallergenic lanolin",
+  "primary_image": "https://www.sudocrem.co.uk/products/sudocrem-antiseptic-healing-cream/",
+  "available_sizes": ["60 g", "125 g", "250 g", "400 g"],
+  "usage": "Apply a thin layer as required. For nappy rash, clean and dry the area and use a light covering after changes as needed.",
+  "warnings": [
+    "For external use only; avoid eyes and mucous membranes.",
+    "Do not use with known hypersensitivity to any ingredient.",
+    "Product-contaminated fabrics burn more easily; keep away from naked flames and smoking.",
+    "Sodium benzoate may cause local irritation and may increase jaundice in newborn babies.",
+    "Occasional local hypersensitivity can occur."
+  ],
+  "retrieved_at": "2026-09-21T10:51:11+00:00"
+}
