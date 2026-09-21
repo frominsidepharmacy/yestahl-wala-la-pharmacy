@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.lifepharmacy.com/product/round-lab-birch-juice-moisturizing-sunscreen-50ml-51814",
+  "manufacturer_source": "https://roundlab.com/products/round-lab-birch-moisturizing-sunscreen-spf-50-pa",
+  "sources": [
+    {
+      "url": "https://www.lifepharmacy.com/product/round-lab-birch-juice-moisturizing-sunscreen-50ml-51814",
+      "supports": [
+        "UAE availability, exact 50 ml pack and SKU 142205",
+        "AED 94.50 original price and AED 54.00 offer price",
+        "SPF50+ PA++++ broad-spectrum protection",
+        "Birch sap, panthenol and hyaluronic acid hydration positioning",
+        "Full ingredient list"
+      ]
+    },
+    {
+      "url": "https://roundlab.com/products/round-lab-birch-moisturizing-sunscreen-spf-50-pa",
+      "supports": [
+        "Official 50 ml product identity and birch-sap hydration role",
+        "Apply liberally 15 minutes before sun exposure",
+        "Reapply at least every two hours",
+        "Use water-resistant sunscreen when swimming or sweating",
+        "External-use, eye-contact, damaged-skin and rash warnings"
+      ]
+    },
+    {
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=228dcd68-aaba-0451-e063-6394a90a8ad0",
+      "supports": [
+        "Sunscreen active-filter purpose",
+        "Official directions and water-resistance limitation",
+        "Keep out of eyes, avoid damaged skin and stop if rash occurs"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The verdict is positive for daily use because the product combines high UV protection with documented hydrating ingredients.",
+    "The limitation is explicit: use a water-resistant sunscreen for swimming or sweating.",
+    "The verified original UAE price shown on artwork is AED 94.50, not the current offer price.",
+    "The retailer and offer details remain in evidence only; no retailer identity appears in artwork or caption."
+  ]
+}
