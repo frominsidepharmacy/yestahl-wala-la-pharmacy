@@ -1,0 +1,28 @@
+{
+  "product_id": "solgar-vitamin-b12-1000mcg-100-nuggets",
+  "product_name": "Solgar Vitamin B12 1000 mcg Nuggets 100's",
+  "brand": "Solgar",
+  "retailer": "Life Pharmacy UAE",
+  "retailer_sku": "105224",
+  "product_url": "https://www.lifepharmacy.com/product/solgar-vitamin-b12-1000-mcg-nuggets-100-s/",
+  "category": "vitamins_supplements",
+  "subcategory": "vitamin_b12",
+  "pack_size": "100 nuggets",
+  "price_aed": 43.05,
+  "old_price_aed": 108.15,
+  "best_offer_price_aed": 32.29,
+  "best_offer_retailer": "Nahdi UAE",
+  "offer_flag": true,
+  "availability": true,
+  "active_ingredient": "Vitamin B12 1000 mcg as cyanocobalamin per nugget",
+  "primary_image": "https://www.solgar.com/products/solgar-vitamin-b12-1000-mcg-nuggets",
+  "available_sizes": ["100 nuggets", "250 nuggets"],
+  "usage": "Adults take one nugget daily, preferably with a meal; place between cheek and gum, under the tongue, or chew.",
+  "warnings": [
+    "Consult a healthcare practitioner before use if pregnant, nursing, taking medication, or managing a medical condition.",
+    "Discontinue use and consult a healthcare practitioner if adverse reactions occur.",
+    "Keep out of reach of children.",
+    "Do not use if the outer bottle seal is missing or damaged."
+  ],
+  "retrieved_at": "2026-09-21T08:49:36+00:00"
+}

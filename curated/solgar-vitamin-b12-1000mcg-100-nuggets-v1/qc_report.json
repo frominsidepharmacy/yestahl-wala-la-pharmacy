@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-21T08:49:36+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "The warm torn-paper reference and Vitamins royal-blue/sunshine palette are retained.",
+    "The Solgar amber bottle, gold cap, gold label, B12 1000 mcg strength and 100-nugget pack remain recognizable and consistent.",
+    "Arabic copy is prominent, readable and unclipped, with series identity and counters on every slide.",
+    "Active ingredient, role, dose, administration route, warnings, pack sizes and original AED 108.15 price are evidence-backed.",
+    "No retailer name, offer price or disease-treatment claim appears in artwork or caption."
+  ]
+}

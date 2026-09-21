@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.lifepharmacy.com/product/solgar-vitamin-b12-1000-mcg-nuggets-100-s/",
+  "manufacturer_source": "https://www.solgar.com/products/solgar-vitamin-b12-1000-mcg-nuggets",
+  "sources": [
+    {
+      "url": "https://www.solgar.com/products/solgar-vitamin-b12-1000-mcg-nuggets",
+      "supports": [
+        "1000 mcg vitamin B12 formulation and 100/250 nugget sizes",
+        "support for energy metabolism, nervous-system health and red-blood-cell formation",
+        "adult dose of one nugget daily, preferably with a meal",
+        "placement between cheek and gum, under the tongue, or chewing",
+        "pregnancy, nursing, medication, medical-condition, adverse-reaction, child-safety and seal warnings"
+      ]
+    },
+    {
+      "url": "https://solgar.co.uk/collections/vitamin-b/products/solgar-vitamin-b12-1000-sublingual-chewable-nuggets",
+      "supports": [
+        "cyanocobalamin form of vitamin B12",
+        "one nugget daily and 100/250 nugget pack sizes",
+        "official amber bottle and gold-label pack appearance"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/product/solgar-vitamin-b12-1000-mcg-nuggets-100-s/",
+      "supports": [
+        "UAE availability and exact 100-nugget pack",
+        "AED 108.15 original price and AED 43.05 current offer price"
+      ]
+    },
+    {
+      "url": "https://www.nahdionline.com/en-ae/solgar-sublingual-vitamin-b12-1000-mcg-100-nuggets/pdp/102337341",
+      "supports": [
+        "UAE availability, exact pack and AED 32.29 current offer price",
+        "dose, route, warnings and listed active ingredient"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The carousel presents the product as a high-dose vitamin B12 supplement, not an instant stimulant or disease treatment.",
+    "The original UAE price shown is AED 108.15, not an offer price.",
+    "Retailer names and offer prices are omitted from artwork and caption.",
+    "The verdict is conditional because usefulness depends on a demonstrated need and the label carries medication and medical-condition warnings."
+  ]
+}
