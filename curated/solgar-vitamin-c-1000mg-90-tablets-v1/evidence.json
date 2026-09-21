@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-09-21",
+  "product_source": "https://www.myaster.com/en/online-pharmacy/p/solgar-vitamin-c-1000mg-tablets-90-tablets/1072330",
+  "manufacturer_source": "https://www.solgar.com/products/solgar-vitamin-c-1000-mg-tablets",
+  "sources": [
+    {
+      "url": "https://www.myaster.com/en/online-pharmacy/p/solgar-vitamin-c-1000mg-tablets-90-tablets/1072330",
+      "supports": [
+        "UAE availability and exact 90-tablet pack",
+        "AED 115.50 original price and AED 63.53 offer price",
+        "1000 mg vitamin C as ascorbic acid per tablet",
+        "Immune, antioxidant and collagen-formation roles"
+      ]
+    },
+    {
+      "url": "https://www.solgar.com/products/solgar-vitamin-c-1000-mg-tablets",
+      "supports": [
+        "One tablet daily for adults, preferably with a meal",
+        "1000 mg vitamin C as ascorbic acid per tablet",
+        "Pregnancy, nursing, medication and medical-condition precautions",
+        "Stop and consult if adverse reactions occur"
+      ]
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminC/Consumer/",
+      "supports": [
+        "For most people supplements do not reduce the risk of getting the common cold",
+        "Excess vitamin C can cause diarrhea, nausea and stomach cramps",
+        "High doses can worsen iron overload in hemochromatosis",
+        "Adult tolerable upper intake is 2000 mg daily from all sources"
+      ]
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+      "supports": [
+        "High intakes can increase urinary oxalate and may matter particularly in people with renal disorders or hyperoxaluria",
+        "Common high-dose adverse effects include gastrointestinal disturbance"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The verdict is conditional because 1000 mg is a high-strength dose and is not automatically necessary for every adult.",
+    "The carousel states practical immune and collagen roles without claiming prevention or treatment of disease.",
+    "The verified original UAE price shown on artwork is AED 115.50; the offer and retailer remain only in evidence.",
+    "Kidney and iron-overload cautions are included because they are specifically supported by NIH evidence."
+  ]
+}
