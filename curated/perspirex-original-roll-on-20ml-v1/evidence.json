@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-23",
+  "product_source": "https://medaid.ae/products/perspirex-strong-roll-on-20ml",
+  "manufacturer_source": "https://www.perspirex.com/shop/perspirex-original/",
+  "sources": [
+    {
+      "url": "https://medaid.ae/products/perspirex-strong-roll-on-20ml",
+      "supports": ["UAE availability", "exact Original 20 ml pack", "AED 129.99 original current price"]
+    },
+    {
+      "url": "https://www.perspirex.com/shop/perspirex-original/",
+      "supports": ["Aluminum Chloride active ingredient", "Calcium Lactate skin-care system", "five-night initial use", "morning wash-off", "up to five-day protection"]
+    },
+    {
+      "url": "https://www.boots.com/perspirex-original-antiperspirant-roll-on-20ml-10210512",
+      "supports": ["unbroken completely dry skin", "night application", "two upward and downward strokes", "thin film", "morning soap-and-water wash", "irritation risk from over-application"]
+    },
+    {
+      "url": "https://www.sweetcare.pt/perspirex-original-antiperspirant-roll-on-p-007741rs?country=ae&fcurr=AED&flang=EN&st=01",
+      "supports": ["verified UAE offer AED 50.14", "exact 20 ml pack"]
+    }
+  ],
+  "content_decisions": [
+    "The deodorant/antiperspirant subcategory rotates away from the recent body-care and mother-care inventory items.",
+    "AED 129.99 is displayed as the verified original price; the offer and retailer remain evidence-only.",
+    "The conditional verdict reflects the strong use case and the documented irritation risk if misapplied.",
+    "No retailer identity appears in artwork or caption."
+  ]
+}

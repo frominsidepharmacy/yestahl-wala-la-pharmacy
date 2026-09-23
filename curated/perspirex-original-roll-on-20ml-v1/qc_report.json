@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-23T08:09:42+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "The torn-paper, tape and plum/coral Personal Care treatment matches the retained reference.",
+    "The white 20 ml Perspirex Original bottle with navy cap is recognizable and consistent.",
+    "Arabic copy is readable and unclipped, with the exact series identity and counters.",
+    "Use method, active ingredient role, irritation warning, pack and original price are source-backed.",
+    "No retailer name or sale price appears in artwork or caption."
+  ]
+}
