@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-09-23",
+  "product_source": "https://www.binsina.ae/en/beauty-of-joseon-revive-eye-serum-with-ginseng-retinal-30ml.html",
+  "manufacturer_source": "https://beautyofjoseon.com/products/revive-eye-serum-ginseng-retinal",
+  "sources": [
+    {
+      "url": "https://www.binsina.ae/en/beauty-of-joseon-revive-eye-serum-with-ginseng-retinal-30ml.html",
+      "supports": [
+        "UAE availability and exact 30 ml pack",
+        "AED 46 original current price",
+        "retinal and Panax ginseng root extract ingredient listing",
+        "one to two pumps around the eyes or over the face"
+      ]
+    },
+    {
+      "url": "https://www.lifepharmacy.com/product/beauty-of-joseon-revive-eye-serum-ginseng-retinal-30ml",
+      "supports": [
+        "exact 30 ml UAE product",
+        "verified offer price AED 39.90",
+        "ingredient list containing retinal and Panax ginseng root extract"
+      ]
+    },
+    {
+      "url": "https://beautyofjoseon.com/products/revive-eye-serum-ginseng-retinal",
+      "supports": [
+        "official one to two pump application",
+        "gentle patting under and around the eye with the ring finger",
+        "morning and night use",
+        "sunscreen during daytime use",
+        "retinal and ginseng positioning for the appearance of wrinkles, brightness and hydration"
+      ]
+    },
+    {
+      "url": "https://dermnetnz.org/topics/topical-retinoids",
+      "supports": [
+        "retinaldehyde is a topical retinoid used in cosmetics",
+        "possible dryness, peeling, irritation and sun sensitivity",
+        "pregnancy precaution for topical retinoids"
+      ]
+    },
+    {
+      "url": "https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/retinoid-retinol",
+      "supports": [
+        "retinoid irritation risk",
+        "night use and daytime sun protection guidance",
+        "avoidance of retinoids during pregnancy"
+      ]
+    }
+  ],
+  "content_decisions": [
+    "The product has not appeared in ready.json, previewed.json or the persisted product history within the 365-day no-repeat window.",
+    "AED 46 is shown as the verified original price; the AED 39.90 offer and retailer identity remain evidence-only.",
+    "The verdict is conditional because retinal can cause dryness or irritation and requires consistent daytime sun protection.",
+    "No unsupported dark-circle cure, comparative superiority or guaranteed result is claimed.",
+    "Retailer identity is omitted from artwork and caption."
+  ]
+}

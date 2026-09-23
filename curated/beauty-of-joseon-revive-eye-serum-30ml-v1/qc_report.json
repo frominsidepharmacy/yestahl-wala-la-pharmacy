@@ -1,0 +1,20 @@
+{
+  "overall_status": "PASS",
+  "reviewed_at": "2026-09-23T08:09:42+00:00",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": [
+    "All three 1080x1350 slides were visually inspected after resizing.",
+    "Warm torn paper, tape, tactile layering and teal/mint Korean Skin Care palette visibly match the retained reference.",
+    "The blush-pink Beauty of Joseon 30 ml pump tube and matching box are recognizable and consistent across all slides.",
+    "Arabic copy is prominent and unclipped; the series identity and slide counters are visible on every slide.",
+    "Ingredient role, written directions, original price, irritation warning, pregnancy precaution and conditional verdict are source-backed.",
+    "No retailer name, offer price or unsupported superiority claim appears in artwork or caption."
+  ]
+}
