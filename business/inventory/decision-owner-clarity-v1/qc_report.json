@@ -1,0 +1,18 @@
+{
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": {
+    "dimensions": "All three slides are 1080x1350 PNG.",
+    "brand": "Every slide shows من جوة البيزنس | د. عمرو أبوبكر; no pharmacy branding is present.",
+    "visual": "ChatGPT ImageGen produced a continuous warm cinematic cartoon-office story using the retained navy/yellow/crimson reference system.",
+    "copy": "The three slides use direct Egyptian Arabic about decision ownership, with no invented statistics or external claims.",
+    "review": "Every final slide was visually inspected. Text is prominent, readable and unclipped; the recurring team, yellow decision folder and office art direction remain consistent."
+  }
+}
