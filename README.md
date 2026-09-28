@@ -6,7 +6,7 @@ Zero-cost daily Instagram carousel engine for **د. عمرو أبوبكر**. The
 
 One daily `Asia/Dubai` slot at 20:00 releases the oldest ready pharmacy carousel across Korean skincare, vitamins/supplements, and personal care. Each carousel uses normalized exact packs, evidence-backed copy, 1080×1350 PNG slides, QC, and a private Actions artifact. Telegram receives the album, caption, and approval controls. Publication remains blocked until manual approval.
 
-Activepieces Free Cloud accepts only updates from `TELEGRAM_ALLOWED_USER_ID`. APPROVE dispatches `publish.yml`; EDIT stores one lightweight table row and dispatches `revise.yml`; REGENERATE and REJECT have separate routes. Publishing recomputes the SHA-256 over all six slides, caption, and metadata. Only that approved version is staged into a GitHub Pages deployment. The official Meta API creates six child containers, waits for readiness, creates the carousel parent, publishes once, and retrieves the permalink. A per-publication caption marker plus serialized workflow execution prevents duplicate posts after retries or timeouts.
+Activepieces Free Cloud accepts only updates from `TELEGRAM_ALLOWED_USER_ID`. APPROVE emits the explicit text route `publish` and dispatches `publish.yml`; EDIT stores one lightweight table row and dispatches `revise.yml`; REGENERATE and REJECT have separate routes. Publishing recomputes the SHA-256 over all three slides, caption, and metadata. Only that approved version is staged into a GitHub Pages deployment. The official Meta API creates three child containers, waits for readiness, creates the carousel parent, publishes once, and retrieves the permalink. A per-publication caption marker plus serialized workflow execution prevents duplicate posts after retries or timeouts.
 
 ## Independent business account
 
@@ -43,7 +43,7 @@ The complete production contract—including the two accounts, schedules, design
 - Change a slot: edit its `cron`, `timezone`, and category mapping together in `.github/workflows/daily.yml`. The current official Actions syntax supports an IANA timezone.
 - Add a retailer: subclass `RetailerAdapter`, add its URLs to `config/retailers.yaml`, register it in `src/pipeline.py`, and add extraction fixtures.
 - Add a category: add queries/detection to `config/categories.yaml`, a one-letter publication code, copy rules, and tests.
-- Change design: edit `config/design.yaml` or `src/design.py`; keep 1080×1350, 70 px minimum margins, RTL, and six separate files. Category identity is fixed: teal/mint for Skin Care, plum/coral for Personal Care, and royal-blue/sunshine for Vitamins. A sampled product-package color may appear only as a micro accent (maximum 15% of the visual), never as a replacement for the category palette.
+- Change design: keep exactly three separate 1080×1350 files, strong RTL, and the locked quality-contract-v2 reference provenance. Pharmacy category identity is fixed: teal/mint for Skin Care, plum/coral for Personal Care, and royal-blue/sunshine for Vitamins. A sampled product-package color may appear only as a micro accent (maximum 15% of the visual), never as a replacement for the category palette.
 - Update evidence: edit `config/ingredient_claims.yaml` with a safe explanation, limitations, warnings, authoritative HTTPS source, and review date. Retailer copy is never used as scientific evidence.
 
 ## Testing and dry run
@@ -55,7 +55,7 @@ python -m venv .venv
 .venv/bin/python -m scripts.dry_run
 ```
 
-The dry run uses live UAE product pages and writes `output/dry-run/<category>/` with six PNGs, `caption.txt`, `evidence_bundle.json`, `score.json`, `content.json`, `manifest.json`, and `qc_report.json`. It never publishes.
+The dry run uses live UAE product pages and writes `output/dry-run/<category>/` with three PNGs, `caption.txt`, `evidence_bundle.json`, `score.json`, `content.json`, `manifest.json`, and `qc_report.json`. It never publishes.
 
 ## Troubleshooting
 

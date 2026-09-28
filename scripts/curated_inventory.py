@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from src.config import ROOT
+from src.curated_qc import reference_contract_error
 
 
 CATEGORY_TARGETS = {
@@ -24,6 +25,8 @@ def _read_json(path: Path) -> dict:
 def ready_items(root: Path = ROOT) -> list[dict]:
     items = []
     for marker_path in sorted((root / "curated").glob("*/ready.json")):
+        if reference_contract_error(marker_path.parent):
+            continue
         marker = _read_json(marker_path)
         product_path = marker_path.parent / "product.json"
         if not product_path.exists():

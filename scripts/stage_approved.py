@@ -14,5 +14,7 @@ approved = Path("approved") / key
 approved.parent.mkdir(parents=True, exist_ok=True)
 __import__("shutil").copytree(matches[0], approved, dirs_exist_ok=True)
 manifest = json.loads((approved / "manifest.json").read_text(encoding="utf-8"))
+if manifest.get("metadata", {}).get("quality_contract_version") != 2:
+    raise SystemExit("Approval blocked: preview predates locked reference contract v2")
 prepare_approved_site(approved, Path("site"), key, manifest["content_hash"] if manifest["content_hash"].startswith(digest) else digest)
 (Path("site") / ".nojekyll").touch()

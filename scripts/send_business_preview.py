@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 
 from src.approval import freeze_manifest
 from src.config import ROOT, assert_guardrails
-from src.curated_qc import require_approved_qc
+from src.curated_qc import quality_contract_metadata, require_approved_qc
 from src.telegram import TelegramClient, inline_keyboard
 
 
@@ -44,11 +44,8 @@ def main() -> None:
     pending = ROOT / "business_pending" / source.name
     pending.mkdir(parents=True, exist_ok=True)
     source_slides = sorted(source.glob("slide[0-9][0-9].png"))
-    if len(source_slides) not in {3, 6}:
-        raise SystemExit(
-            f"Expected 3 business slides (or a legacy 6-slide carousel), "
-            f"found {len(source_slides)}"
-        )
+    if len(source_slides) != 3:
+        raise SystemExit(f"Expected exactly 3 business slides, found {len(source_slides)}")
     require_approved_qc(source, source_slides)
     slides = []
     for source_slide in source_slides:
@@ -74,6 +71,7 @@ def main() -> None:
         "publication_key": publication_key,
         "version": 1,
         "review_status": "READY_FOR_USER_REVIEW",
+        **quality_contract_metadata(source),
     }
     manifest = freeze_manifest(pending, slides, caption, metadata)
     run_id = os.environ["GITHUB_RUN_ID"]

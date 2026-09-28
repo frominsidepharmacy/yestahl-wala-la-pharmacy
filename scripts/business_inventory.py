@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from src.config import ROOT
+from src.curated_qc import reference_contract_error
 
 
 LANE_TARGETS = {
@@ -55,6 +56,8 @@ def ready_items(root: Path = ROOT) -> list[dict]:
         raise SystemExit(f"BUSINESS QUEUE BLOCK: repeated topic_id: {details}")
 
     for marker_path in sorted(queue_root.glob("*/ready.json")):
+        if reference_contract_error(marker_path.parent):
+            continue
         marker = _read_json(marker_path)
         if marker.get("status") != "READY":
             raise SystemExit(

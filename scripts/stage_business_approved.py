@@ -25,6 +25,10 @@ for manifest_path in Path("pending_business").rglob("manifest.json"):
 if len(matches) != 1:
     raise SystemExit(f"Expected one business pending version for {key}, found {len(matches)}")
 
+manifest = json.loads((matches[0] / "manifest.json").read_text(encoding="utf-8"))
+if manifest.get("metadata", {}).get("quality_contract_version") != 2:
+    raise SystemExit("Approval blocked: preview predates locked reference contract v2")
+
 approved = Path("approved_business") / key
 approved.parent.mkdir(parents=True, exist_ok=True)
 shutil.copytree(matches[0], approved, dirs_exist_ok=True)

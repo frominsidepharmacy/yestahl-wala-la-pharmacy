@@ -9,7 +9,7 @@ from pathlib import Path
 
 from src.approval import freeze_manifest
 from src.config import ROOT, assert_guardrails, load_yaml
-from src.curated_qc import require_approved_qc
+from src.curated_qc import quality_contract_metadata, require_approved_qc
 from src.telegram import TelegramClient, inline_keyboard
 
 
@@ -17,8 +17,8 @@ def main() -> None:
     assert_guardrails()
     source = ROOT / os.environ.get("CURATED_DIR", "curated/cosrx-salicylic-cleanser-v1")
     slides = sorted(source.glob("slide[0-9][0-9].png"))
-    if len(slides) not in {3, 6}:
-        raise SystemExit(f"Expected 3 or 6 curated slides, found {len(slides)}")
+    if len(slides) != 3:
+        raise SystemExit(f"Expected exactly 3 curated slides, found {len(slides)}")
     missing = [path.name for path in slides if not path.exists()]
     if missing:
         raise SystemExit(f"Missing curated slides: {', '.join(missing)}")
@@ -44,6 +44,7 @@ def main() -> None:
         "version": 1,
         "curated": True,
         "review_status": "READY_FOR_USER_REVIEW",
+        **quality_contract_metadata(source),
     }
     manifest = freeze_manifest(source, slides, caption, metadata)
     product_id = product["product_id"][:8]

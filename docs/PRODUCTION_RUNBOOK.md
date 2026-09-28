@@ -15,7 +15,9 @@ Current non-secret identities are `INSTAGRAM_USER_ID=28801746372751606` and `BUS
 
 ## Content and design contract
 
-Every carousel is six separate 1080×1350 PNG slides with safe margins, strong RTL hierarchy, readable Arabic, consistent numbering, exact approved copy, and a `qc_report.json` with overall status `PASS`.
+Every carousel is exactly three separate 1080×1350 PNG slides with safe margins, strong RTL hierarchy, readable Arabic, consistent numbering, exact approved copy, and a `qc_report.json` with overall status `PASS`.
+
+Every new item must use quality contract v2. Its provenance binds the correct retained reference SHA-256, the stream-specific ChatGPT ImageGen renderer, all three slide hashes, and a timestamped side-by-side visual review that passes reference match, visible-text legibility, and account branding. Items from the earlier self-declared PASS contract are excluded from inventory and cannot be staged for publishing.
 
 Pharmacy requirements:
 
@@ -57,7 +59,7 @@ The business stream has a separate GitHub-backed buffer of 10 unseen, QC-passed 
 3. Commit the immutable carousel to the GitHub inventory with `ready.json` written last. Pull/rebase in a clean temporary worktree before pushing so local user edits are never included.
 4. At 20:00 Asia/Dubai, GitHub selects the oldest queued item for each stream, uploads its immutable Actions artifact, and sends the Telegram album, caption, and approval controls.
 5. Wait for explicit approval from the authorized user. Closing the local computer does not stop cloud-hosted steps.
-6. Activepieces parses the callback, verifies the sender, and routes only when the Boolean `dispatch` value **Is true**.
+6. Activepieces parses the callback, verifies the sender, returns the literal text `dispatch_route=publish`, and routes only when that value **Exactly matches (Text)** `publish`. Boolean routing is forbidden.
 7. Immediately answer the callback: `⏳ تم استلام موافقتك وبدأ النشر… سيصلك رابط البوست هنا بعد النجاح.`
 8. Dispatch `.github/workflows/publish.yml` on `main` with `publication_key`, `content_hash`, and `artifact_run_id` from the approved callback.
 9. GitHub verifies the immutable manifest, stages only those assets, exposes them through GitHub Pages, and calls the official Meta API.
@@ -79,7 +81,7 @@ The business stream has a separate GitHub-backed buffer of 10 unseen, QC-passed 
 
 Use the first failed run as evidence; do not repeatedly click or redispatch blindly.
 
-- Approval recorded but Router false: use **Is true (Boolean)**. The Code step emits a JSON Boolean; a text comparison sends valid approvals to the `Otherwise` branch.
+- Approval recorded but Router false: verify that Code emitted the string `dispatch_route=publish` and that Router uses **Exactly matches (Text)** `publish`. Do not restore Boolean routing.
 - No GitHub run: ensure the Activepieces GitHub step targets `publish.yml`, not `telegram_control.yml`, and maps all three inputs.
 - Media URL 404: keep global serialization and URL-readiness polling; do not overlap Pages deployments.
 - Meta 400: inspect the response body surfaced by `src/instagram.py`, then verify URL reachability and token/account pairing.

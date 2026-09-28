@@ -1,5 +1,7 @@
 import json
 
+from src.curated_qc import QUALITY_CONTRACT_VERSION, REFERENCE_CONTRACTS
+
 from scripts.business_inventory import inventory_status, mark_previewed, select_item
 
 
@@ -27,6 +29,21 @@ def _queued(root, slug, lane, created_at, topic_id=None):
             }
         ),
         encoding="utf-8",
+    )
+    reference = REFERENCE_CONTRACTS["chatgpt-imagegen-business-reference"]
+    (directory / "design_provenance.json").write_text(
+        json.dumps({
+            "quality_contract_version": QUALITY_CONTRACT_VERSION,
+            "renderer_id": "chatgpt-imagegen-business-reference",
+            "renderer_version": 2,
+            **reference,
+            "visual_review": {
+                "status": "PASS", "method": "side_by_side",
+                "reference_match": "PASS", "text_legibility": "PASS",
+                "brand_match": "PASS", "reviewer": "test",
+                "reviewed_at": "2026-09-28T10:00:00Z",
+            },
+        }), encoding="utf-8"
     )
     return directory
 
@@ -71,3 +88,11 @@ def test_business_inventory_rejects_repeated_topic_id(tmp_path):
         assert "repeated topic_id" in str(exc)
     else:
         raise AssertionError("duplicate business topics must block the queue")
+
+
+def test_business_legacy_self_declared_pass_is_not_counted(tmp_path):
+    directory = _queued(tmp_path, "legacy", "day", "2026-09-14T08:00:00Z")
+    provenance = json.loads((directory / "design_provenance.json").read_text())
+    provenance["quality_contract_version"] = 1
+    (directory / "design_provenance.json").write_text(json.dumps(provenance))
+    assert inventory_status(tmp_path)["ready_total"] == 0

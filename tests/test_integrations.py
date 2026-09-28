@@ -99,6 +99,14 @@ def test_activepieces_routes_complete():
     blob = json.dumps(spec)
     assert all(action in blob for action in ("approve:", "edit:", "regenerate:", "reject:", "approve_all:"))
     assert "JSON.parse" in spec["normalization"]["updateInput"]
+    condition = spec["approvalBranch"]["routerCondition"]
+    assert condition == {
+        "left": "{{step_2['dispatch_route']}}",
+        "operator": "Exactly matches (Text)",
+        "right": "publish",
+        "warning": condition["warning"],
+    }
+    assert "Boolean" in condition["warning"]
 
 
 def test_telegram_control_dispatches_with_explicit_repository():
