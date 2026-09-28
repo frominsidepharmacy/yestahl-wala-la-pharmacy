@@ -1,0 +1,23 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-business-reference",
+  "renderer_version": 2,
+  "reference_id": "business-premium-cartoon-office-v1",
+  "reference_sha256": "92820ceff2f823bd2bcb2ff0aa0b06c1c2c103f68631500d74c699b0bc48b2d3",
+  "dimensions": [1080, 1350],
+  "generation": "Three separate ChatGPT ImageGen calls each attached the actual retained reference. Slide01 bubble tail corrected with ImageGen. User-authorized Lanczos resizing only; final images visually inspected.",
+  "slide_sha256": {
+    "slide01.png": "cfa2177658dcb06568aa5fc1b060659a7ea79c5d2f360ff675280802353af909",
+    "slide02.png": "9a982f3979eee51a54cd7521792e5c6a8ac2f80b3492d5751c7d1246b6b0b814",
+    "slide03.png": "9c090eb370e4944217e1fcad09c41dfb040acda467584023fa0442f6592e385a"
+  },
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex visual inspection of retained reference and every final slide",
+    "reviewed_at": "2026-09-28T17:53:45Z"
+  }
+}
