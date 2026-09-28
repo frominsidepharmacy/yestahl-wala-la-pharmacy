@@ -1,0 +1,6 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {"arabic_text_fidelity": "PASS", "reference_fidelity": "PASS", "brand_identity": "PASS", "layout_readability": "PASS", "visual_integrity": "PASS", "content_accuracy": "PASS"},
+  "review_notes": ["All three final resized slides opened and inspected against retained torn-paper reference", "Plum/coral, tactile tape, layered cream paper and consistent blue QV tube", "Cover includes clearly labelled dry-skin illustration; no before/after claim", "Slide 2 explicitly names glycerin and benefit; unverified concentration not invented", "Slide 3 includes price, verdict and external-use/eye warning; all text legible"]
+}
