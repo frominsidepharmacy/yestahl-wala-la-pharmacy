@@ -1,0 +1,6 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {"arabic_text_fidelity": "PASS", "reference_fidelity": "PASS", "brand_identity": "PASS", "layout_readability": "PASS", "visual_integrity": "PASS", "content_accuracy": "PASS"},
+  "review_notes": ["All final resized slides opened and compared with actual premium-office reference", "Corrected slide 2 denominator and added slide 3 numbering with ImageGen before final review", "Consistent recurring white-shirt character, expressive office scenes and navy/yellow/crimson hierarchy", "Complete Arabic narrative and signature readable; no pharmacy branding", "Customer example is explicitly illustrative in caption"]
+}
