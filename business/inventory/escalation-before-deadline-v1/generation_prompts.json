@@ -1,0 +1,11 @@
+{
+  "tool": "ChatGPT ImageGen built-in",
+  "reference": "business-premium-cartoon-office-v1",
+  "shared": "Actual retained reference attached to each generation. Premium cartoon office, navy headlines, crimson/yellow brush labels, warm cinematic depth, expressive consistent characters, exact Arabic signature and 3-slide numbering. Target 1080x1350.",
+  "slides": [
+    "01/03. Headline \"ما تستناش ميعاد التسليم\" Crimson \"لو الشغل واقف...\" Yellow \"بلّغ بدري واطلب قرار\". Bubble \"لسه مستني موافقة المورد\". Scene reference glasses bearded white-shirt employee concerned at laptop with unanswered email, clock prop; no invented numbers.",
+    "02/03. Headline \"مثال: عرض العميل متعطّل\" Crimson \"السعر لسه ما اتأكدش\" Yellow \"والعرض مطلوب بكرة\". Bubble spoken by white-shirt employee to navy-jacket manager \"نكمل بسعر تقديري ولا نستنى؟\". Same characters consistent expressive warm premium cartoon office.",
+    "03/03. Headline \"صعّد المشكلة بشكل مفيد\" Yellow \"إيه العائق؟ وإيه أثره؟\" Crimson \"إيه القرار المطلوب؟ وإمتى؟\". Bubble from white-shirt employee to navy-jacket manager \"محتاج قرار النهارده عشان نلحق\". CTA \"احفظها للشغل المتعطّل\". Same characters working on plan at desk."
+  ],
+  "correction": "Remove unintended laptop logo from slide03 only."
+}
