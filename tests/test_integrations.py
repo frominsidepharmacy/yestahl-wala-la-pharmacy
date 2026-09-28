@@ -115,6 +115,13 @@ def test_telegram_control_dispatches_with_explicit_repository():
     assert 'os.environ["GITHUB_REPOSITORY"]' in text
 
 
+def test_activepieces_code_uses_text_route_not_boolean_dispatch():
+    text = (Path(__file__).parents[1]/"activepieces/approval_code.js").read_text()
+    assert 'dispatch_route: "ignore"' in text
+    assert 'result.dispatch_route = "publish"' in text
+    assert "dispatch: true" not in text
+
+
 def test_schedule_timezone_and_time():
     text = (Path(__file__).parents[1]/".github/workflows/curated_preview.yml").read_text()
     # GitHub evaluates cron in UTC. 16:00 UTC is 20:00 Dubai year-round.

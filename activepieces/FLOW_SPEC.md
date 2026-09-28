@@ -13,7 +13,7 @@ The flow must be explicitly published in Activepieces after both OAuth connectio
 The published flow order is:
 
 1. Telegram Bot — New Update.
-2. Code — parse an object or repeatedly JSON-decode a string, authorize the sender, and parse callback data.
+2. Code — use [`approval_code.js`](approval_code.js) unchanged. Map the Telegram trigger output to `update` and the authorized Telegram user ID to `allowed_user_id`.
 3. Router — `{{step_2['dispatch_route']}}` **Exactly matches (Text)** `publish`. The Code step must emit the literal string `publish` only for an authorized approve callback and `ignore` otherwise. Do not use a Boolean router value; production proved that its coercion can send a valid approval to `Otherwise`.
 4. Telegram Bot — Answer Callback Query using `{{trigger['callback_query']['id']}}` with: `⏳ تم استلام موافقتك وبدأ النشر… سيصلك رابط البوست هنا بعد النجاح.`
 5. GitHub — Trigger Workflow Dispatch for `Publish approved carousel (.github/workflows/publish.yml)` on `main`.
