@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Viewed all final slides against retained office reference: warm cinematic depth, expressive cartoon faces, navy typography and yellow/crimson brush labels.",
+    "Arabic main copy, bubbles and full business signature legible and uncropped; exactly three 1080x1350 slides.",
+    "Corrected mentor clothing across slides 01 and 03 to match slide 02 navy blazer and white T-shirt; protagonist glasses and white shirt consistent.",
+    "Scenario explicitly hypothetical training task; no fabricated statistics or promised outcomes."
+  ]
+}
