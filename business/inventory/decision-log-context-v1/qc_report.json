@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Inspected retained reference and all final 1080x1350 PNGs. Warm cinematic office depth, expressive premium cartoon figures, huge navy headings and brush labels match reference.",
+    "Verified copy, complete business signature, numbering, text visibility and safe text boundaries. No pharmacy branding.",
+    "Initial slide03 rejected for unrelated zombie and inconsistent character. ImageGen replaced it with the same navy-jacket colleague from slide02; final slide re-inspected and bubble speaker corrected.",
+    "Scenario expressly fictional; no fabricated statistics. Caption explains decisions must be reconsidered when assumptions change."
+  ]
+}
