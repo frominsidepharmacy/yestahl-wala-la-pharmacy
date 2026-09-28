@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Inspected actual retained reference and all final resized slides. Warm cinematic office depth, expressive premium cartoon figures, large navy text and paintstroke labels match reference.",
+    "Verified all primary copy, complete signature, legibility, unclipped text and 01/03–03/03 numbering.",
+    "Rejected initial slide03 for changed characters. Corrected through ImageGen using slide02 as identity reference and re-inspected final: same white-shirt glasses protagonist and navy-jacket colleague.",
+    "Fictional scenario identified; no statistics. Caption explains team-specific limits and urgent exceptions, not a universal ban on parallel work."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-business-reference",
+  "renderer_version": 2,
+  "reference_id": "business-premium-cartoon-office-v1",
+  "reference_sha256": "92820ceff2f823bd2bcb2ff0aa0b06c1c2c103f68631500d74c699b0bc48b2d3",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "generation": "Three built-in ChatGPT ImageGen calls with actual retained reference; slide03 consistency correction with slide02 reference; user-authorized Lanczos resize. Full slide briefs retained in content.json.",
+  "slide_sha256": {
+    "slide01.png": "24bd06644c9088d27c18b33a55a4f349e1ddc7cb99f64cfb858419b2733a3683",
+    "slide02.png": "f9058fec0b28b14a23fb64d3e3c364c92f89054ce557f8a5115d3d1493db7a6d",
+    "slide03.png": "d9c97ac10d37d93f92aa76d78227f8d7841fb688fd2d73decb958b08ed5d6e8a"
+  },
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex visual inspection of reference and all final slides",
+    "reviewed_at": "2026-09-28T21:56:33Z"
+  }
+}
