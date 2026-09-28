@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-09-28T16:50:00Z",
+  "manufacturer": {"url": "https://beautyofjoseon.com/products/glow-deep-serum-rice-alpha-arbutin", "supports": ["alpha arbutin improves appearance of dark spots", "evening use; a few drops on clean hands, pat into skin, follow with moisturizer", "avoid dropper contact with skin", "sensitive skin patch test", "cool dark storage away from sunlight"], "concentration": "Not stated on current page reviewed"},
+  "commerce": {"retailer": "LOOKFANTASTIC UAE", "url": "https://www.lookfantastic.ae/p/beauty-of-joseon-glow-deep-serum-rice-arbutin-30ml/14866966/", "pack": "30ml", "recommended_retail_price_aed": 99, "offer_price_aed": 69, "availability": "In stock; shipping from UAE", "pack_image": "https://static.thcdn.com/productimg/original/14866966-1325171145059844.jpg"},
+  "rejected_claims": ["Retailer lists 68% rice bran water and 2% arbutin, but current manufacturer page does not confirm concentrations; omit numerical claim", "Do not interpret recommended retail price as verified historical selling price"],
+  "illustration": "Generated mild post-blemish marks; not a diagnosis or before/after evidence"
+}
