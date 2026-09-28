@@ -1,0 +1,17 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Viewed retained reference and all three final 1080x1350 slides. Premium cartoon office depth, warm lighting, navy headlines, crimson/yellow paintstroke labels match the reference.",
+    "Checked all primary Arabic text, bubble speakers, exact full footer and 01/03–03/03 numbering. Text legible and not clipped. White-shirt interviewer and navy-shirt customer visually consistent.",
+    "Fictional dialogue identified in caption; no statistics or guarantees. Final slide explicitly states interview is not proof of demand. No pharmacy branding or unrelated logos."
+  ]
+}
