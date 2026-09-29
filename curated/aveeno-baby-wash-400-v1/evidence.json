@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-09-29",
+  "manufacturer_url": "https://kenvuepro.com/en-gb/brands/aveeno/products/aveeno-baby-daily-care-hair-body-wash-400ml",
+  "claims": [
+    "Natural oat extract in gently cleansing non-drying formulation; do not present as eczema treatment.",
+    "Apply on wet hair and body, lather and rinse thoroughly.",
+    "External use only; keep out of reach of children. Always check current pack ingredients.",
+    "Glycerin and oat present in manufacturer INCI, percentage not stated."
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/aveeno-baby-daily-care-hair-body-wash-400ml",
+    "sku": "143275",
+    "regular_price_aed": 53.92,
+    "offer": "No discounted price shown",
+    "availability": "Add to Cart, Dubai",
+    "image_url": "https://cdn.lifepharmacy.com/products/aveeno-baby-daily-care-hair-body-wash-400ml/143275-1.jpg"
+  },
+  "visual_script": [
+    [
+      "غسول لطيف لطفلك",
+      "مش علاج للإكزيما",
+      "Aveeno Baby Daily Care",
+      "للشعر والجسم | 400 مل"
+    ],
+    [
+      "مستخلص الشوفان",
+      "في تركيبة تنظّف من غير تجفيف",
+      "على الشعر والجسم المبلولين",
+      "اعمل رغوة واشطف كويس",
+      "نسبة الشوفان والجلسرين مش معلنة"
+    ],
+    [
+      "يستاهل بشروط واضحة",
+      "لو محتاج غسول لطيف للشعر والجسم",
+      "للاستخدام الخارجي فقط",
+      "واحفظه بعيد عن الأطفال",
+      "400 مل | 53.92 درهم"
+    ]
+  ],
+  "no_repeat_check": "No Aveeno matches in curated/data or all-branch commit messages; category rotated from oral care to baby care."
+}

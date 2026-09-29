@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Direct visual comparison of all three final images with actual retained reference: tactile torn paper, tape, product-on-stone depth and hand-drawn details preserved, personal-care plum/coral accents.",
+    "All Arabic script, numbering, price, 400ml and full series/author signatures readable with safe margins. Exact UAE package cream tapered bottle, striped label and turquoise cap consistent.",
+    "Main oat ingredient role, written usage, external-use/storage warning and non-eczema-treatment limitation included. Undisclosed oat/glycerin concentrations explicitly identified rather than invented.",
+    "Illustrative caregiver/child washing vignette is labeled; no before/after claim or diagnosis."
+  ]
+}

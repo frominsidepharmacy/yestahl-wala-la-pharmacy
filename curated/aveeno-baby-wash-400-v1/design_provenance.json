@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "b37ffea3095493c818155d0c2c3580abbbb3a088bac5a07fbf2ddb7d9c39fd05",
+    "slide02.png": "29e3c356cc9b2298d7ba262fdc8a96e62426b725e1e0e1ff45e32c425dbbb4e8",
+    "slide03.png": "48c33d3ee2fd75cd0a037a55f4ffed1a0c9ffeb1073611d9472e6eaf25605be8"
+  },
+  "generation": "Built-in ChatGPT ImageGen; actual retained style reference and verified UAE 400ml package attached to each of three calls. Lanczos resized to final dimensions.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex direct visual inspection of reference, UAE package and all final slides",
+    "reviewed_at": "2026-09-29T04:58:25Z"
+  }
+}
