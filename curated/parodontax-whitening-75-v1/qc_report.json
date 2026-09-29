@@ -1,0 +1,17 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Viewed every final slide alongside retained reference and exact UAE pack image: warm torn-paper/tape, coral and deep plum accents, matching horizontal daily-whitening package.",
+    "Arabic main copy and full signature legible, unclipped. Surface-stain illustration explicitly labelled illustrative.",
+    "Active ingredients and roles, twice-daily instructions, spit/minimize swallowing, conditional verdict, persistent bleeding and irritation warnings present. No4x or transferred concentration claims."
+  ]
+}

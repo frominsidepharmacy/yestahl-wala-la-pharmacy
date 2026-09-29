@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-09-29",
+  "sources": [
+    {
+      "url": "https://www.parodontaxarabia.com/en/products/toothpaste.html",
+      "supports": "Whitening removes surface stains; no natural-tooth-color change promised"
+    },
+    {
+      "url": "https://www.parodontaxarabia.com/en/faqs/",
+      "supports": "Bicarbonate helps break up plaque with brushing; 4x claim specifically excludes Whitening and is not used"
+    },
+    {
+      "url": "https://www.haleonhealthpartner.com/en-eg/oral-health/brands/parodontax/products/whitening/",
+      "supports": "Bicarbonate formulation, fluoride cavity protection, surface stain removal. Regional1400ppm not generalized to exact UAE carton."
+    },
+    {
+      "url": "https://www.parodontax.com/en-sg/products/parodontax-toothpaste/whitening/",
+      "supports": "Twice daily brushing, spit/minimize swallowing, stop irritation, seek care swelling mouth/face, not under12, dentist persistent symptoms"
+    }
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/parodontax-gentle-whitening-toothpaste-75-ml",
+    "sku": "111408",
+    "original_aed": 35.18,
+    "offer_aed": 22.95,
+    "member_aed": 20.65,
+    "pack_image": "https://cdn.lifepharmacy.com/products/parodontax-gentle-whitening-toothpaste-75-ml/111408-1.jpg"
+  },
+  "limitations": [
+    "No fabricated whitening magnitude or timeline.",
+    "No67% bicarbonate claim transferred from other formulations. Glycerin percentage not published in reviewed sources."
+  ]
+}
