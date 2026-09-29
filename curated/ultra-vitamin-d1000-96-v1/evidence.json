@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-09-29",
+  "manufacturer_source": "https://www.vitabiotics.com/products/ultra-vitamin-d-1000iu-96-tablets",
+  "claims": {
+    "strength": "25 micrograms D3 per tablet =1000 IU",
+    "role": "Supports normal calcium absorption and maintenance of normal bones",
+    "use": "One tablet per day with main meal; swallow water/cold drink, do not chew or exceed intake",
+    "warnings": "Not for children. Consult professional when pregnant, breastfeeding, under medical supervision, epilepsy or allergies. Store below25C away from children."
+  },
+  "commerce": {
+    "retailer": "Carrefour UAE / Sporter",
+    "url": "https://www.carrefouruae.com/mafuae/en/vitamin-d/vitabiotics-ultra-vitamin-d-1000iu-96-tablets/p/5021265243372",
+    "original_aed": 62.73,
+    "offer_aed": 47.91,
+    "verification": "Search-indexed retailer listing; direct page returned cache miss. No live-stock guarantee. Sporter UAE listing independently shows62.73 before43.91 offer.",
+    "comparison_url": "https://www.sporter.com/en-ae/health-vitamins/"
+  },
+  "pack_reference": "https://www.vitabiotics.com/cdn/shop/files/ultra_vitamin_d_1000_front_CTUTD096T1UK2E.png?v=1755180889",
+  "limitations": [
+    "Manufacturer pack artwork used; local-market artwork may vary.",
+    "Not a self-prescribed deficiency treatment; no competitive superiority claimed."
+  ]
+}
