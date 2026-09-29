@@ -1,0 +1,23 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [1080, 1350],
+  "slide_sha256": {
+    "slide01.png": "ae1d1695c34579e09b7285a61a3332e4349b3c1c5c2adf835e562353403b5075",
+    "slide02.png": "835443e6351172d5444317f7d6c49315117c52bf9056eef6f6e027d2b8655517",
+    "slide03.png": "5f461880ebc12c41bfee2cd0b4bcc81bed8e69606a11e402bcaa609654d88f03"
+  },
+  "generation": "Built-in ChatGPT ImageGen; each slide generated separately with the actual retained pharmacy reference and inspected product photograph. Final images resized to 1080x1350 using Lanczos, then visually inspected.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex direct visual inspection of retained reference, product photo and all three final slides",
+    "reviewed_at": "2026-09-29T07:02:59Z"
+  }
+}

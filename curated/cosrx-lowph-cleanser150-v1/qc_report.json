@@ -1,0 +1,19 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "All three final 1080x1350 slides inspected against the retained reference: warm torn paper, tape, teal/mint accents, product-led hierarchy and editorial illustrations match.",
+    "Arabic headings, directions, qualification and warning are legible and not cropped. Correct series and author signature appears on all slides.",
+    "White 150 ml tube with turquoise/yellow label and white bottom cap matches the inspected product photograph across all slides.",
+    "Face-washing illustration is labeled illustrative; no fabricated clinical before/after or treatment outcome.",
+    "Manufacturer directions and highlighted ingredients checked; undisclosed ingredient concentrations explicitly remain undisclosed. Original UAE price is distinguished from offers in evidence."
+  ]
+}

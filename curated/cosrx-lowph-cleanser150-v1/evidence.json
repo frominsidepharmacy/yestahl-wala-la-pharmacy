@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-09-29",
+  "manufacturer_url": "https://www.cosrx.com/products/low-ph-good-morning-gel-cleanser",
+  "safety_url": "https://www.nccih.nih.gov/health/tea-tree-oil",
+  "claims": [
+    "Manufacturer identifies betaine salicylate and tea tree oil as key ingredients with soothing/clear-skin cosmetic positioning; no acne treatment claim.",
+    "Wet hands and face, foam, massage avoiding eyes/mouth, rinse warm water; after makeup removal morning/night per manufacturer.",
+    "Concentrations not declared. No glycerin percentage inferred, and ethylhexylglycerin is not labeled glycerin.",
+    "NCCIH notes potential irritation/redness with tea tree-containing topical products; stop if irritation."
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/cosrx-low-ph-good-morning-cleanser-150ml",
+    "sku": "135554",
+    "regular_price_aed": 72.45,
+    "offer_price_aed": 18.95,
+    "member_price_aed": 17.05,
+    "availability": "Add to Cart Dubai",
+    "image_url": "https://cdn.lifepharmacy.com/products/cosrx-low-ph-good-morning-cleanser-150ml/135554-1.jpg"
+  },
+  "visual_script": [
+    [
+      "غسول يومي... مش علاج للحبوب",
+      "COSRX Low pH",
+      "Good Morning Gel Cleanser",
+      "150 مل"
+    ],
+    [
+      "بيتايين ساليسيلات وزيت شجرة الشاي",
+      "لدعم هدوء وصفاء البشرة",
+      "بلّل وشّك وإيدك واعمل رغوة",
+      "دلّك بلطف واشطف بمياه دافية",
+      "ابعد عن العين والفم"
+    ],
+    [
+      "يستاهل بشروط واضحة",
+      "لو عايز تنظيف يومي من غير تهيّج",
+      "لو حصل احمرار أو حرقان، وقّفه",
+      "تركيز المكونات مش معلن",
+      "150 مل | السعر الأصلي 72.45 درهم"
+    ]
+  ],
+  "no_repeat_check": "No low ph/good morning matches in curated and data history on fetched main."
+}
