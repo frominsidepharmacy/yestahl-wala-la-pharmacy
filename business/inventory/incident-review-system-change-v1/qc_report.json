@@ -1,0 +1,17 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Each final image visually compared with retained office reference: matched warm depth, cartoon protagonist and bold navy/yellow/crimson hierarchy.",
+    "All primary Arabic copy and signature legible and unclipped; continuous white-shirt glasses protagonist, coherent parcel scenario.",
+    "Three separate final 1080x1350 slides. Caption explicitly identifies fictional example and distinguishes learning from accountability. No invented statistics."
+  ]
+}
