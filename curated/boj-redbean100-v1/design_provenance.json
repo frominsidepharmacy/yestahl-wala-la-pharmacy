@@ -1,0 +1,31 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "b7f568539b580cf4a65b58f2792c8734c683014f7c52c02f8b9918210d306712",
+    "slide02.png": "5883ed1308b232b537bd50d67f2aec4889ddb5835ff486ce042e5a05849eff84",
+    "slide03.png": "f6b2cf4fccaff7d5aa26def8317ba062e3c5796de18f3aaa5dbc490e4ad02571"
+  },
+  "generation": "Built-in ImageGen with actual retained reference and official package photo; separate calls, Lanczos resize, final visual review.",
+  "script": [
+    "بشرتك دهنية ومش بتحب الكريم التقيل؟\nBeauty of Joseon\nRed Bean Water Gel\nترطيب خفيف... مش علاج للحبوب\n100 مل",
+    "مستخلص الفاصوليا الحمراء\nيساعد يقلل الدهون الزائدة حسب الشركة\nبعد الغسول والتونر والسيروم\nحط كمية بحجم عملة صغيرة وربّت بلطف\nبالنهار، بعده واقي شمس",
+    "يستاهل بشروط واضحة\nلو بشرتك دهنية أو مختلطة وعايز جل خفيف\nنسبة الجلسرين مش معلنة\nلو حصل تهيّج مستمر، استشر مختص\n100 مل | السعر الأصلي 81.90 درهم"
+  ],
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex direct final image comparison against retained reference and product photograph",
+    "reviewed_at": "2026-09-29T08:59:13Z"
+  }
+}

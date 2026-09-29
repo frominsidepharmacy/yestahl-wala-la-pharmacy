@@ -1,0 +1,17 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "All three final images directly compared with retained reference and exact pink tube photograph: tactile torn paper, tape, stone plinth, teal/mint palette and product-led hierarchy retained.",
+    "Arabic copy legible without cropping; full series/author identity on each slide. Product tube, label and cap consistent.",
+    "Illustration explicitly labeled illustrative; no clinical before/after. Manufacturer attribution preserved for sebum claim. No unsupported concentration or acne-treatment claim."
+  ]
+}
