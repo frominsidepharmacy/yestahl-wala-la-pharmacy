@@ -1,0 +1,31 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "fa90aec783bc08110753c822b1917df0ad3014b04284e5b6cce55caced2e93b0",
+    "slide02.png": "38173ee7be9affad0d31f0047a2c9b32b629c84431c7f5278785702e4975c89a",
+    "slide03.png": "83083074807f22823e3db500e9042ed409fb6ddaff39803ac3ca88c9e0eeb6a8"
+  },
+  "generation": "Built-in ImageGen with actual retained reference and official packaging photograph, separate slides; slide 2 signature correction with ImageGen; Lanczos resize then direct final inspection.",
+  "script": [
+    "شعرك بيقع؟ مش معناه ناقص بيوتين\nSolgar Biotin 5000 mcg\nالدليل على فائدته للشعر محدود\n50 كبسولة",
+    "بيوتين B7: يساعد الجسم يستفيد من الأكل للطاقة\n5000 ميكروجرام في الكبسولة\nتعليمات العبوة للبالغين:\nكبسولة يوميًا مع الأكل، أو حسب المختص\nمش توصية تبدأه من نفسك",
+    "لا يستاهل كتجربة عشوائية للتساقط\nاعرف السبب قبل ما تشتري\nممكن يغيّر نتائج بعض التحاليل\nبلّغ الطبيب والمعمل إنك بتاخده\n50 كبسولة | السعر الأصلي 106.05 درهم"
+  ],
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex direct comparison of final slides with retained reference and official product photo",
+    "reviewed_at": "2026-09-29T10:02:27Z"
+  }
+}
