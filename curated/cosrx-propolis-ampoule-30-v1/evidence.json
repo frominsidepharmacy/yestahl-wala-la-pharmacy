@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-09-29",
+  "manufacturer_source": "https://www.cosrx.com/products/full-fit-propolis-light-ampoule",
+  "claims": {
+    "concentration": "83.3% Propolis Extract explicitly displayed by current COSRX page; not83.25% from third-party pages",
+    "benefits": "Hydration, smoothness and glow; no acne-treatment or superiority claim",
+    "use": "Apply evenly after cleansing and toning; gently massage/pat, then moisturizer",
+    "glycerin": "Present in INCI; percentage not disclosed"
+  },
+  "safety_source": "https://dermnetnz.org/topics/contact-allergy-to-propolis",
+  "safety": "Propolis can cause allergic contact dermatitis or urticaria; avoid known allergy and discontinue with rash/itch.",
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/cosrx-full-fit-propolis-light-ampoule-30ml",
+    "sku": "135579",
+    "listed_regular_aed": 145.95,
+    "offer_aed": null,
+    "pack_image": "https://cdn.lifepharmacy.com/products/cosrx-full-fit-propolis-light-ampoule-30ml/135579-1.jpg",
+    "manufacturer_matching_pack": "https://www.cosrx.com/cdn/shop/files/full-fit-propolis-light-ampoule-cosrx-official-1_1200x1200.jpg?v=1724835475"
+  }
+}

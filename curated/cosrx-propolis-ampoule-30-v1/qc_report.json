@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "All three final 1080x1350 slides visually inspected beside retained reference: warm torn paper, tape, teal/mint paint labels, realistic product-led depth and hand-drawn accents match.",
+    "Large Arabic copy and complete pharmacy signature are readable and not clipped. Gold bottle/black ribbed dropper identity remains consistent. Small package ingredient print is not used as medical information.",
+    "83.3% propolis follows current manufacturer evidence. Glycerin percentage is not disclosed and is not guessed. Allergy warning, use and explicit non-acne-treatment limitation included.",
+    "Dry-skin illustration is labeled illustrative, not a before/after or diagnosis. Final slide uses 3/3 rather than zero-padded numbering; sequence remains unambiguous."
+  ]
+}
