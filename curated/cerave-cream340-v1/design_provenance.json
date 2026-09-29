@@ -1,0 +1,31 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "dfa9e3b4c3e5d4de2522a51d2a30fcdda7b79d76a21c7e8358c110a1c37d0b3d",
+    "slide02.png": "815eabafc5a32c3212c93b13a87307bc6535eab79e9c2e24b29aabb725074f48",
+    "slide03.png": "6e34b6570dcd16d90dcc3d30e6e9fac9d51a496c85ff28300e700d5523ebeee9"
+  },
+  "generation": "Built-in ChatGPT ImageGen, three separate calls with actual retained reference and exact product photograph; Lanczos resizing followed by direct final-image inspection.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex direct visual comparison of final slides with retained reference and product photograph",
+    "reviewed_at": "2026-09-29T07:58:28Z"
+  },
+  "script": [
+    "جلدك ناشف ومشدود؟\nCeraVe Moisturising Cream\nمرطّب للجفاف... مش علاج لكل طفح\n340 جم",
+    "٣ سيراميدات تدعم حاجز الجلد\nوهيالورونيك يساعد يحتفظ بالرطوبة\nافرده بكمية كافية حسب الحاجة\nبعد التنشيف بلطف\nنسبة الجلسرين مش معلنة",
+    "يستاهل بشروط واضحة\nللجلد الجاف لو محتاج كريم غني بلا عطر\nابعد الملابس الملامسة للكريم عن النار\nلو حصل تهيّج مستمر، استشر مختص\n340 جم | السعر الأصلي 98.99 درهم"
+  ]
+}

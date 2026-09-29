@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Direct visual comparison of all final slides with the retained reference: matching torn warm paper, tactile tape, stone plinth, photo-led depth and hand-drawn accents, with plum/coral personal-care palette.",
+    "Large Arabic copy is legible and not cropped. Series and doctor name present on every slide. Packaging remains the inspected white/blue 340 g cream jar.",
+    "Dry-skin illustration is explicitly illustrative, not a fabricated clinical outcome. Main ingredients, undisclosed glycerin percentage, application, qualified verdict and fire safety are visible.",
+    "Slide 3 uses three spacious short text panels; no crowded icon grid."
+  ]
+}
