@@ -1,0 +1,18 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "All three final images visually compared against retained reference and exact UAE package: torn warm paper, tactile tape, stone plinth depth and royal-blue/yellow category identity preserved.",
+    "Arabic main copy, numbering and full footer clearly legible without clipping. Gold lid, amber bottle, gold label,25mg and90caps identity consistent.",
+    "Dose clearly adult manufacturer directions, not individualized anemia treatment. Ingredient amount, hemoglobin/oxygen role, fatigue limitation, possible GI effects and child-overdose warning explicit.",
+    "Slide1 fatigue vignette labeled illustrative; no diagnosis. Package non-constipating marketing counterbalanced by explicit possible constipation in editorial copy. No retailer branding."
+  ]
+}

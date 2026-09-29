@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "1327aa3bc325d2189106db006f0f0ac774439d5faf25ae7e7cbd606f021a4677",
+    "slide02.png": "472c803cf1e3053cafe096bb57938111db907501863d8fcc4faa73503c9b7f1e",
+    "slide03.png": "3ebf05a92aa5eeb69cf741cd136539bf5a17239e5e95be951beab8a96a48fc6c"
+  },
+  "generation": "Built-in ChatGPT ImageGen; actual retained visual reference and verified UAE Solgar25mg90caps pack attached to all calls; Lanczos resizing.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex direct visual inspection of reference, exact package and three final images",
+    "reviewed_at": "2026-09-29T06:00:45Z"
+  }
+}

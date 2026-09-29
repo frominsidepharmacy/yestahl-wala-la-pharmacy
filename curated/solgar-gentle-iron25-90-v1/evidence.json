@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-09-29",
+  "manufacturer_url": "https://www.solgar.com/products/gentle-iron-vegetable-capsules",
+  "safety_url": "https://ods.od.nih.gov/factsheets/Iron-Consumer/",
+  "claims": [
+    "25mg elemental iron as bisglycinate per capsule, adult one capsule daily preferably with meal or clinician directions.",
+    "Iron supports hemoglobin and oxygen transport. Fatigue alone does not establish iron deficiency.",
+    "Iron can cause GI upset; manufacturer non-constipating marketing is not amplified as guaranteed no side effects.",
+    "Keep away from children; overdose requires immediate medical attention. Consult clinician in pregnancy/nursing, medication use or conditions; avoid self-supplementation in iron overload."
+  ],
+  "commerce": [
+    {
+      "retailer": "Life Pharmacy",
+      "url": "https://www.lifepharmacy.com/product/solgar-gentle-iron-25mg-vegetable-capsules-90-s",
+      "sku": "105183",
+      "regular_price_aed": 106.05,
+      "offer_price_aed": 44.1,
+      "availability": "Add to Cart Dubai"
+    },
+    {
+      "retailer": "Chemist Warehouse UAE",
+      "url": "https://www.chemistwarehouse.ae/products/solgar-gentle-iron-25mg-90-vege-capsules",
+      "regular_price_aed": 111.3,
+      "offer_price_aed": 66.69,
+      "image_url": "https://www.chemistwarehouse.ae/cdn/shop/files/7032928_3.jpg?v=1777882651&width=1200"
+    }
+  ],
+  "visual_script": [
+    [
+      "تعبان؟ مش كل تعب نقص حديد",
+      "Solgar Gentle Iron",
+      "25 مجم | 90 كبسولة",
+      "ما تبدأهوش لمجرد الإرهاق"
+    ],
+    [
+      "حديد بيسجليسينات",
+      "25 مجم في الكبسولة",
+      "يساعد تكوين الهيموجلوبين ونقل الأكسجين",
+      "للبالغين: كبسولة يوميًا مع وجبة",
+      "أو حسب توجيه المختص"
+    ],
+    [
+      "يستاهل بشروط واضحة",
+      "لو المختص أكد احتياجك للحديد",
+      "ممكن يسبب غثيان أو إمساك",
+      "بعيد عن الأطفال: الجرعة الزائدة خطيرة"
+    ]
+  ],
+  "no_repeat_check": "No Gentle Iron or solgariron matches in curated/data history at origin/main."
+}
