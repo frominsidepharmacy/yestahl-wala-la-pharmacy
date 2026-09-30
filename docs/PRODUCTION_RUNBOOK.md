@@ -60,7 +60,7 @@ The business stream has a separate GitHub-backed buffer of 10 unseen, QC-passed 
 4. At 20:00 Asia/Dubai, GitHub selects the oldest queued item for each stream, uploads its immutable Actions artifact, and sends the Telegram album, caption, and approval controls.
 5. Wait for explicit approval from the authorized user. Closing the local computer does not stop cloud-hosted steps.
 6. Activepieces parses the callback, verifies the sender, returns the literal text `dispatch_route=publish`, and routes only when that value **Exactly matches (Text)** `publish`. Boolean routing is forbidden.
-7. Immediately answer the callback: `⏳ تم استلام موافقتك وبدأ النشر… سيصلك رابط البوست هنا بعد النجاح.`
+7. Answer the callback using the normalized `{{step_2['callback_query_id']}}`: `⏳ تم استلام موافقتك. سيصلك رابط البوست بعد نجاح النشر.` Enable Continue on failure on this acknowledgement only, so an expired callback cannot block GitHub dispatch. Never read the ID directly from a potentially string-valued trigger.
 8. Dispatch `.github/workflows/publish.yml` on `main` with `publication_key`, `content_hash`, and `artifact_run_id` from the approved callback.
 9. GitHub verifies the immutable manifest, stages only those assets, exposes them through GitHub Pages, and calls the official Meta API.
 10. Retrieve the Instagram permalink and send it to Telegram as final proof.
