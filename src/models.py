@@ -57,6 +57,10 @@ class Product:
         """Build a Product from persisted metadata while tolerating editorial fields."""
         allowed = {item.name for item in fields(cls)}
         raw = {key: value for key, value in data.items() if key in allowed}
+        # Curated manifests deliberately omit commerce-only fields. Unknown
+        # values remain unknown; never infer a retailer or alter the manifest.
+        raw.setdefault("brand", None)
+        raw.setdefault("retailer", "")
         active = data.get("active_ingredient")
         if active and not raw.get("ingredients"):
             raw["ingredients"] = [active]
