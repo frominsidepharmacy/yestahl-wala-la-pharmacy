@@ -17,3 +17,10 @@ def test_known_commerce_fields_are_preserved():
     product = Product.from_dict({"product_name": "Test", "product_url": "https://example.com",
                                  "category": "personal_care", "brand": "Brand", "retailer": "Store"})
     assert (product.brand, product.retailer) == ("Brand", "Store")
+def test_curated_product_without_commerce_url():
+    from src.models import Product
+    data = {"product_name": "Aveeno Baby Wash", "category": "personal_care", "pack_size": "400 ml"}
+    product = Product.from_dict(data)
+    assert product.product_url == ""
+    assert "product_url" not in data
+    assert product.normalized_id

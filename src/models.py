@@ -61,6 +61,7 @@ class Product:
         # values remain unknown; never infer a retailer or alter the manifest.
         raw.setdefault("brand", None)
         raw.setdefault("retailer", "")
+        raw.setdefault("product_url", "")
         active = data.get("active_ingredient")
         if active and not raw.get("ingredients"):
             raw["ingredients"] = [active]
