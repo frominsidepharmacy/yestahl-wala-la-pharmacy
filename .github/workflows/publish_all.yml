@@ -8,6 +8,7 @@ permissions: {actions: read, contents: read, pages: write, id-token: write}
 concurrency: {group: publish-all, cancel-in-progress: false}
 jobs:
   publish:
+    if: ${{ false }} # Retired bulk Telegram route; use exact-item Codex approval.
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: {name: github-pages}

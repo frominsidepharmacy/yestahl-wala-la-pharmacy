@@ -26,10 +26,13 @@ def main() -> None:
 
     caption = (source / "caption.txt").read_text(encoding="utf-8").strip()
     product = json.loads((source / "product.json").read_text(encoding="utf-8"))
-    product.setdefault(
-        "product_id",
-        str(product.get("retailer_sku") or hashlib.sha256(product["product_url"].encode()).hexdigest()[:16]),
-    )
+    if not product.get("product_id"):
+        if product.get("retailer_sku"):
+            product["product_id"] = str(product["retailer_sku"])
+        elif product.get("product_url"):
+            product["product_id"] = hashlib.sha256(product["product_url"].encode()).hexdigest()[:16]
+        else:
+            raise SystemExit("Product requires product_id, retailer_sku, or product_url")
     category_labels = {
         "korean_skincare": "Skin Care — Teal / Mint",
         "vitamins_supplements": "Vitamins — Royal Blue / Sunshine Yellow",
