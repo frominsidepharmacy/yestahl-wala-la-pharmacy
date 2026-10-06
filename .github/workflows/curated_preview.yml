@@ -31,8 +31,6 @@ jobs:
       ALLOW_PAID_SERVICES: "false"
       REQUIRE_MANUAL_APPROVAL: "true"
       FREE_AI_ENABLED: "false"
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -65,10 +63,10 @@ jobs:
           fi
       - name: Notify empty pharmacy inventory
         if: steps.source.outputs.found != 'true'
-        run: python -m scripts.notify
+        run: echo "Pharmacy inventory is empty; Codex review has no new item."
         env:
           NOTIFICATION_MESSAGE: "⚠️ مخزون ${{ steps.category.outputs.category }} فارغ؛ لم تُرسل معاينة في هذا الموعد. سيُعوَّض عند أول تشغيل متاح لـ Codex."
-      - name: Send selected carousel to Telegram
+      - name: Prepare selected carousel for Codex approval
         if: steps.source.outputs.found == 'true'
         run: python -m scripts.send_curated_preview
         env:
@@ -78,7 +76,7 @@ jobs:
         with:
           name: pending-previews-${{ github.run_id }}
           path: ${{ steps.source.outputs.curated_dir }}
-          retention-days: 7
+          retention-days: 90
       - name: Mark carousel as released
         if: steps.source.outputs.found == 'true'
         run: |

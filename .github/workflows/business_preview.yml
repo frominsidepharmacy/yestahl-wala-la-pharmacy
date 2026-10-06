@@ -30,8 +30,6 @@ jobs:
       ALLOW_PAID_SERVICES: "false"
       REQUIRE_MANUAL_APPROVAL: "true"
       FREE_AI_ENABLED: "false"
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -62,10 +60,10 @@ jobs:
           fi
       - name: Notify empty business inventory
         if: steps.source.outputs.found != 'true'
-        run: python -m scripts.notify
+        run: echo "Business inventory is empty; Codex review has no new item."
         env:
           NOTIFICATION_MESSAGE: "⚠️ مخزون من جوة البيزنس (${{ steps.lane.outputs.lane }}) فارغ؛ لم تُرسل معاينة في هذا الموعد. سيُعوَّض عند أول تشغيل متاح لـ Codex."
-      - name: Send selected business carousel to Telegram
+      - name: Prepare selected business carousel for Codex approval
         if: steps.source.outputs.found == 'true'
         run: python -m scripts.send_business_preview
         env:
@@ -75,7 +73,7 @@ jobs:
         with:
           name: pending-business-previews-${{ github.run_id }}
           path: business_pending
-          retention-days: 7
+          retention-days: 90
       - name: Mark business carousel as released
         if: steps.source.outputs.found == 'true'
         run: |

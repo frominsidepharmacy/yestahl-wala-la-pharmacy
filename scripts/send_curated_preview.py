@@ -50,6 +50,11 @@ def main() -> None:
     product_id = product["product_id"][:8]
     publication_key = f"{datetime.now(timezone.utc):%y%m%d}-k-{product_id}"
     run_id = os.environ["GITHUB_RUN_ID"]
+    from src.codex_review import save_review
+    save_review(source, publication_key=publication_key,
+                content_hash=manifest["content_hash"], run_id=run_id,
+                account="dramrouaboubakr")
+    return  # Approval now happens in Codex; no Telegram side effects.
     control = f"""━━━━━━━━━━
 🎨 النسخة المعتمدة بصريًا للمراجعة
 

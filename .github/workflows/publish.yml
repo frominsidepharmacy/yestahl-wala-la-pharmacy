@@ -2,6 +2,12 @@ name: Publish approved carousel
 on:
   workflow_dispatch:
     inputs:
+      approval_source:
+        description: Must be codex after explicit approval of this exact artifact in the Codex conversation
+        required: true
+        default: telegram
+        type: choice
+        options: [telegram, codex]
       publication_key:
         required: true
         type: string
@@ -23,7 +29,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy-approved-media:
-    if: ${{ !startsWith(inputs.publication_key, 'biz-') }}
+    if: ${{ inputs.approval_source == 'codex' && !startsWith(inputs.publication_key, 'biz-') }}
     environment:
       name: github-pages
     runs-on: ubuntu-latest
@@ -70,7 +76,7 @@ jobs:
           path: data/runtime
           retention-days: 90
   deploy-approved-business-media:
-    if: ${{ startsWith(inputs.publication_key, 'biz-') }}
+    if: ${{ inputs.approval_source == 'codex' && startsWith(inputs.publication_key, 'biz-') }}
     environment:
       name: github-pages
     runs-on: ubuntu-latest

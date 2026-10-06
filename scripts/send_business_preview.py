@@ -75,6 +75,11 @@ def main() -> None:
     }
     manifest = freeze_manifest(pending, slides, caption, metadata)
     run_id = os.environ["GITHUB_RUN_ID"]
+    from src.codex_review import save_review
+    save_review(pending, publication_key=publication_key,
+                content_hash=manifest["content_hash"], run_id=run_id,
+                account="dramrou.business")
+    return  # Approval now happens in Codex; no Telegram side effects.
     control = f"""━━━━━━━━━━
 🎨 من جوة البيزنس | د. عمرو أبوبكر
 
