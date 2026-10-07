@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-07T05:40:18Z",
+  "manufacturer": {
+    "url": "https://www.solgar.com/products/yeast-free-selenium-100-mcg-tablets",
+    "supports": [
+      "100mcg L-selenomethionine, 100 tablets",
+      "glutathione peroxidase component",
+      "adults1-2tablets daily preferablymeals or practitioner",
+      "pregnancy/nursing/medication/condition consult"
+    ]
+  },
+  "safety": {
+    "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/",
+    "supports": [
+      "excess chronic intake can cause hair and nail problems",
+      "consider total intake, no automatic hair-loss treatment"
+    ]
+  },
+  "commerce": [
+    {
+      "retailer": "Life Pharmacy UAE",
+      "url": "https://www.lifepharmacy.com/product/solgar-yeast-free-selenium-100mcg-100-tablets/",
+      "original_price_aed": 77.7,
+      "offer_price_aed": 30.45,
+      "availability": "Add to Cart Dubai"
+    },
+    {
+      "retailer": "Nahdi UAE",
+      "url": "https://www.nahdionline.com/en-ae/solgar-selenium-100-mcg-yeast-free-100-tablets/pdp/102335469",
+      "price_aed": 30.61
+    }
+  ],
+  "pack_reference": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102335469_63df535f39eecc6fe_57853.jpg",
+  "no_repeat": {
+    "days": 365,
+    "checked": "Curated products and runtime database: no match."
+  }
+}

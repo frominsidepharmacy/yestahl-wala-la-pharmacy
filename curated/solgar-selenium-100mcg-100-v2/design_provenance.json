@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 2,
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "3505ae7bfdf669d6ded8604613964dd1f3d4d3071c87afe085e6027d9a325873",
+    "slide02.png": "43958c9d65054e2401b3bdc24024f44c003aa922ddf83d5ffb3dca39fcc09dfd",
+    "slide03.png": "247b87d0f72624205fb9d8895b94fff1dbb1bbc4356cd050c09b9c94700162ee"
+  },
+  "generation": "Built-in ChatGPT ImageGen, actual design and exact manufacturer pack references attached. sips dimension normalization.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex side-by-side /private/tmp/selenium-review.png and exact 100mcg 100-tablet pack",
+    "reviewed_at": "2026-10-07T05:40:18Z"
+  }
+}
