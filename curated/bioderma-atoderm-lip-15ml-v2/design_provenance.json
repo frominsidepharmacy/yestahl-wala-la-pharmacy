@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 2,
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "7ab63203e4fe72a373b1cab2ebecb2dc441dcdd70edf61da7d2fcd6206b312df",
+    "slide02.png": "db03518b08fb421a3c2878b6cdb8a7d83f37bdf1cab31a77b701c5363e37f75d",
+    "slide03.png": "39e4d8ffb77149ac370465b1245edf57a44a8dfafc3f37c82d33890d2f631342"
+  },
+  "generation": "Built-in ChatGPT ImageGen, actual design and exact manufacturer pack references attached. sips dimension normalization.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex actual side-by-side /private/tmp/lip-review.png plus exact 15ml tube comparison",
+    "reviewed_at": "2026-10-07T05:38:38Z"
+  }
+}

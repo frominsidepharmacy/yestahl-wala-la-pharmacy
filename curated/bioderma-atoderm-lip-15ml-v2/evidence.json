@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-07T05:38:38Z",
+  "manufacturer": {
+    "url": "https://www.bioderma.us/en/p/atoderm-lip-balm.html",
+    "supports": [
+      "15ml lip balm, unfragranced",
+      "shea butter and avocado oil nourish",
+      "apply directly and reapply as needed"
+    ]
+  },
+  "safety": {
+    "url": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/heal-dry-chapped-lips",
+    "supports": [
+      "stop products that irritate",
+      "persistent chapping needs dermatologist"
+    ]
+  },
+  "commerce": {
+    "retailer": "Life Pharmacy UAE",
+    "url": "https://www.lifepharmacy.com/product/bioderma-atoderm-lip-balm-15-ml",
+    "sku": "108653",
+    "observed_price_aed": 69.3,
+    "member_price_aed": 62.37,
+    "notes": "Listing verified earlier this run; later page fetch returned403, no price in artwork."
+  },
+  "no_repeat": {
+    "days": 365,
+    "checked": "Curated records and runtime database; no match. Lip care rotates away from previous baby care."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Three final slides compared with retained reference; correct plum/coral palette, legible Arabic, correct 15ml tube, no store branding.",
+    "Manufacturer supports shea/avocado nourishment, fragrance-free and direct lip application as needed. Persistent cracks/bleeding are not treated as simple dryness."
+  ]
+}
