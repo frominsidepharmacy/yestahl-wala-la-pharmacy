@@ -1,0 +1,16 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "review_notes": [
+    "Comparedall3withactualreference; correctroyalblueyellow, exactUS666mcgDFE/400mcg100tabletpack, Arabiclegible.",
+    "USmanufacturer dose1tablet1-2timesdaily; UKonce-daily NOTapplied. No fatigue diagnosis or prenatal substitution."
+  ]
+}

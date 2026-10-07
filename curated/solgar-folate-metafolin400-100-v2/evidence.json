@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-07T05:44:51Z",
+  "manufacturer": {
+    "url": "https://www.solgar.com/products/folate-666-mcg-dfe-metafolin-400-mcg-tablets",
+    "supports": [
+      "100tablets UPC033984019416",
+      "redbloodcellformation",
+      "USlabel adults1tablet1-2timesdailywithmeal",
+      "pregnancy/nursing/meds/condition consult"
+    ]
+  },
+  "safety": {
+    "url": "https://www.cdc.gov/folic-acid/data-research/mthfr/index.html",
+    "supports": [
+      "folicacid remains evidence-based neural-tube-defect prevention; no automatic substitution"
+    ]
+  },
+  "commerce": {
+    "retailer": "Chemist Warehouse UAE",
+    "url": "https://www.chemistwarehouse.ae/products/solgar-folate-666mcg-dfe-metafolin-400mcg-100-tablets",
+    "price_aed": 88.99,
+    "rsp_aed": 115.5,
+    "availability": "In Stock",
+    "pack": "USlabel666mcgDFE/Metafolin400mcg100tablets"
+  },
+  "pack_reference": "https://www.chemistwarehouse.ae/cdn/shop/files/7032917.jpg?v=1777880279",
+  "rejected": "UK50-tablet image and once-daily instructions were not used for US100-tablet version.",
+  "no_repeat": {
+    "days": 365,
+    "checked": "All curated product records plus runtime history; no exact product match. Distinct subcategory when personal care."
+  }
+}

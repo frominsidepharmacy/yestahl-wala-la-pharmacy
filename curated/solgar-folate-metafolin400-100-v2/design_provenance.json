@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 2,
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "734e5514cf35a7355c4d53baf6ccdbf7ee6b48f5f85da14ff8599ddb5e55b8c1",
+    "slide02.png": "bb8a30cf3a3308aa4862e7cb8c931812b8312bcc62a0caba4e5edea855068cbb",
+    "slide03.png": "b07c72be543bd49c5c7fd4f269ec6262f2e58c45e8db338389c3860531a421c8"
+  },
+  "generation": "Built-in ChatGPT ImageGen, actual design and exact manufacturer pack references attached. sips dimension normalization.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex actual side-by-side /private/tmp/folate-review.png and exact product reference",
+    "reviewed_at": "2026-10-07T05:44:51Z"
+  }
+}
