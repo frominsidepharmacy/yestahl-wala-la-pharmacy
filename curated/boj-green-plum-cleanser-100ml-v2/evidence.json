@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-07T05:34:43Z",
+  "manufacturer": {
+    "url": "https://beautyofjoseon.com/products/green-plum-refreshing-cleanser",
+    "supports": [
+      "Plum water hydration",
+      "wet hands, gentle face massage, lukewarm rinse",
+      "not designed to remove makeup",
+      "100 and 200ml"
+    ]
+  },
+  "commerce": {
+    "retailer": "Life Pharmacy UAE",
+    "url": "https://www.lifepharmacy.com/product/beauty-of-joseon-green-plum-refreshing-cleanser-100ml",
+    "pack": "100ml",
+    "original_price_aed": 58.8,
+    "offer_price_aed": 30.45,
+    "availability": "Add to Cart Dubai",
+    "sku": "135547"
+  },
+  "pack_reference": "https://beautyofjoseon.com/cdn/shop/files/green-plum-refreshing-cleanser-1-front.webp?v=1770618132",
+  "safety": "Stop if irritation occurs; avoid eyes. General external-cleanser precaution, not an efficacy claim.",
+  "no_repeat": {
+    "days": 365,
+    "checked": "All curated product records plus primary runtime history.sqlite3; no Green Plum Cleanser match."
+  }
+}

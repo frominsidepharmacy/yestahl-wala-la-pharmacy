@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 2,
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "1edf13f00a9cae276e11af74951ccc7715c50a5b590fb88440e94d88efedcf74",
+    "slide02.png": "acf775f85e613102ebed8c99641dc7223b44fdfc5124fc9901e5bbd8cf9c338b",
+    "slide03.png": "5eb395a31d0c677f0a5335f70c80d54944d9b9083de5f0675c818beb7147f304"
+  },
+  "generation": "Built-in ChatGPT ImageGen, actual design and exact manufacturer pack references attached. sips dimension normalization.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex genuine inspection of /private/tmp/boj-review.png and actual pack reference",
+    "reviewed_at": "2026-10-07T05:34:43Z"
+  }
+}
