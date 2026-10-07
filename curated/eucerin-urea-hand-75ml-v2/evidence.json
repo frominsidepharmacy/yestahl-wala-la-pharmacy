@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-10-07T05:44:51Z",
+  "manufacturer": {
+    "url": "https://www.eucerin.co.uk/products/urea-repair/plus-hand-creme-5percent-urea",
+    "supports": [
+      "5%urea retainswater, ceramidesbarrier",
+      "fragrance-free handcream"
+    ]
+  },
+  "usage": {
+    "url": "https://images-us.eucerin.com/eucerin%20relaunch/home/products/urea-repair/plus-hand-creme-5percent-urea",
+    "supports": [
+      "massageuntilabsorbed; asneeded"
+    ]
+  },
+  "safety": {
+    "url": "https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin",
+    "supports": [
+      "persistentdrynessneedsmedicalassessment"
+    ]
+  },
+  "commerce": {
+    "retailer": "Life Pharmacy UAE",
+    "url": "https://www.lifepharmacy.com/product/eucerin-5-urea-hand-cream-75-ml?found=true",
+    "pack": "75ml",
+    "listed_price_aed": 74,
+    "member_price_aed": 66.6,
+    "availability": "Add to Cart Dubai; 24hdelivery as returned",
+    "note": "Cached listing; no current-price claim in art/caption."
+  },
+  "pack_reference": "https://images-1.eucerin.com/~/media/eucerin%20relaunch%20media/media-center-items/7/a/7/00858fb83bc54f0297bf2a5ca9377d6a-screen.jpg",
+  "no_repeat": {
+    "days": 365,
+    "checked": "All curated product records plus runtime history; no exact product match. Distinct subcategory when personal care."
+  }
+}
