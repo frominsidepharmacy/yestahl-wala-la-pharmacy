@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-business-reference",
+  "renderer_version": 2,
+  "reference_id": "business-premium-cartoon-office-v1",
+  "reference_sha256": "92820ceff2f823bd2bcb2ff0aa0b06c1c2c103f68631500d74c699b0bc48b2d3",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "10fc50faf6397ddb5dba773731c9a2fe1de8e6007e4895e835ceddaed8fb0682",
+    "slide02.png": "1ca4a4d526e368cd432026995558de2d46c7e89719047025980be66e983e917d",
+    "slide03.png": "04b812b6e7c157e0a4adcaab811db0a4cc3fc8d0e4af9a696dccb2204f0e9d95"
+  },
+  "generation": "Built-in ChatGPT ImageGen using actual retained reference; sips normalization.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex visual inspection",
+    "reviewed_at": "2026-10-08T04:08:27Z"
+  }
+}
