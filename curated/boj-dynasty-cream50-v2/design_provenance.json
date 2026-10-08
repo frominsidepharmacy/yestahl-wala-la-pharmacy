@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "renderer_version": 2,
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "slide_sha256": {
+    "slide01.png": "8ec992c14e8d024c495b3a7d3ae6a017d1b7e2aef6f01de0139aa1d03426c78d",
+    "slide02.png": "ff005392569a0f7980927f6174b089da7e4986c84756c7616ddaa3e7419f4373",
+    "slide03.png": "b2fdb633960907e2032e74e0a9ff2004f9bb54f1d81cf1eb83547d95bdae3200"
+  },
+  "generation": "Built-in ChatGPT ImageGen with actual retained reference and verified pack image. ImageGen correction of cover 50 ml label and slide 02/03. sips normalization.",
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex full-slide and final comparison visual inspection",
+    "reviewed_at": "2026-10-08T04:11:43Z"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-08T04:08:27Z",
+  "product_id": "bojdynastycream50",
+  "sources": [
+    {
+      "url": "https://beautyofjoseon.com/products/dynasty-cream",
+      "supports": "Squalane hydration, niacinamide balance, fragrance-free, small amount face/neck after cleanser toner serum, pat, AM/PM; oily skin smaller amount. No concentrations claimed."
+    },
+    {
+      "url": "https://www.lifepharmacy.com/product/beauty-of-joseon-dynasty-cream-50ml",
+      "retailer": "Life Pharmacy",
+      "pack": "50ml",
+      "original_price_aed": 97.65,
+      "offer_price_aed": 56.18,
+      "availability": "Add to Cart; delivery Dubai UAE",
+      "supports": "Commerce and exact packaging only"
+    },
+    {
+      "url": "https://www.aad.org/public/everyday-care/skin-care-secrets/prevent-skin-problems/test-skin-care-products/",
+      "supports": "Test skincare before full use; irritation can occur"
+    },
+    {
+      "url": "https://www.aad.org/public/everyday-care/itchy-skin/rash/itchy-rash-contact-dermatitis",
+      "supports": "Stop suspected product if rash occurs"
+    }
+  ],
+  "pack_reference": "https://cdn.lifepharmacy.com/products/beauty-of-joseon-dynasty-cream-50ml/135544-1.jpg",
+  "duplicate_check": "No Dynasty product in persisted curated/history files or runtime posts. Existing runtime product is unrelated magnesium.",
+  "medical_review": "No diagnosis, treatment promise, ingredient percentage or comparative efficacy claim. Moisturizer not presented as acne treatment."
+}
