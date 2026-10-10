@@ -2,11 +2,18 @@
 // Inputs: update (Telegram trigger output), allowed_user_id.
 export const code = async (inputs) => {
   let update = inputs.update;
-  for (let attempt = 0; attempt < 3 && typeof update === "string"; attempt += 1) {
-    try {
-      update = JSON.parse(update);
-    } catch (_) {
-      update = {};
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    if (typeof update === "string") {
+      try {
+        update = JSON.parse(update);
+      } catch (_) {
+        update = {};
+        break;
+      }
+    } else if (update && typeof update === "object" && !Array.isArray(update) &&
+               !update.callback_query && !update.message && "body" in update) {
+      update = update.body;
+    } else {
       break;
     }
   }
@@ -14,7 +21,8 @@ export const code = async (inputs) => {
 
   const callback = update.callback_query || {};
   const actorId = callback.from?.id ?? update.message?.from?.id ?? "";
-  const authorized = String(actorId) === String(inputs.allowed_user_id);
+  const allowedId = String(inputs.allowed_user_id ?? "");
+  const authorized = /^\d+$/.test(allowedId) && String(actorId) === allowedId;
   const raw = String(callback.data || "");
   const parts = raw.split(":");
   const action = parts[0] || "";
@@ -26,7 +34,7 @@ export const code = async (inputs) => {
     callback_query_id: String(callback.id || ""),
     workflow_inputs: {},
   };
-  if (!authorized || action !== "approve" || parts.length !== 5) return result;
+  if (!authorized || !result.callback_query_id || action !== "approve" || parts.length !== 5) return result;
 
   const [, publicationKey, version, contentHash, artifactRunId] = parts;
   if (
