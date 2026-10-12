@@ -1,0 +1,10 @@
+{
+  "engine": "ChatGPT ImageGen",
+  "style_reference": "/Users/amrouaboubakr/.codex/skills/artifact-template-reference-design-2/assets/reference.png",
+  "product_reference": "https://cdn.lifepharmacy.com/products/beauty-of-joseon-ginseng-essence-water-150ml/135540-1.jpg",
+  "slides": [
+    "1/3. Main heading: «تونر الجينسنج… لازم في روتينك؟» Limitation panel: «ترطيب خفيف إضافي… مش خطوة إجبارية» Product name panel «Beauty of Joseon» «Ginseng Essence Water • 150 ml».",
+    "2/3. Heading «بعد الغسول… كام نقطة» Usage panel «حط كام نقطة على إيدك» «وربّت بلطف على وشك» Ingredient panel «ماء الجينسنج: يساعد على الترطيب» «نياسيناميد: يدعم توازن البشرة». No percentages.",
+    "3/3. Heading «يستاهل بشروط واضحة» Main panel «لو محتاج طبقة ترطيب خفيفة» «لو روتينك كفاية… مش لازم تزوده» Warning panel «لو ظهر تهيّج: وقف الاستخدام» CTA «احفظها قبل ما تزود خطوة» Price panel «150 مل | السعر قبل العرض: 42 درهم»."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-12T23:43:59Z",
+  "commerce": {
+    "retailer": "Life Pharmacy UAE",
+    "url": "https://www.lifepharmacy.com/product/beauty-of-joseon-ginseng-essence-water-150ml",
+    "sku": "135540",
+    "original_price_aed": 42,
+    "offer_price_aed": 40.01,
+    "availability": "Add to Cart and Dubai delivery shown",
+    "image_url": "https://cdn.lifepharmacy.com/products/beauty-of-joseon-ginseng-essence-water-150ml/135540-1.jpg",
+    "best_offer_claim": false
+  },
+  "manufacturer": {
+    "url": "https://beautyofjoseon.com/products/ginseng-essence-water",
+    "facts": [
+      "Ginseng root water supports hydration",
+      "Niacinamide supports oil-moisture balance",
+      "After cleansing apply a few drops and gently press into skin",
+      "Morning or evening use",
+      "150ml"
+    ]
+  },
+  "review_notes": [
+    "Retailer and manufacturer ingredient lists differ; avoid all concentration claims and advise checking actual pack.",
+    "Optional additional hydration is editorial verdict, not a manufacturer efficacy claim.",
+    "No ginseng essence water match in repository curated/data history before creation; other ginseng products are different formulations."
+  ],
+  "safety": {
+    "url": "https://www.aad.org/public/everyday-care/skin-care-secrets/prevent-skin-problems/test-skin-care-products",
+    "guidance": "Test a small area and stop if irritation."
+  }
+}

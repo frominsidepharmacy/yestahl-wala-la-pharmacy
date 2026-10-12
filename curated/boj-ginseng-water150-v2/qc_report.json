@@ -1,0 +1,13 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "notes": "Each normalized slide visually reviewed side-by-side against retained reference. Exact amber bottle/white cap identity, readable Arabic, hierarchy, footer, safe margins and no retailer branding verified. Reviewed montages ginseng-review1/2/3.jpg."
+}
