@@ -1,0 +1,15 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-13T21:23:40Z",
+  "notes": "Actual side-by-side visual review, not report-only. No claim to cure wounds; diabetic wound warning. No retailer names in art/caption."
+}

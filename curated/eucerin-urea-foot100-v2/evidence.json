@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-13T21:23:40Z",
+  "sources": [
+    {
+      "url": "https://www.eucerin.co.uk/products/urea-repair/plus-foot-creme-10percent-urea",
+      "role": "manufacturer: 10% urea, moisture binding/smoothing, fragrance-free, 100ml"
+    },
+    {
+      "url": "https://images-1.eucerin.com/eucerin%20relaunch/home/products/urea-repair/plus-foot-cream-10percent-urea",
+      "role": "manufacturer: morning/evening clean dry feet, massage heels until absorbed"
+    },
+    {
+      "url": "https://mydiabetesmyway.scot.nhs.uk/resources/app-resources/footcare-advice-for-diabetes/",
+      "role": "NHS: inspect daily for wounds/redness/swelling/heat, moisturise avoiding between toes"
+    },
+    {
+      "url": "https://www.england.nhs.uk/north/wp-content/uploads/sites/5/2018/12/Looking-after-your-Diabetic-Foot-Ulcer.pdf",
+      "role": "NHS: danger signs contact care team within 24 hours; avoid broken skin and between toes"
+    }
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/eucerin-10-urea-foot-cream-100-ml?found=true",
+    "sku": "110653",
+    "original_price_aed": 94,
+    "offer_price_aed": 47,
+    "availability_evidence": "Retrieved page shows Add to Cart, Dubai; search cache may be older, no live price/availability claim in artwork or caption",
+    "pack_image_url": "https://cdn.lifepharmacy.com/products/eucerin-10-urea-foot-cream-100-ml/110653-1.jpg"
+  },
+  "duplicate_check": {
+    "scope": "All persisted repository product/history JSON; no foot cream match. Existing hand cream and shampoo are distinct products.",
+    "window_days": 365
+  },
+  "rotation": "New foot_care item follows released lip_care; business unchanged."
+}

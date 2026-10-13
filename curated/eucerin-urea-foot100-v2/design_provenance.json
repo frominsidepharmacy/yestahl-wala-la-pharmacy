@@ -1,0 +1,28 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "slide_sha256": {
+    "slide01.png": "41c34a976b34644ace069759dd41fa5c6ec3625087c45680ac6140b8088d14a9",
+    "slide02.png": "aa586187ed307c3a088fb48f0346bf3518718605eb987ab1a2625d12f24c4795",
+    "slide03.png": "e1ce7296f1da7991f60479adabf68a21289559503745907aa07565f817393706"
+  },
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex",
+    "reviewed_at": "2026-10-13T21:23:40Z",
+    "notes": "Viewed each actual generated slide alongside retained design reference and exact pack photo. Large Arabic hook/use/verdict and warning readable; plum/coral torn-paper system, correct tube identity, no clipped copy. QA boards retained as visual_review01-03.jpg."
+  },
+  "generation": {
+    "tool": "ChatGPT ImageGen",
+    "actual_reference_attached": true,
+    "product_reference_attached": true,
+    "normalization": "sips resample 1122x1402 to 1080x1350, no content edits"
+  }
+}
