@@ -1,0 +1,8 @@
+{
+  "status": "PREVIEW_SENT",
+  "lane": "evening",
+  "created_at": "2026-10-07T05:24:49Z",
+  "topic_id": "forecast-assumptions",
+  "previewed_at": "2026-10-16T19:29:08.277544+00:00",
+  "github_run_id": "38955207438"
+}
