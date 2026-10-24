@@ -1,0 +1,15 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "arabic_text_fidelity": "PASS",
+    "reference_fidelity": "PASS",
+    "brand_identity": "PASS",
+    "layout_readability": "PASS",
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS"
+  },
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-24T06:16:24Z",
+  "notes": "Viewed all three side-by-side boards with actual retained style left, final slide center, official exact pack right. Arabic fully legible unclipped, numbering1/3-3/3 correct, teal/mint identity and tube consistent. No retailer. Manufacturer validates cellulose8%,20seconds,dry skin,1-2/week. No acne/ scar treatment claim."
+}
