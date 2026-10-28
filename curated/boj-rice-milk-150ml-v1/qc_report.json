@@ -1,0 +1,15 @@
+{
+  "quality_contract_version": 2,
+  "overall_status": "PASS",
+  "checks": {
+    "visual_integrity": "PASS",
+    "content_accuracy": "PASS",
+    "reference_fidelity": "PASS",
+    "layout_readability": "PASS",
+    "brand_identity": "PASS",
+    "arabic_text_fidelity": "PASS"
+  },
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-28T06:13:11.030404+00:00",
+  "notes": "Viewed each final resized slide beside actual retained reference. All main Arabic copy readable and complete; brand signature, numbers 1/3–3/3, teal/mint palette, torn paper, safe margins and exact bottle identity consistent. Manufacturer claims and written usage checked. No retailer in caption/artwork."
+}

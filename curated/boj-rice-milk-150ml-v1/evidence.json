@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-28T06:09:00+00:00",
+  "manufacturer": "https://beautyofjoseon.com/products/glow-replenishing-rice-milk",
+  "commerce": {
+    "retailer": "myAster UAE",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/beauty-of-joseon-glow-replenishing-rice-milk-facial-toner-for-all-skin-types-150ml/1061808",
+    "pack": "150ml",
+    "original_price_aed": 126,
+    "observed_offer_aed": 69.3,
+    "availability": "Add to Cart; Delivered by Today",
+    "price_in_design": false
+  },
+  "pack_image": "https://media.myaster.com/images/products/1061808/beauty-of-joseon-glow-replenishing-rice-milk-facial-toner-for-all-skin-types-150ml/1061808_1.jpg?fit=bounds&width=1200",
+  "claims": {
+    "ingredients": "Manufacturer identifies rice extract/amino acids for hydration and powder complex for excess oil absorption. No percentage asserted.",
+    "usage": "Shake to mix the two layers before each use. Apply drops after cleansing with hands or cotton, AM/PM.",
+    "limitation": "Cosmetic toner; not acne treatment, not required in every routine.",
+    "warning": "Stop if irritation; general cosmetic safety precaution, no claim of guaranteed tolerance."
+  },
+  "deduplication": "No rice milk/glow replenishing entry in curated or data history as checked 2026-10-28."
+}
