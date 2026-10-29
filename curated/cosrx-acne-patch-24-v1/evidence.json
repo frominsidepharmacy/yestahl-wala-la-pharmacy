@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-28T06:17:00+00:00",
+  "manufacturer": "https://www.cosrx.com/collections/under-10/products/acne-pimple-master-patch",
+  "medical_source": "https://www.aad.org/news/diy-acne-trick",
+  "additional_safety_source": "https://www.aad.org/public/diseases/acne/diy/adult-acne-treatment",
+  "commerce": {
+    "retailer": "myAster UAE",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/Cosrx-Acne-Pimple-Master-Patch%2C-Pack-of-24%27s/1063805",
+    "original_price_aed": 22,
+    "offer_price_aed": 12.76,
+    "availability": "Add to Cart, delivered tomorrow",
+    "pack": "24 patches"
+  },
+  "pack_image": "https://media.myaster.com/images/products/1063805/cosrx-acne-pimple-master-patch-pack-of-24s/1063805_1.jpg?fit=bounds&width=1200",
+  "claims": {
+    "mechanism": "Hydrocolloid absorbs discharge and maintains humidity; manufacturer.",
+    "usage": "Clean affected area, choose patch larger than spot and attach; manufacturer. Dry clean skin supports adhesion.",
+    "limitations": "AAD explains patches draw fluid and deter picking but do not work on deep acne. No universal cure or scar prevention guarantee included.",
+    "safety": "Do not squeeze pimples; persistent deep/painful/scarring acne needs dermatologist; stop if contact irritation."
+  },
+  "deduplication": "No pimple patch product in curated/data history. Checked 2026-10-28."
+}
