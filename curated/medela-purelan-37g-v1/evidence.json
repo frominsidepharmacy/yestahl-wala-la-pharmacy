@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-31",
+  "no_repeat_days": 365,
+  "duplicate_check": "No Medela/Purelan in curated or data; mother care rotates from body care QV.",
+  "sources": [
+    "https://www.medela.com/010-products/060-breast-care/080-purelan-lanolin-cream/pdf-downloads/mode-d-emploi-de-la-creme-purelan-pdf-.pdf",
+    "https://www.medela.com/en-us/breastfeeding-pumping/products/breast-care/purelan-lanolin-cream?productId=4063"
+  ],
+  "commerce": {
+    "retailer": "Al Manara Pharmacy",
+    "url": "https://manaraonline.com/products/medela-purelan-cream-37gm",
+    "price_aed": 51.33,
+    "pack": "37g",
+    "availability": "In stock, ready to ship",
+    "image_url": "https://manaraonline.com/cdn/shop/products/Products_2_e90d6f72-294a-42cd-be23-9ea60a2619f6.jpg?v=1695117383&width=1080"
+  }
+}
