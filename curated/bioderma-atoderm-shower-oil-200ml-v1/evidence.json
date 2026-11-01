@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-01T06:46:28.767087+00:00",
+  "sources": [
+    {
+      "url": "https://www.bioderma.co.uk/p/atoderm-shower-oil",
+      "supports": "Rinse-off cleanser; soap-free; scented; wet skin once/twice daily then rinse; niacinamide and plant biolipids support barrier"
+    },
+    {
+      "url": "https://www.bioderma.com.au/products/atoderm/shower-oil-0",
+      "supports": "Niacinamide and plant biolipids lipid replenishment"
+    }
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/bd-atoderm-shower-oil-200ml/",
+    "sku": "136150",
+    "listed_price_aed": 77.7,
+    "member_price_aed": 69.93,
+    "availability": "Retrieved page Add to Cart Dubai; crawler two months old; no live price or stock claim in artwork/caption",
+    "pack_image_url": "https://cdn.lifepharmacy.com/products/bd-atoderm-shower-oil-200ml/136150-1.jpg"
+  },
+  "duplicate_check": {
+    "window_days": 365,
+    "scope": "curated and data product/history search; no Atoderm shower oil match"
+  },
+  "rotation": "body_care follows Purelan mother_care"
+}

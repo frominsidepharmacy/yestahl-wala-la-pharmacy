@@ -1,0 +1,26 @@
+{
+  "quality_contract_version": 2,
+  "renderer_version": 2,
+  "renderer_id": "chatgpt-imagegen-reference",
+  "reference_id": "pharmacy-torn-paper-editorial-v1",
+  "reference_sha256": "2602973a447dbb85f83c007e0d2eba23053ae65118751dbe108242b7fcb43192",
+  "slide_sha256": {
+    "slide01.png": "9dd386bde9e4b26e27a30f55f5d69d5301a43801eab4b30c15bd78c57e5fc969",
+    "slide02.png": "8dd17d9ca83e3b299a13e3769c5d103ee2b342c67623382277fbc8bfcfdc671b",
+    "slide03.png": "ccd40b84afc4ea0c0664a7fa60b0253fbd5ef5f9c4618b50548939f8b9b3a363"
+  },
+  "visual_review": {
+    "status": "PASS",
+    "method": "side_by_side",
+    "reference_match": "PASS",
+    "text_legibility": "PASS",
+    "brand_match": "PASS",
+    "reviewer": "Codex",
+    "reviewed_at": "2026-11-01T06:48:11.707485+00:00",
+    "evidence": [
+      "visual_review01.jpg",
+      "visual_review02.jpg",
+      "visual_review03.jpg"
+    ]
+  }
+}
