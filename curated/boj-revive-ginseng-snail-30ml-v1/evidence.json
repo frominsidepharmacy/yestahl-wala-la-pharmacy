@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-02T06:17:37.732640+00:00",
+  "sources": [
+    {
+      "url": "https://beautyofjoseon.com/products/revive-serum-ginseng-snail-mucin",
+      "supports": "Ginseng root water/snail mucin hydration; few drops clean hands pat then moisturizer AMPM; avoid dropper contact"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/beauty-of-joseon-revive-facial-serum-with-ginseng-snail-mucin-30ml/1057581",
+    "original_price_aed": 110.5,
+    "offer_price_aed": 55.25,
+    "availability": "Retrieved page60min delivery;no price/stock claims in artwork/caption;direct curl later failed522"
+  },
+  "pack_image_url": "https://beautyofjoseon.com/cdn/shop/files/03_0916__30ml.jpg?v=1789546598",
+  "duplicate_check": {
+    "window_days": 365,
+    "scope": "curated/data search; only Revive EYE retinal is distinct existing item;no ginseng/snail face serum"
+  }
+}
