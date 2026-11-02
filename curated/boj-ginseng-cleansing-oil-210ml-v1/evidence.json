@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-02T06:13:11.348505+00:00",
+  "sources": [
+    {
+      "url": "https://beautyofjoseon.com/products/ginseng-cleansing-oil",
+      "supports": "Soybean oil dissolves impurities;1-2pumps dry skin,emulsify,rinse lukewarm,water-based cleanser;essential oils listed;210ml"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/Beauty-of-Joseon-Ginseng-Facial-Cleansing-Oil-210ml/1057585",
+    "original_price_aed": 114.5,
+    "offer_price_aed": 57.25,
+    "availability": "Retrieved listing delivery tomorrow;no price/stock claims in art/caption"
+  },
+  "pack_image_url": "https://cdn.shopify.com/s/files/1/0558/4135/7989/files/GINSENG_CLEANSING_OIL__2.jpg?v=1790044860",
+  "duplicate_check": {
+    "window_days": 365,
+    "scope": "curated/data product history no cleansing oil match"
+  }
+}
