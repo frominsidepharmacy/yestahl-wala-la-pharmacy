@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-03T06:14:52.631901+00:00",
+  "sources": [
+    {
+      "url": "https://www.solgar.com/products/solgar-naturally-sourced-vitamin-k2-mk-7-100-mcg-vegetable-capsules",
+      "supports": "One capsule daily with food; MK7 bone health; milk/soy; blood thinning medicine interaction"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/solgar-vitamin-k2-100mcg-vegetables-capsules-50-capsules/1072307",
+    "original_price_aed": 210,
+    "offer_price_aed": 105,
+    "availability": "Current brand category delivered today"
+  },
+  "pack_image_url": "https://www.korendy.com.tr/cdn/shop/files/1_org_zoom_20190996-c48c-423f-a02c-e45c9e4c41cf.jpg?v=1773734053",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": ""
+}
