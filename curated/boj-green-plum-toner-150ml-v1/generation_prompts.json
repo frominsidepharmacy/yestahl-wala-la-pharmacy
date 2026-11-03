@@ -1,0 +1,13 @@
+{
+  "engine": "ChatGPT ImageGen",
+  "references": [
+    "retained pharmacy reference.png",
+    "https://oceanbuy.ca/cdn/shop/files/beauty-of-joseon-beauty-of-joseon-green-plum-refreshing-toner-aha-bha-150ml-oceanbuy-beauty-651501.jpg?v=1747897948"
+  ],
+  "palette": "teal/mint",
+  "copy": [
+    "تونر البرقوق... فيه أحماض!\nBeauty of Joseon Green Plum Toner\n150 مل\nمش مجرد مياه مرطبة",
+    "بعد الغسول\nكام نقطة على إيدك وطبطب على البشرة\nجليكوليك + ساليسيليك للتقشير\nابدأ تدريجيًا، وواقي شمس نهارًا",
+    "يستاهل بشروط واضحة\nلو محتاج تقشير خفيف وبشرتك بتتحمله\nوقفه لو حصل تهيّج\nفي الحمل والرضاعة: راجعي الطبيب قبل الاستخدام"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-03T06:22:22.796909+00:00",
+  "sources": [
+    {
+      "url": "https://beautyofjoseon.com/products/green-plum-refreshing-toner-aha-bha",
+      "supports": "Glycolic/salicylic exfoliation;aftercleanse drops pat;patch test;sunscreen;pregnancy/nursing caution"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/beauty-of-joseon-green-plum-aha-bha-refreshing-face-toner-for-all-skin-types-150ml-/1061804",
+    "original_price_aed": 114.5,
+    "offer_price_aed": 57.25,
+    "availability": "Current toner category deliveredtoday"
+  },
+  "pack_image_url": "https://oceanbuy.ca/cdn/shop/files/beauty-of-joseon-beauty-of-joseon-green-plum-refreshing-toner-aha-bha-150ml-oceanbuy-beauty-651501.jpg?v=1747897948",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": ""
+}
