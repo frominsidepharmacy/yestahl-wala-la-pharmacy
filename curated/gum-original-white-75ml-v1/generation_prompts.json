@@ -1,0 +1,13 @@
+{
+  "engine": "ChatGPT ImageGen",
+  "references": [
+    "retained pharmacy reference.png",
+    "https://www.sunstargum.com/content/dam/sunstar-europe/gum/product-catalogue/et/con/toothpaste/original-white/1745EEA-EN-LV-RO-GR-ET-LT-CS-HU-BG-GUM-ORIGINAL-WHITE-TOOTHPASTE-WHITE-75ML-TUBE-N1.jpg"
+  ],
+  "palette": "plum/coral",
+  "copy": [
+    "معجون تبييض... مش جلسة تبييض!\nGUM Original White\n75 مل\nللتصبغات السطحية، مش تغيير لون السن من الداخل",
+    "فرّش دقيقتين مرتين يوميًا\nابصق الزيادة، ومتتمضمضش فورًا\nالفلورايد يساعد يحمي من التسوس\nوالسيليكا تساعد إزالة التصبغات السطحية",
+    "يستاهل بشروط واضحة\nلو هدفك تنظيف يومي وتقليل بقع سطحية\nمش علاج لحساسية الأسنان\nلو الألم أو الحساسية مستمرين، راجع طبيب الأسنان"
+  ]
+}

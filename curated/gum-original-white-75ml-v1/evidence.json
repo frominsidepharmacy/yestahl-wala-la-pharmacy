@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-03T06:24:17.515255+00:00",
+  "sources": [
+    {
+      "url": "https://www.sunstargum.com/gb-en/products/toothpastes/gum-original-white-toothpaste.html",
+      "supports": "Product identity, active ingredients, role and use"
+    },
+    {
+      "url": "https://www.nhs.uk/live-well/healthy-teeth-and-gums/how-to-keep-your-teeth-clean/",
+      "supports": "Brush twice daily for two minutes, spit without immediately rinsing; fluoride protection"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/1000994",
+    "original_price_aed": 27.75,
+    "offer_price_aed": 23.59,
+    "availability": "UAE online stock/delivery verified 2026-11-03"
+  },
+  "pack_image_url": "https://www.sunstargum.com/content/dam/sunstar-europe/gum/product-catalogue/et/con/toothpaste/original-white/1745EEA-EN-LV-RO-GR-ET-LT-CS-HU-BG-GUM-ORIGINAL-WHITE-TOOTHPASTE-WHITE-75ML-TUBE-N1.jpg",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": ""
+}
