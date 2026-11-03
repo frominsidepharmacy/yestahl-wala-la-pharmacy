@@ -1,0 +1,13 @@
+{
+  "engine": "ChatGPT ImageGen",
+  "references": [
+    "retained pharmacy reference.png",
+    "https://cdn.ae1stcry.com/brainbees/images/products/zoom/bebb7ae928fd9a.webp"
+  ],
+  "palette": "plum/coral",
+  "copy": [
+    "بيبانثين للحفاض... مش لكل طفح!\nBepanthen Protective Baby Ointment\n30 جم\nيحمي الجلد، مش علاج للفطريات",
+    "مع تغيير الحفاض\nنظّف بالمياه، نشّف بلطف، وحط طبقة من المرهم\nديكسبانثينول يدعم تجدد الجلد\nوقاعدة دهنية تقلل فقدان الرطوبة",
+    "يستاهل بشروط واضحة\nللحماية والعناية بالتهيج البسيط\nلو الطفح بيزيد أو معاه حرارة، راجع الطبيب\nبلاش مع حساسية أي مكوّن"
+  ]
+}

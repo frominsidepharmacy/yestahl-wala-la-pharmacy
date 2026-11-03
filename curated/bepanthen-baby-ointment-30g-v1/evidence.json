@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-03T06:24:43.627748+00:00",
+  "sources": [
+    {
+      "url": "https://www.bepanthen.me/en/bepanthens-range/baby-and-mother/bepanthen-ointment",
+      "supports": "Product identity, active ingredients, role and use"
+    },
+    {
+      "url": "https://www.bepanthen.me/en/patient-information-leaflets.php",
+      "supports": "Dexpanthenol 50mg/g, lanolin and almond oil; ingredient allergy"
+    },
+    {
+      "url": "https://www.nhs.uk/baby/caring-for-a-newborn/nappy-rash/",
+      "supports": "Worsening or spreading rash and fever require medical review"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/1001140",
+    "original_price_aed": 23,
+    "offer_price_aed": 21.85,
+    "availability": "UAE online stock/delivery verified 2026-11-03"
+  },
+  "pack_image_url": "https://cdn.ae1stcry.com/brainbees/images/products/zoom/bebb7ae928fd9a.webp",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": ""
+}
