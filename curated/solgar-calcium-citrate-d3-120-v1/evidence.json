@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-03T06:12:10.171044+00:00",
+  "sources": [
+    {
+      "url": "https://www.solgar.com/products/calcium-citrate-with-vitamin-d3-tablets",
+      "supports": "Adult4tablets daily with meal, may divide;calcium structure/D3absorption"
+    },
+    {
+      "url": "https://ods.od.nih.gov/factsheets/Calcium-Consumer/",
+      "supports": "Individual food intake needs, split calcium dose, constipation and medicine interactions"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/solgar-calcium-citrate-with-vitamin-d3-tablets-120-tablets/1072318",
+    "original_price_aed": 115.5,
+    "offer_price_aed": 57.75,
+    "availability": "Current category delivered today"
+  },
+  "pack_image_url": "https://myvillagegreen.com/cdn/shop/products/CALCIUMCITRATEW_VITAMIND-3671.jpg?v=1608104937",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data"
+  }
+}
