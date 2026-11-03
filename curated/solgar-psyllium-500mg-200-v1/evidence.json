@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-03T06:18:21.888248+00:00",
+  "sources": [
+    {
+      "url": "https://www.solgar.com/products/psyllium-husks-fiber-500-mg-vegetable-capsules",
+      "supports": "Two capsules between meals with minimum8ozliquid;1g fiber per serving"
+    },
+    {
+      "url": "https://medlineplus.gov/druginfo/meds/a601104.html",
+      "supports": "Fluid/bulk mechanism;swallowing obstruction and medication precautions"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/solgar-psyllium-husks-fiber-500mg-capsules-200-capsules/1072317",
+    "original_price_aed": 183.75,
+    "offer_price_aed": 91.88,
+    "availability": "Current fiber category delivered today"
+  },
+  "pack_image_url": "https://cdn.cimri.io/image/1000x1000/solgar-psyllium-husks-fibre-500-mg-200-kapsul_832938670.jpg",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": ""
+}
