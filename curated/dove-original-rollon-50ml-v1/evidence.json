@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-03T06:24:17.538185+00:00",
+  "sources": [
+    {
+      "url": "https://www.dove.com/tr/p/original-antiperspirant-roll-antiperspirant-deodorant-200ml.html/04800888196392",
+      "supports": "Product identity, active ingredients, role and use"
+    },
+    {
+      "url": "https://www.dove.com/pe/p/antitranspirante-roll-on-original.html/00000078924468",
+      "supports": "Apply roll on gently to dry underarms"
+    },
+    {
+      "url": "https://www.dove.com/uk/p/dove-48h-citrus-fresh-anti-perspirant-roll-on-deodorant-50-ml.sm.html/00000059029595",
+      "supports": "General roll-on warning: avoid broken or irritated skin; not used as ingredient evidence"
+    }
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy",
+    "url": "https://www.lifepharmacy.com/product/dove-original-roll-on-50-ml",
+    "original_price_aed": 17.66,
+    "offer_price_aed": 17.66,
+    "availability": "UAE online stock/delivery verified 2026-11-03"
+  },
+  "pack_image_url": "https://prod-spinneys-cdn-new.azureedge.net/media/images/products/2021/01/4800888196392_OtoLlNq.jpg",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": ""
+}

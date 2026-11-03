@@ -1,0 +1,13 @@
+{
+  "engine": "ChatGPT ImageGen",
+  "references": [
+    "retained pharmacy reference.png",
+    "https://prod-spinneys-cdn-new.azureedge.net/media/images/products/2021/01/4800888196392_OtoLlNq.jpg"
+  ],
+  "palette": "plum/coral",
+  "copy": [
+    "دوف الأصلي... بيقلل العرق؟\nDove Original Roll-On\n50 مل\nمضاد تعرّق، مش علاج لفرط التعرق",
+    "على إبط نظيف وجاف\nمرّر الرول برفق، وسيبه ينشف قبل اللبس\nألومنيوم كلوروهيدرات\nيساعد يقلل خروج العرق",
+    "يستاهل بشروط واضحة\nللتحكم اليومي في العرق والرائحة\nفيه عطر: بلاش لو بيسبب لك حساسية\nمتستخدموش على جلد متهيج أو مجروح"
+  ]
+}
