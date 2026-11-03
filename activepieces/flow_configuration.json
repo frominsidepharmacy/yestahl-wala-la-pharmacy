@@ -18,8 +18,9 @@
       "warning": "Do not route on a Boolean. Activepieces changed/coerced that value inconsistently in production; the route is now an explicit string enum."
     },
     "answerCallbackQuery": {
-      "callbackQueryId": "{{trigger['callback_query']['id']}}",
-      "text": "⏳ تم استلام موافقتك وبدأ النشر… سيصلك رابط البوست هنا بعد النجاح."
+      "callbackQueryId": "{{step_2['callback_query_id']}}",
+      "text": "⏳ تم استلام موافقتك. سيصلك رابط البوست بعد نجاح النشر.",
+      "continueOnFailure": true
     },
     "githubWorkflow": "Publish approved carousel (.github/workflows/publish.yml)",
     "ref": "main",
