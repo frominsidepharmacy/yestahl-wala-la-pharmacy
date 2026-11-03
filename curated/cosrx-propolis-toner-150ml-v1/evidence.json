@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-03T06:09:54.908705+00:00",
+  "sources": [
+    {
+      "url": "https://www.cosrx.com/products/full-fit-propolis-synergy-toner",
+      "supports": "Ingredients, hydration, texture, after-cleansing application and massage"
+    }
+  ],
+  "commerce": {
+    "retailer": "myAster",
+    "url": "https://www.myaster.com/en/online-pharmacy/p/1054632",
+    "original_price_aed": 104,
+    "offer_price_aed": 52,
+    "availability": "Indexed page delivered today; current category confirms"
+  },
+  "pack_image_url": "https://beautyandseoul.co.uk/cdn/shop/products/COSRX-Full-Fit-Propolis-Synergy-Toner_9af76bd3-dee9-4aab-b0b1-5b71ce73b1aa.jpg?v=1610129587",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data"
+  },
+  "safety": "Avoid known ingredient allergy; stop irritation. No acne treatment claim."
+}
