@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-04T06:04:07.165717+00:00",
+  "sources": [
+    {
+      "url": "https://www.cosrx.com/products/advanced-snail-peptide-eye-cream",
+      "supports": "25ml; snail filtrate moisturizes; use after serum/essence/ampoule around eyes, massage and gently tap. Formula includes niacinamide and peptides. No promise of complete dark-circle removal."
+    }
+  ],
+  "commerce": {
+    "retailer": "Life Pharmacy UAE",
+    "url": "https://www.lifepharmacy.com/product/cosrx-advanced-snail-peptide-eye-cream-25ml",
+    "original_price_aed": 135.45,
+    "offer_price_aed": 45.1,
+    "availability": "Add to Cart for Dubai; SKU 135580"
+  },
+  "pack_image_url": "https://lifeadmin-store.s3.ap-south-1.amazonaws.com/products/cosrx-advanced-snail-peptide-eye-cream-25ml/135580-2.jpg",
+  "duplicate_check": {
+    "window_days": 365,
+    "result": "No matching product in curated/data search"
+  },
+  "notes": "No matching product in retained 365-day inventory/history. General cosmetic eye-contact and irritation precautions. No exact peptide efficacy or dark-circle cure claim."
+}
